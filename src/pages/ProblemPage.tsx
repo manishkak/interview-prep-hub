@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useAppContext } from '../context/AppContext'
 import MarkdownRenderer from '../components/MarkdownRenderer'
@@ -39,9 +39,19 @@ export default function ProblemPage() {
     }
   }, [markViewedProblem, note])
 
+  const restoredScroll = useRef(false)
+
   useEffect(() => {
+    restoredScroll.current = false
+  }, [note?.topicSlug, note?.problemSlug])
+
+  useEffect(() => {
+    if (restoredScroll.current) {
+      return
+    }
     if (record?.scrollPosition) {
       window.scrollTo(0, record.scrollPosition)
+      restoredScroll.current = true
     }
   }, [record])
 

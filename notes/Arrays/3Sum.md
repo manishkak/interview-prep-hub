@@ -2,7 +2,7 @@
 
 ## Problem Statement
 
-Describe the problem statement for **3Sum** here.
+Given an integer array nums, find all unique triplets in the array which give the sum of zero.
 
 ## Examples
 

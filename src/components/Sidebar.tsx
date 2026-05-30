@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import Fuse from 'fuse.js'
 import { useAppContext } from '../context/AppContext'
 import { ReviewStatusFilter } from '../types'
 
@@ -45,16 +44,10 @@ export default function Sidebar({ isMobile, open, onMobileClose }: SidebarProps)
   )
 
   const matchedProblems = useMemo(() => {
-    const trimmed = query.trim()
-    let candidates = allProblems
-    if (trimmed.length > 0) {
-      const fuse = new Fuse(allProblems, {
-        keys: ['problemName', 'topicName'],
-        threshold: 0.34,
-        ignoreLocation: true
-      })
-      candidates = fuse.search(trimmed).map((result) => result.item)
-    }
+    const trimmed = query.trim().toLowerCase()
+    const candidates = trimmed.length > 0
+      ? allProblems.filter((problem) => problem.problemName.toLowerCase().includes(trimmed))
+      : allProblems
     return candidates.filter((problem) => matchesFilter(status, getRecord(`${problem.topicSlug}:${problem.problemSlug}`)))
   }, [allProblems, getRecord, query, status])
 

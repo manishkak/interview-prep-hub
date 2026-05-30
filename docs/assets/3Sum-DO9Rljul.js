@@ -2,7 +2,7 @@ const r=`# 3Sum\r
 \r
 ## Problem Statement\r
 \r
-Describe the problem statement for **3Sum** here.\r
+Given an integer array nums, find all unique triplets in the array which give the sum of zero.\r
 \r
 ## Examples\r
 \r
