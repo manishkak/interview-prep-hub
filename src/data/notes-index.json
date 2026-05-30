@@ -1,0 +1,1446 @@
+{
+  "topics": [
+    {
+      "topicName": "Arrays",
+      "topicSlug": "arrays",
+      "problems": [
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "3Sum",
+          "problemSlug": "3sum",
+          "fileName": "3Sum.md",
+          "relativePath": "Arrays/3Sum.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "Best Time To Buy Sell Stock",
+          "problemSlug": "best-time-to-buy-sell-stock",
+          "fileName": "Best Time To Buy Sell Stock.md",
+          "relativePath": "Arrays/Best Time To Buy Sell Stock.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "combination Sum",
+          "problemSlug": "combination-sum",
+          "fileName": "combination Sum.md",
+          "relativePath": "Arrays/combination Sum.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "containerwith Most Water",
+          "problemSlug": "containerwith-most-water",
+          "fileName": "containerwith Most Water.md",
+          "relativePath": "Arrays/containerwith Most Water.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "contains Duplicate",
+          "problemSlug": "contains-duplicate",
+          "fileName": "contains Duplicate.md",
+          "relativePath": "Arrays/contains Duplicate.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "contiguous Array",
+          "problemSlug": "contiguous-array",
+          "fileName": "contiguous Array.md",
+          "relativePath": "Arrays/contiguous Array.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "insert Interval",
+          "problemSlug": "insert-interval",
+          "fileName": "insert Interval.md",
+          "relativePath": "Arrays/insert Interval.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "Kadane",
+          "problemSlug": "kadane",
+          "fileName": "Kadane.md",
+          "relativePath": "Arrays/Kadane.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "longest Consecutive Sequence",
+          "problemSlug": "longest-consecutive-sequence",
+          "fileName": "longest Consecutive Sequence.md",
+          "relativePath": "Arrays/longest Consecutive Sequence.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "Longest Substringwith At Most KDistinct Characters",
+          "problemSlug": "longest-substringwith-at-most-kdistinct-characters",
+          "fileName": "Longest Substringwith At Most KDistinct Characters.md",
+          "relativePath": "Arrays/Longest Substringwith At Most KDistinct Characters.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "majority Element",
+          "problemSlug": "majority-element",
+          "fileName": "majority Element.md",
+          "relativePath": "Arrays/majority Element.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "Maximum Average Subarrayof Size K",
+          "problemSlug": "maximum-average-subarrayof-size-k",
+          "fileName": "Maximum Average Subarrayof Size K.md",
+          "relativePath": "Arrays/Maximum Average Subarrayof Size K.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "Maximum Size Subarray Sum",
+          "problemSlug": "maximum-size-subarray-sum",
+          "fileName": "Maximum Size Subarray Sum.md",
+          "relativePath": "Arrays/Maximum Size Subarray Sum.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "maximum Subarray",
+          "problemSlug": "maximum-subarray",
+          "fileName": "maximum Subarray.md",
+          "relativePath": "Arrays/maximum Subarray.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "meeting Rooms",
+          "problemSlug": "meeting-rooms",
+          "fileName": "meeting Rooms.md",
+          "relativePath": "Arrays/meeting Rooms.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "meeting Rooms2",
+          "problemSlug": "meeting-rooms2",
+          "fileName": "meeting Rooms2.md",
+          "relativePath": "Arrays/meeting Rooms2.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "merge Intervals",
+          "problemSlug": "merge-intervals",
+          "fileName": "merge Intervals.md",
+          "relativePath": "Arrays/merge Intervals.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "Merge KSorted Arrays",
+          "problemSlug": "merge-ksorted-arrays",
+          "fileName": "Merge KSorted Arrays.md",
+          "relativePath": "Arrays/Merge KSorted Arrays.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "Minimum Size Subarray Sum",
+          "problemSlug": "minimum-size-subarray-sum",
+          "fileName": "Minimum Size Subarray Sum.md",
+          "relativePath": "Arrays/Minimum Size Subarray Sum.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "Move All Zeros To The End Of Array",
+          "problemSlug": "move-all-zeros-to-the-end-of-array",
+          "fileName": "Move All Zeros To The End Of Array.md",
+          "relativePath": "Arrays/Move All Zeros To The End Of Array.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "product Of Array Except Self",
+          "problemSlug": "product-of-array-except-self",
+          "fileName": "product Of Array Except Self.md",
+          "relativePath": "Arrays/product Of Array Except Self.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "remove Dupes From Array",
+          "problemSlug": "remove-dupes-from-array",
+          "fileName": "remove Dupes From Array.md",
+          "relativePath": "Arrays/remove Dupes From Array.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "rotate Array",
+          "problemSlug": "rotate-array",
+          "fileName": "rotate Array.md",
+          "relativePath": "Arrays/rotate Array.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "sort Colors",
+          "problemSlug": "sort-colors",
+          "fileName": "sort Colors.md",
+          "relativePath": "Arrays/sort Colors.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "sum Of Three Values",
+          "problemSlug": "sum-of-three-values",
+          "fileName": "sum Of Three Values.md",
+          "relativePath": "Arrays/sum Of Three Values.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "trapping Rain Water",
+          "problemSlug": "trapping-rain-water",
+          "fileName": "trapping Rain Water.md",
+          "relativePath": "Arrays/trapping Rain Water.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "triplet Sum Close To Target",
+          "problemSlug": "triplet-sum-close-to-target",
+          "fileName": "triplet Sum Close To Target.md",
+          "relativePath": "Arrays/triplet Sum Close To Target.md"
+        },
+        {
+          "topicName": "Arrays",
+          "topicSlug": "arrays",
+          "problemName": "Two Sum",
+          "problemSlug": "two-sum",
+          "fileName": "Two Sum.md",
+          "relativePath": "Arrays/Two Sum.md"
+        }
+      ]
+    },
+    {
+      "topicName": "Binary Tree",
+      "topicSlug": "binary-tree",
+      "problems": [
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "balanced Binary Tree",
+          "problemSlug": "balanced-binary-tree",
+          "fileName": "balanced Binary Tree.md",
+          "relativePath": "Binary Tree/balanced Binary Tree.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "binary Tree Maximum Path Sum",
+          "problemSlug": "binary-tree-maximum-path-sum",
+          "fileName": "binary Tree Maximum Path Sum.md",
+          "relativePath": "Binary Tree/binary Tree Maximum Path Sum.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "binary Tree Right Side View",
+          "problemSlug": "binary-tree-right-side-view",
+          "fileName": "binary Tree Right Side View.md",
+          "relativePath": "Binary Tree/binary Tree Right Side View.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "complete Binary Tree",
+          "problemSlug": "complete-binary-tree",
+          "fileName": "complete Binary Tree.md",
+          "relativePath": "Binary Tree/complete Binary Tree.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "construct Binary Tree From Preorder And Inorder Traversal",
+          "problemSlug": "construct-binary-tree-from-preorder-and-inorder-traversal",
+          "fileName": "construct Binary Tree From Preorder And Inorder Traversal.md",
+          "relativePath": "Binary Tree/construct Binary Tree From Preorder And Inorder Traversal.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "diameter Of ABinary Tree",
+          "problemSlug": "diameter-of-abinary-tree",
+          "fileName": "diameter Of ABinary Tree.md",
+          "relativePath": "Binary Tree/diameter Of ABinary Tree.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "invert Binary Tree",
+          "problemSlug": "invert-binary-tree",
+          "fileName": "invert Binary Tree.md",
+          "relativePath": "Binary Tree/invert Binary Tree.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "is Same Tree",
+          "problemSlug": "is-same-tree",
+          "fileName": "is Same Tree.md",
+          "relativePath": "Binary Tree/is Same Tree.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "level Order Traversal",
+          "problemSlug": "level-order-traversal",
+          "fileName": "level Order Traversal.md",
+          "relativePath": "Binary Tree/level Order Traversal.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "lowest Common Ancestor Binary Tree",
+          "problemSlug": "lowest-common-ancestor-binary-tree",
+          "fileName": "lowest Common Ancestor Binary Tree.md",
+          "relativePath": "Binary Tree/lowest Common Ancestor Binary Tree.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "maximum Depth Of Binary Tree",
+          "problemSlug": "maximum-depth-of-binary-tree",
+          "fileName": "maximum Depth Of Binary Tree.md",
+          "relativePath": "Binary Tree/maximum Depth Of Binary Tree.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "maximum Width Of ABinary Tree",
+          "problemSlug": "maximum-width-of-abinary-tree",
+          "fileName": "maximum Width Of ABinary Tree.md",
+          "relativePath": "Binary Tree/maximum Width Of ABinary Tree.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "path Sum1Binary Tree",
+          "problemSlug": "path-sum1binary-tree",
+          "fileName": "path Sum1Binary Tree.md",
+          "relativePath": "Binary Tree/path Sum1Binary Tree.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "path Sum2Binary Tree",
+          "problemSlug": "path-sum2binary-tree",
+          "fileName": "path Sum2Binary Tree.md",
+          "relativePath": "Binary Tree/path Sum2Binary Tree.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "simple Treein JS",
+          "problemSlug": "simple-treein-js",
+          "fileName": "simple Treein JS.md",
+          "relativePath": "Binary Tree/simple Treein JS.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "subtreeof Another Tree",
+          "problemSlug": "subtreeof-another-tree",
+          "fileName": "subtreeof Another Tree.md",
+          "relativePath": "Binary Tree/subtreeof Another Tree.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "symmetric Tree",
+          "problemSlug": "symmetric-tree",
+          "fileName": "symmetric Tree.md",
+          "relativePath": "Binary Tree/symmetric Tree.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "tree BFSTraversal EDUCATIVE",
+          "problemSlug": "tree-bfstraversal-educative",
+          "fileName": "tree BFSTraversal EDUCATIVE.md",
+          "relativePath": "Binary Tree/tree BFSTraversal EDUCATIVE.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "tree BFSTraversal",
+          "problemSlug": "tree-bfstraversal",
+          "fileName": "tree BFSTraversal.md",
+          "relativePath": "Binary Tree/tree BFSTraversal.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "tree DFSTraversal",
+          "problemSlug": "tree-dfstraversal",
+          "fileName": "tree DFSTraversal.md",
+          "relativePath": "Binary Tree/tree DFSTraversal.md"
+        },
+        {
+          "topicName": "Binary Tree",
+          "topicSlug": "binary-tree",
+          "problemName": "tree Traversals",
+          "problemSlug": "tree-traversals",
+          "fileName": "tree Traversals.md",
+          "relativePath": "Binary Tree/tree Traversals.md"
+        }
+      ]
+    },
+    {
+      "topicName": "BinarySearch",
+      "topicSlug": "binarysearch",
+      "problems": [
+        {
+          "topicName": "BinarySearch",
+          "topicSlug": "binarysearch",
+          "problemName": "binary Search",
+          "problemSlug": "binary-search",
+          "fileName": "binary Search.md",
+          "relativePath": "BinarySearch/binary Search.md"
+        },
+        {
+          "topicName": "BinarySearch",
+          "topicSlug": "binarysearch",
+          "problemName": "cutting Wood",
+          "problemSlug": "cutting-wood",
+          "fileName": "cutting Wood.md",
+          "relativePath": "BinarySearch/cutting Wood.md"
+        },
+        {
+          "topicName": "BinarySearch",
+          "topicSlug": "binarysearch",
+          "problemName": "first Bad Version",
+          "problemSlug": "first-bad-version",
+          "fileName": "first Bad Version.md",
+          "relativePath": "BinarySearch/first Bad Version.md"
+        },
+        {
+          "topicName": "BinarySearch",
+          "topicSlug": "binarysearch",
+          "problemName": "First&Last Post Of Target",
+          "problemSlug": "firstlast-post-of-target",
+          "fileName": "First&Last Post Of Target.md",
+          "relativePath": "BinarySearch/First&Last Post Of Target.md"
+        },
+        {
+          "topicName": "BinarySearch",
+          "topicSlug": "binarysearch",
+          "problemName": "median Of Two Sorted Arrays",
+          "problemSlug": "median-of-two-sorted-arrays",
+          "fileName": "median Of Two Sorted Arrays.md",
+          "relativePath": "BinarySearch/median Of Two Sorted Arrays.md"
+        },
+        {
+          "topicName": "BinarySearch",
+          "topicSlug": "binarysearch",
+          "problemName": "Peak Element In Array",
+          "problemSlug": "peak-element-in-array",
+          "fileName": "Peak Element In Array.md",
+          "relativePath": "BinarySearch/Peak Element In Array.md"
+        },
+        {
+          "topicName": "BinarySearch",
+          "topicSlug": "binarysearch",
+          "problemName": "searchin Rotated Sorted Array",
+          "problemSlug": "searchin-rotated-sorted-array",
+          "fileName": "searchin Rotated Sorted Array.md",
+          "relativePath": "BinarySearch/searchin Rotated Sorted Array.md"
+        },
+        {
+          "topicName": "BinarySearch",
+          "topicSlug": "binarysearch",
+          "problemName": "Square Root Of ANum",
+          "problemSlug": "square-root-of-anum",
+          "fileName": "Square Root Of ANum.md",
+          "relativePath": "BinarySearch/Square Root Of ANum.md"
+        },
+        {
+          "topicName": "BinarySearch",
+          "topicSlug": "binarysearch",
+          "problemName": "time Based Key Value Store",
+          "problemSlug": "time-based-key-value-store",
+          "fileName": "time Based Key Value Store.md",
+          "relativePath": "BinarySearch/time Based Key Value Store.md"
+        }
+      ]
+    },
+    {
+      "topicName": "DynamicProgramming",
+      "topicSlug": "dynamicprogramming",
+      "problems": [
+        {
+          "topicName": "DynamicProgramming",
+          "topicSlug": "dynamicprogramming",
+          "problemName": "House Robber1",
+          "problemSlug": "house-robber1",
+          "fileName": "House Robber1.md",
+          "relativePath": "DynamicProgramming/House Robber1.md"
+        },
+        {
+          "topicName": "DynamicProgramming",
+          "topicSlug": "dynamicprogramming",
+          "problemName": "Memoization Examples",
+          "problemSlug": "memoization-examples",
+          "fileName": "Memoization Examples.md",
+          "relativePath": "DynamicProgramming/Memoization Examples.md"
+        },
+        {
+          "topicName": "DynamicProgramming",
+          "topicSlug": "dynamicprogramming",
+          "problemName": "Min Cost Climbing Stairs",
+          "problemSlug": "min-cost-climbing-stairs",
+          "fileName": "Min Cost Climbing Stairs.md",
+          "relativePath": "DynamicProgramming/Min Cost Climbing Stairs.md"
+        }
+      ]
+    },
+    {
+      "topicName": "Graph",
+      "topicSlug": "graph",
+      "problems": [
+        {
+          "topicName": "Graph",
+          "topicSlug": "graph",
+          "problemName": "01 Matrix",
+          "problemSlug": "01-matrix",
+          "fileName": "01 Matrix.md",
+          "relativePath": "Graph/01 Matrix.md"
+        },
+        {
+          "topicName": "Graph",
+          "topicSlug": "graph",
+          "problemName": "BFS DFSAlgos",
+          "problemSlug": "bfs-dfsalgos",
+          "fileName": "BFS DFSAlgos.md",
+          "relativePath": "Graph/BFS DFSAlgos.md"
+        },
+        {
+          "topicName": "Graph",
+          "topicSlug": "graph",
+          "problemName": "Clone Graph",
+          "problemSlug": "clone-graph",
+          "fileName": "Clone Graph.md",
+          "relativePath": "Graph/Clone Graph.md"
+        },
+        {
+          "topicName": "Graph",
+          "topicSlug": "graph",
+          "problemName": "Course Schedule",
+          "problemSlug": "course-schedule",
+          "fileName": "Course Schedule.md",
+          "relativePath": "Graph/Course Schedule.md"
+        },
+        {
+          "topicName": "Graph",
+          "topicSlug": "graph",
+          "problemName": "Course Schedule2",
+          "problemSlug": "course-schedule2",
+          "fileName": "Course Schedule2.md",
+          "relativePath": "Graph/Course Schedule2.md"
+        },
+        {
+          "topicName": "Graph",
+          "topicSlug": "graph",
+          "problemName": "Flood Fill",
+          "problemSlug": "flood-fill",
+          "fileName": "Flood Fill.md",
+          "relativePath": "Graph/Flood Fill.md"
+        },
+        {
+          "topicName": "Graph",
+          "topicSlug": "graph",
+          "problemName": "Graph Valid Tree",
+          "problemSlug": "graph-valid-tree",
+          "fileName": "Graph Valid Tree.md",
+          "relativePath": "Graph/Graph Valid Tree.md"
+        },
+        {
+          "topicName": "Graph",
+          "topicSlug": "graph",
+          "problemName": "Numberof Connected Componentsinan Undirected Graph",
+          "problemSlug": "numberof-connected-componentsinan-undirected-graph",
+          "fileName": "Numberof Connected Componentsinan Undirected Graph.md",
+          "relativePath": "Graph/Numberof Connected Componentsinan Undirected Graph.md"
+        },
+        {
+          "topicName": "Graph",
+          "topicSlug": "graph",
+          "problemName": "Numberof Islands",
+          "problemSlug": "numberof-islands",
+          "fileName": "Numberof Islands.md",
+          "relativePath": "Graph/Numberof Islands.md"
+        },
+        {
+          "topicName": "Graph",
+          "topicSlug": "graph",
+          "problemName": "Pacific Atlantic Water Flow",
+          "problemSlug": "pacific-atlantic-water-flow",
+          "fileName": "Pacific Atlantic Water Flow.md",
+          "relativePath": "Graph/Pacific Atlantic Water Flow.md"
+        },
+        {
+          "topicName": "Graph",
+          "topicSlug": "graph",
+          "problemName": "Rotting Oranges",
+          "problemSlug": "rotting-oranges",
+          "fileName": "Rotting Oranges.md",
+          "relativePath": "Graph/Rotting Oranges.md"
+        },
+        {
+          "topicName": "Graph",
+          "topicSlug": "graph",
+          "problemName": "Shortest Pathto Get Food",
+          "problemSlug": "shortest-pathto-get-food",
+          "fileName": "Shortest Pathto Get Food.md",
+          "relativePath": "Graph/Shortest Pathto Get Food.md"
+        },
+        {
+          "topicName": "Graph",
+          "topicSlug": "graph",
+          "problemName": "Word Search",
+          "problemSlug": "word-search",
+          "fileName": "Word Search.md",
+          "relativePath": "Graph/Word Search.md"
+        }
+      ]
+    },
+    {
+      "topicName": "Hash Table",
+      "topicSlug": "hash-table",
+      "problems": [
+        {
+          "topicName": "Hash Table",
+          "topicSlug": "hash-table",
+          "problemName": "Insert Delete Get Random",
+          "problemSlug": "insert-delete-get-random",
+          "fileName": "Insert Delete Get Random.md",
+          "relativePath": "Hash Table/Insert Delete Get Random.md"
+        },
+        {
+          "topicName": "Hash Table",
+          "topicSlug": "hash-table",
+          "problemName": "Ransom Note",
+          "problemSlug": "ransom-note",
+          "fileName": "Ransom Note.md",
+          "relativePath": "Hash Table/Ransom Note.md"
+        }
+      ]
+    },
+    {
+      "topicName": "Heap",
+      "topicSlug": "heap",
+      "problems": [
+        {
+          "topicName": "Heap",
+          "topicSlug": "heap",
+          "problemName": "Connect NRopes",
+          "problemSlug": "connect-nropes",
+          "fileName": "Connect NRopes.md",
+          "relativePath": "Heap/Connect NRopes.md"
+        },
+        {
+          "topicName": "Heap",
+          "topicSlug": "heap",
+          "problemName": "find KClosest Elements",
+          "problemSlug": "find-kclosest-elements",
+          "fileName": "find KClosest Elements.md",
+          "relativePath": "Heap/find KClosest Elements.md"
+        },
+        {
+          "topicName": "Heap",
+          "topicSlug": "heap",
+          "problemName": "Find Medianfrom Data Stream",
+          "problemSlug": "find-medianfrom-data-stream",
+          "fileName": "Find Medianfrom Data Stream.md",
+          "relativePath": "Heap/Find Medianfrom Data Stream.md"
+        },
+        {
+          "topicName": "Heap",
+          "topicSlug": "heap",
+          "problemName": "Heap Intro",
+          "problemSlug": "heap-intro",
+          "fileName": "Heap Intro.md",
+          "relativePath": "Heap/Heap Intro.md"
+        },
+        {
+          "topicName": "Heap",
+          "topicSlug": "heap",
+          "problemName": "k Closest Points To Origin",
+          "problemSlug": "k-closest-points-to-origin",
+          "fileName": "k Closest Points To Origin.md",
+          "relativePath": "Heap/k Closest Points To Origin.md"
+        },
+        {
+          "topicName": "Heap",
+          "topicSlug": "heap",
+          "problemName": "kth Largest Ele In Stream",
+          "problemSlug": "kth-largest-ele-in-stream",
+          "fileName": "kth Largest Ele In Stream.md",
+          "relativePath": "Heap/kth Largest Ele In Stream.md"
+        },
+        {
+          "topicName": "Heap",
+          "topicSlug": "heap",
+          "problemName": "Max Heap And Heap Info",
+          "problemSlug": "max-heap-and-heap-info",
+          "fileName": "Max Heap And Heap Info.md",
+          "relativePath": "Heap/Max Heap And Heap Info.md"
+        },
+        {
+          "topicName": "Heap",
+          "topicSlug": "heap",
+          "problemName": "Min Heap Functions",
+          "problemSlug": "min-heap-functions",
+          "fileName": "Min Heap Functions.md",
+          "relativePath": "Heap/Min Heap Functions.md"
+        },
+        {
+          "topicName": "Heap",
+          "topicSlug": "heap",
+          "problemName": "Reorganiza String",
+          "problemSlug": "reorganiza-string",
+          "fileName": "Reorganiza String.md",
+          "relativePath": "Heap/Reorganiza String.md"
+        },
+        {
+          "topicName": "Heap",
+          "topicSlug": "heap",
+          "problemName": "Sort Characters By Frequency",
+          "problemSlug": "sort-characters-by-frequency",
+          "fileName": "Sort Characters By Frequency.md",
+          "relativePath": "Heap/Sort Characters By Frequency.md"
+        },
+        {
+          "topicName": "Heap",
+          "topicSlug": "heap",
+          "problemName": "top KFrequent Elements",
+          "problemSlug": "top-kfrequent-elements",
+          "fileName": "top KFrequent Elements.md",
+          "relativePath": "Heap/top KFrequent Elements.md"
+        },
+        {
+          "topicName": "Heap",
+          "topicSlug": "heap",
+          "problemName": "top KFrequent Words",
+          "problemSlug": "top-kfrequent-words",
+          "fileName": "top KFrequent Words.md",
+          "relativePath": "Heap/top KFrequent Words.md"
+        }
+      ]
+    },
+    {
+      "topicName": "Linked List",
+      "topicSlug": "linked-list",
+      "problems": [
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "Add Two Numbers Linked List",
+          "problemSlug": "add-two-numbers-linked-list",
+          "fileName": "Add Two Numbers Linked List.md",
+          "relativePath": "Linked List/Add Two Numbers Linked List.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "Convert Binary Numberina Linked Listto Integer",
+          "problemSlug": "convert-binary-numberina-linked-listto-integer",
+          "fileName": "Convert Binary Numberina Linked Listto Integer.md",
+          "relativePath": "Linked List/Convert Binary Numberina Linked Listto Integer.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "delete Node From Linked List",
+          "problemSlug": "delete-node-from-linked-list",
+          "fileName": "delete Node From Linked List.md",
+          "relativePath": "Linked List/delete Node From Linked List.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "implementation Of Linked List",
+          "problemSlug": "implementation-of-linked-list",
+          "fileName": "implementation Of Linked List.md",
+          "relativePath": "Linked List/implementation Of Linked List.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "intersectionof Two Linked Lists",
+          "problemSlug": "intersectionof-two-linked-lists",
+          "fileName": "intersectionof Two Linked Lists.md",
+          "relativePath": "Linked List/intersectionof Two Linked Lists.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "linked List Cycle",
+          "problemSlug": "linked-list-cycle",
+          "fileName": "linked List Cycle.md",
+          "relativePath": "Linked List/linked List Cycle.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "Linked List Cycle2",
+          "problemSlug": "linked-list-cycle2",
+          "fileName": "Linked List Cycle2.md",
+          "relativePath": "Linked List/Linked List Cycle2.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "LRUCache",
+          "problemSlug": "lrucache",
+          "fileName": "LRUCache.md",
+          "relativePath": "Linked List/LRUCache.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "Merge Two Sorted Lists",
+          "problemSlug": "merge-two-sorted-lists",
+          "fileName": "Merge Two Sorted Lists.md",
+          "relativePath": "Linked List/Merge Two Sorted Lists.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "middle Of The Linked List",
+          "problemSlug": "middle-of-the-linked-list",
+          "fileName": "middle Of The Linked List.md",
+          "relativePath": "Linked List/middle Of The Linked List.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "Odd Even Linked List",
+          "problemSlug": "odd-even-linked-list",
+          "fileName": "Odd Even Linked List.md",
+          "relativePath": "Linked List/Odd Even Linked List.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "palindrome Linked List",
+          "problemSlug": "palindrome-linked-list",
+          "fileName": "palindrome Linked List.md",
+          "relativePath": "Linked List/palindrome Linked List.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "Partition List Linked List",
+          "problemSlug": "partition-list-linked-list",
+          "fileName": "Partition List Linked List.md",
+          "relativePath": "Linked List/Partition List Linked List.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "remove Duplicates From Linked List",
+          "problemSlug": "remove-duplicates-from-linked-list",
+          "fileName": "remove Duplicates From Linked List.md",
+          "relativePath": "Linked List/remove Duplicates From Linked List.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "Remove Nth Node From Endof List",
+          "problemSlug": "remove-nth-node-from-endof-list",
+          "fileName": "Remove Nth Node From Endof List.md",
+          "relativePath": "Linked List/Remove Nth Node From Endof List.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "Reorder Linked List",
+          "problemSlug": "reorder-linked-list",
+          "fileName": "Reorder Linked List.md",
+          "relativePath": "Linked List/Reorder Linked List.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "Reverse Linked List",
+          "problemSlug": "reverse-linked-list",
+          "fileName": "Reverse Linked List.md",
+          "relativePath": "Linked List/Reverse Linked List.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "Reverse Linked List2",
+          "problemSlug": "reverse-linked-list2",
+          "fileName": "Reverse Linked List2.md",
+          "relativePath": "Linked List/Reverse Linked List2.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "Reverse Nodes In K group",
+          "problemSlug": "reverse-nodes-in-k-group",
+          "fileName": "Reverse Nodes In K group.md",
+          "relativePath": "Linked List/Reverse Nodes In K group.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "Rotate Linked List",
+          "problemSlug": "rotate-linked-list",
+          "fileName": "Rotate Linked List.md",
+          "relativePath": "Linked List/Rotate Linked List.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "Sort List Linked List",
+          "problemSlug": "sort-list-linked-list",
+          "fileName": "Sort List Linked List.md",
+          "relativePath": "Linked List/Sort List Linked List.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "Split Linked Listin Parts",
+          "problemSlug": "split-linked-listin-parts",
+          "fileName": "Split Linked Listin Parts.md",
+          "relativePath": "Linked List/Split Linked Listin Parts.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "Swap Nodes In Pairs",
+          "problemSlug": "swap-nodes-in-pairs",
+          "fileName": "Swap Nodes In Pairs.md",
+          "relativePath": "Linked List/Swap Nodes In Pairs.md"
+        },
+        {
+          "topicName": "Linked List",
+          "topicSlug": "linked-list",
+          "problemName": "union Intersectionof Linked List",
+          "problemSlug": "union-intersectionof-linked-list",
+          "fileName": "union Intersectionof Linked List.md",
+          "relativePath": "Linked List/union Intersectionof Linked List.md"
+        }
+      ]
+    },
+    {
+      "topicName": "Math",
+      "topicSlug": "math",
+      "problems": [
+        {
+          "topicName": "Math",
+          "topicSlug": "math",
+          "problemName": "happy Number",
+          "problemSlug": "happy-number",
+          "fileName": "happy Number.md",
+          "relativePath": "Math/happy Number.md"
+        }
+      ]
+    },
+    {
+      "topicName": "Matrix",
+      "topicSlug": "matrix",
+      "problems": [
+        {
+          "topicName": "Matrix",
+          "topicSlug": "matrix",
+          "problemName": "Find Row With Max1s",
+          "problemSlug": "find-row-with-max1s",
+          "fileName": "Find Row With Max1s.md",
+          "relativePath": "Matrix/Find Row With Max1s.md"
+        },
+        {
+          "topicName": "Matrix",
+          "topicSlug": "matrix",
+          "problemName": "Matrix Traversal",
+          "problemSlug": "matrix-traversal",
+          "fileName": "Matrix Traversal.md",
+          "relativePath": "Matrix/Matrix Traversal.md"
+        },
+        {
+          "topicName": "Matrix",
+          "topicSlug": "matrix",
+          "problemName": "Rotate Matrix",
+          "problemSlug": "rotate-matrix",
+          "fileName": "Rotate Matrix.md",
+          "relativePath": "Matrix/Rotate Matrix.md"
+        },
+        {
+          "topicName": "Matrix",
+          "topicSlug": "matrix",
+          "problemName": "Search In A2DMatrix",
+          "problemSlug": "search-in-a2dmatrix",
+          "fileName": "Search In A2DMatrix.md",
+          "relativePath": "Matrix/Search In A2DMatrix.md"
+        },
+        {
+          "topicName": "Matrix",
+          "topicSlug": "matrix",
+          "problemName": "Set Matrix Zeroes",
+          "problemSlug": "set-matrix-zeroes",
+          "fileName": "Set Matrix Zeroes.md",
+          "relativePath": "Matrix/Set Matrix Zeroes.md"
+        },
+        {
+          "topicName": "Matrix",
+          "topicSlug": "matrix",
+          "problemName": "Toeplitz Matrix",
+          "problemSlug": "toeplitz-matrix",
+          "fileName": "Toeplitz Matrix.md",
+          "relativePath": "Matrix/Toeplitz Matrix.md"
+        },
+        {
+          "topicName": "Matrix",
+          "topicSlug": "matrix",
+          "problemName": "Transpose Matix",
+          "problemSlug": "transpose-matix",
+          "fileName": "Transpose Matix.md",
+          "relativePath": "Matrix/Transpose Matix.md"
+        }
+      ]
+    },
+    {
+      "topicName": "Sliding Window",
+      "topicSlug": "sliding-window",
+      "problems": [
+        {
+          "topicName": "Sliding Window",
+          "topicSlug": "sliding-window",
+          "problemName": "Longest Substring Without Repeating Characters",
+          "problemSlug": "longest-substring-without-repeating-characters",
+          "fileName": "Longest Substring Without Repeating Characters.md",
+          "relativePath": "Sliding Window/Longest Substring Without Repeating Characters.md"
+        }
+      ]
+    },
+    {
+      "topicName": "Stacks & Queues",
+      "topicSlug": "stacks-queues",
+      "problems": [
+        {
+          "topicName": "Stacks & Queues",
+          "topicSlug": "stacks-queues",
+          "problemName": "asteroid Collision",
+          "problemSlug": "asteroid-collision",
+          "fileName": "asteroid Collision.md",
+          "relativePath": "Stacks & Queues/asteroid Collision.md"
+        },
+        {
+          "topicName": "Stacks & Queues",
+          "topicSlug": "stacks-queues",
+          "problemName": "backspace String Compare",
+          "problemSlug": "backspace-string-compare",
+          "fileName": "backspace String Compare.md",
+          "relativePath": "Stacks & Queues/backspace String Compare.md"
+        },
+        {
+          "topicName": "Stacks & Queues",
+          "topicSlug": "stacks-queues",
+          "problemName": "daily Temperatures",
+          "problemSlug": "daily-temperatures",
+          "fileName": "daily Temperatures.md",
+          "relativePath": "Stacks & Queues/daily Temperatures.md"
+        },
+        {
+          "topicName": "Stacks & Queues",
+          "topicSlug": "stacks-queues",
+          "problemName": "decode String",
+          "problemSlug": "decode-string",
+          "fileName": "decode String.md",
+          "relativePath": "Stacks & Queues/decode String.md"
+        },
+        {
+          "topicName": "Stacks & Queues",
+          "topicSlug": "stacks-queues",
+          "problemName": "implement Queueusing Stacks",
+          "problemSlug": "implement-queueusing-stacks",
+          "fileName": "implement Queueusing Stacks.md",
+          "relativePath": "Stacks & Queues/implement Queueusing Stacks.md"
+        },
+        {
+          "topicName": "Stacks & Queues",
+          "topicSlug": "stacks-queues",
+          "problemName": "largest Rectangle In Histogram",
+          "problemSlug": "largest-rectangle-in-histogram",
+          "fileName": "largest Rectangle In Histogram.md",
+          "relativePath": "Stacks & Queues/largest Rectangle In Histogram.md"
+        },
+        {
+          "topicName": "Stacks & Queues",
+          "topicSlug": "stacks-queues",
+          "problemName": "min Stack",
+          "problemSlug": "min-stack",
+          "fileName": "min Stack.md",
+          "relativePath": "Stacks & Queues/min Stack.md"
+        },
+        {
+          "topicName": "Stacks & Queues",
+          "topicSlug": "stacks-queues",
+          "problemName": "monotonic Stack",
+          "problemSlug": "monotonic-stack",
+          "fileName": "monotonic Stack.md",
+          "relativePath": "Stacks & Queues/monotonic Stack.md"
+        },
+        {
+          "topicName": "Stacks & Queues",
+          "topicSlug": "stacks-queues",
+          "problemName": "must Knows",
+          "problemSlug": "must-knows",
+          "fileName": "must Knows.md",
+          "relativePath": "Stacks & Queues/must Knows.md"
+        },
+        {
+          "topicName": "Stacks & Queues",
+          "topicSlug": "stacks-queues",
+          "problemName": "next Greater Element1",
+          "problemSlug": "next-greater-element1",
+          "fileName": "next Greater Element1.md",
+          "relativePath": "Stacks & Queues/next Greater Element1.md"
+        },
+        {
+          "topicName": "Stacks & Queues",
+          "topicSlug": "stacks-queues",
+          "problemName": "next Greater Element2",
+          "problemSlug": "next-greater-element2",
+          "fileName": "next Greater Element2.md",
+          "relativePath": "Stacks & Queues/next Greater Element2.md"
+        },
+        {
+          "topicName": "Stacks & Queues",
+          "topicSlug": "stacks-queues",
+          "problemName": "queue Implementation",
+          "problemSlug": "queue-implementation",
+          "fileName": "queue Implementation.md",
+          "relativePath": "Stacks & Queues/queue Implementation.md"
+        },
+        {
+          "topicName": "Stacks & Queues",
+          "topicSlug": "stacks-queues",
+          "problemName": "reverse Polish Notation",
+          "problemSlug": "reverse-polish-notation",
+          "fileName": "reverse Polish Notation.md",
+          "relativePath": "Stacks & Queues/reverse Polish Notation.md"
+        },
+        {
+          "topicName": "Stacks & Queues",
+          "topicSlug": "stacks-queues",
+          "problemName": "stack Implementation",
+          "problemSlug": "stack-implementation",
+          "fileName": "stack Implementation.md",
+          "relativePath": "Stacks & Queues/stack Implementation.md"
+        },
+        {
+          "topicName": "Stacks & Queues",
+          "topicSlug": "stacks-queues",
+          "problemName": "stock Span Problem",
+          "problemSlug": "stock-span-problem",
+          "fileName": "stock Span Problem.md",
+          "relativePath": "Stacks & Queues/stock Span Problem.md"
+        },
+        {
+          "topicName": "Stacks & Queues",
+          "topicSlug": "stacks-queues",
+          "problemName": "valid Parentheses",
+          "problemSlug": "valid-parentheses",
+          "fileName": "valid Parentheses.md",
+          "relativePath": "Stacks & Queues/valid Parentheses.md"
+        }
+      ]
+    },
+    {
+      "topicName": "String",
+      "topicSlug": "string",
+      "problems": [
+        {
+          "topicName": "String",
+          "topicSlug": "string",
+          "problemName": "Find All Anagrams In AString",
+          "problemSlug": "find-all-anagrams-in-astring",
+          "fileName": "Find All Anagrams In AString.md",
+          "relativePath": "String/Find All Anagrams In AString.md"
+        },
+        {
+          "topicName": "String",
+          "topicSlug": "string",
+          "problemName": "Group Anagrams",
+          "problemSlug": "group-anagrams",
+          "fileName": "Group Anagrams.md",
+          "relativePath": "String/Group Anagrams.md"
+        },
+        {
+          "topicName": "String",
+          "topicSlug": "string",
+          "problemName": "Group Shifted Strings",
+          "problemSlug": "group-shifted-strings",
+          "fileName": "Group Shifted Strings.md",
+          "relativePath": "String/Group Shifted Strings.md"
+        },
+        {
+          "topicName": "String",
+          "topicSlug": "string",
+          "problemName": "Isomorphic Strings",
+          "problemSlug": "isomorphic-strings",
+          "fileName": "Isomorphic Strings.md",
+          "relativePath": "String/Isomorphic Strings.md"
+        },
+        {
+          "topicName": "String",
+          "topicSlug": "string",
+          "problemName": "longest Common Prefix",
+          "problemSlug": "longest-common-prefix",
+          "fileName": "longest Common Prefix.md",
+          "relativePath": "String/longest Common Prefix.md"
+        },
+        {
+          "topicName": "String",
+          "topicSlug": "string",
+          "problemName": "longest Palindrome",
+          "problemSlug": "longest-palindrome",
+          "fileName": "longest Palindrome.md",
+          "relativePath": "String/longest Palindrome.md"
+        },
+        {
+          "topicName": "String",
+          "topicSlug": "string",
+          "problemName": "Longest Palindromic Substring",
+          "problemSlug": "longest-palindromic-substring",
+          "fileName": "Longest Palindromic Substring.md",
+          "relativePath": "String/Longest Palindromic Substring.md"
+        },
+        {
+          "topicName": "String",
+          "topicSlug": "string",
+          "problemName": "Longest Substring Without Repeating Characters",
+          "problemSlug": "longest-substring-without-repeating-characters",
+          "fileName": "Longest Substring Without Repeating Characters.md",
+          "relativePath": "String/Longest Substring Without Repeating Characters.md"
+        },
+        {
+          "topicName": "String",
+          "topicSlug": "string",
+          "problemName": "Minimum Window Substring",
+          "problemSlug": "minimum-window-substring",
+          "fileName": "Minimum Window Substring.md",
+          "relativePath": "String/Minimum Window Substring.md"
+        },
+        {
+          "topicName": "String",
+          "topicSlug": "string",
+          "problemName": "string To Integer Atoi",
+          "problemSlug": "string-to-integer-atoi",
+          "fileName": "string To Integer Atoi.md",
+          "relativePath": "String/string To Integer Atoi.md"
+        },
+        {
+          "topicName": "String",
+          "topicSlug": "string",
+          "problemName": "Subarray Sum Equals K",
+          "problemSlug": "subarray-sum-equals-k",
+          "fileName": "Subarray Sum Equals K.md",
+          "relativePath": "String/Subarray Sum Equals K.md"
+        },
+        {
+          "topicName": "String",
+          "topicSlug": "string",
+          "problemName": "valid Anagram",
+          "problemSlug": "valid-anagram",
+          "fileName": "valid Anagram.md",
+          "relativePath": "String/valid Anagram.md"
+        },
+        {
+          "topicName": "String",
+          "topicSlug": "string",
+          "problemName": "valid Palindrome",
+          "problemSlug": "valid-palindrome",
+          "fileName": "valid Palindrome.md",
+          "relativePath": "String/valid Palindrome.md"
+        },
+        {
+          "topicName": "String",
+          "topicSlug": "string",
+          "problemName": "valid Palindrome2",
+          "problemSlug": "valid-palindrome2",
+          "fileName": "valid Palindrome2.md",
+          "relativePath": "String/valid Palindrome2.md"
+        }
+      ]
+    },
+    {
+      "topicName": "Trees",
+      "topicSlug": "trees",
+      "problems": [
+        {
+          "topicName": "Trees",
+          "topicSlug": "trees",
+          "problemName": "ancestor Of Node In BST",
+          "problemSlug": "ancestor-of-node-in-bst",
+          "fileName": "ancestor Of Node In BST.md",
+          "relativePath": "Trees/ancestor Of Node In BST.md"
+        },
+        {
+          "topicName": "Trees",
+          "topicSlug": "trees",
+          "problemName": "bst Insertion",
+          "problemSlug": "bst-insertion",
+          "fileName": "bst Insertion.md",
+          "relativePath": "Trees/bst Insertion.md"
+        },
+        {
+          "topicName": "Trees",
+          "topicSlug": "trees",
+          "problemName": "BSTbasics",
+          "problemSlug": "bstbasics",
+          "fileName": "BSTbasics.md",
+          "relativePath": "Trees/BSTbasics.md"
+        },
+        {
+          "topicName": "Trees",
+          "topicSlug": "trees",
+          "problemName": "Bunchof Binary Tree Problems",
+          "problemSlug": "bunchof-binary-tree-problems",
+          "fileName": "Bunchof Binary Tree Problems.md",
+          "relativePath": "Trees/Bunchof Binary Tree Problems.md"
+        },
+        {
+          "topicName": "Trees",
+          "topicSlug": "trees",
+          "problemName": "deletion In BST",
+          "problemSlug": "deletion-in-bst",
+          "fileName": "deletion In BST.md",
+          "relativePath": "Trees/deletion In BST.md"
+        },
+        {
+          "topicName": "Trees",
+          "topicSlug": "trees",
+          "problemName": "flatten Binary Tree To Linked List",
+          "problemSlug": "flatten-binary-tree-to-linked-list",
+          "fileName": "flatten Binary Tree To Linked List.md",
+          "relativePath": "Trees/flatten Binary Tree To Linked List.md"
+        },
+        {
+          "topicName": "Trees",
+          "topicSlug": "trees",
+          "problemName": "height Of BST",
+          "problemSlug": "height-of-bst",
+          "fileName": "height Of BST.md",
+          "relativePath": "Trees/height Of BST.md"
+        },
+        {
+          "topicName": "Trees",
+          "topicSlug": "trees",
+          "problemName": "Inorder Traversal",
+          "problemSlug": "inorder-traversal",
+          "fileName": "Inorder Traversal.md",
+          "relativePath": "Trees/Inorder Traversal.md"
+        },
+        {
+          "topicName": "Trees",
+          "topicSlug": "trees",
+          "problemName": "kth Maximum Valuein BST",
+          "problemSlug": "kth-maximum-valuein-bst",
+          "fileName": "kth Maximum Valuein BST.md",
+          "relativePath": "Trees/kth Maximum Valuein BST.md"
+        },
+        {
+          "topicName": "Trees",
+          "topicSlug": "trees",
+          "problemName": "minimum Value In ABST",
+          "problemSlug": "minimum-value-in-abst",
+          "fileName": "minimum Value In ABST.md",
+          "relativePath": "Trees/minimum Value In ABST.md"
+        },
+        {
+          "topicName": "Trees",
+          "topicSlug": "trees",
+          "problemName": "nodes Atk Dist From Root",
+          "problemSlug": "nodes-atk-dist-from-root",
+          "fileName": "nodes Atk Dist From Root.md",
+          "relativePath": "Trees/nodes Atk Dist From Root.md"
+        },
+        {
+          "topicName": "Trees",
+          "topicSlug": "trees",
+          "problemName": "post Order Traversal",
+          "problemSlug": "post-order-traversal",
+          "fileName": "post Order Traversal.md",
+          "relativePath": "Trees/post Order Traversal.md"
+        },
+        {
+          "topicName": "Trees",
+          "topicSlug": "trees",
+          "problemName": "searching In BST",
+          "problemSlug": "searching-in-bst",
+          "fileName": "searching In BST.md",
+          "relativePath": "Trees/searching In BST.md"
+        },
+        {
+          "topicName": "Trees",
+          "topicSlug": "trees",
+          "problemName": "validate Binary Search Tree",
+          "problemSlug": "validate-binary-search-tree",
+          "fileName": "validate Binary Search Tree.md",
+          "relativePath": "Trees/validate Binary Search Tree.md"
+        }
+      ]
+    },
+    {
+      "topicName": "TwoPointer",
+      "topicSlug": "twopointer",
+      "problems": [
+        {
+          "topicName": "TwoPointer",
+          "topicSlug": "twopointer",
+          "problemName": "is Valid Palindrome",
+          "problemSlug": "is-valid-palindrome",
+          "fileName": "is Valid Palindrome.md",
+          "relativePath": "TwoPointer/is Valid Palindrome.md"
+        },
+        {
+          "topicName": "TwoPointer",
+          "topicSlug": "twopointer",
+          "problemName": "largest Container",
+          "problemSlug": "largest-container",
+          "fileName": "largest Container.md",
+          "relativePath": "TwoPointer/largest Container.md"
+        },
+        {
+          "topicName": "TwoPointer",
+          "topicSlug": "twopointer",
+          "problemName": "pair Sum Sorted",
+          "problemSlug": "pair-sum-sorted",
+          "fileName": "pair Sum Sorted.md",
+          "relativePath": "TwoPointer/pair Sum Sorted.md"
+        },
+        {
+          "topicName": "TwoPointer",
+          "topicSlug": "twopointer",
+          "problemName": "triplet Sum",
+          "problemSlug": "triplet-sum",
+          "fileName": "triplet Sum.md",
+          "relativePath": "TwoPointer/triplet Sum.md"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "interview-prep-hub",
+  "private": true,
+  "version": "0.1.0",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "vite",
+    "build:notes": "node scripts/generate-notes-index.js",
+    "migrate:notes": "node scripts/migrate-grokking-notes.js",
+    "backfill:solutions": "node scripts/backfill-solutions.js",
+    "build": "npm run build:notes && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "fuse.js": "^6.6.2",
+    "highlight.js": "^11.9.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^8.0.7",
+    "react-router-dom": "^6.16.0",
+    "rehype-highlight": "^7.0.2",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "@types/react": "^18.3.4",
+    "@types/react-dom": "^18.3.0",
+    "@tailwindcss/typography": "^0.5.9",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.40",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.1"
+  }
+}
