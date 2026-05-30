@@ -15,12 +15,41 @@ Explain the general approach, intuition, and algorithms.
 
 ## Solution
 
-```ts
-// Add your example solution here
-function solution() {
-  return null
-}
+```js
+/**
+ * Backspace String Compare
+ * Given two strings s and t, return true if they are equal when both are typed into empty text editors. '#' means a backspace character.
+   Note that after backspacing an empty text, the text will continue empty.
+*/
+
+ var backspaceCompare = function (s, t) {
+	s = parse(s);
+	t = parse(t);
+	return s === t;
+	function parse(string) {
+	  let count = 0,
+		stack = [];
+	  while (count < string.length) {
+		if (string[count] == "#") {
+		  stack.pop();
+		} else {
+		  stack.push(string[count]);
+		}
+		count++;
+	  }
+	  return stack.join("");
+	}
+  };
+  
+  console.log(backspaceCompare("ab#cdd##f", "ad#cer##f"));
+  
+
+/**
+ * TC = O(n); The time complexity is O(n) where n is the number of characters present in the string.
+ * SC = O(n); because we use constant space to store two indices.
+ */
 ```
+
 
 ## Time Complexity
 

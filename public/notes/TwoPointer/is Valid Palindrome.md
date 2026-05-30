@@ -15,12 +15,23 @@ Explain the general approach, intuition, and algorithms.
 
 ## Solution
 
-```ts
-// Add your example solution here
-function solution() {
-  return null
-}
+```js
+// is valid palindrome
+
+// Problem: Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+// Example:
+// Input: "A man, a plan, a canal: Panama"
+// Output: true
+
+// Input: "race a car"
+// Output: false
+
+let str = "A man, a plan, a canal: Panama"
+console.log(isValidPalindrome(str))
+
+// same as C:\Users\manis\OneDrive\Documents\MKTechPrep\Grokking\String\validPalindrome.js
 ```
+
 
 ## Time Complexity
 

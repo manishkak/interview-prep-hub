@@ -15,12 +15,13 @@ Explain the general approach, intuition, and algorithms.
 
 ## Solution
 
-```ts
-// Add your example solution here
-function solution() {
-  return null
-}
+```js
+/**
+ * Recover Binary Search Tree0
+ * Solution- https://leetcode.com/problems/recover-binary-search-tree/solutions/1984081/js-simple-explained-in-order-traversal/
+ */
 ```
+
 
 ## Time Complexity
 

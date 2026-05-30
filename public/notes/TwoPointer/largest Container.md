@@ -15,12 +15,17 @@ Explain the general approach, intuition, and algorithms.
 
 ## Solution
 
-```ts
-// Add your example solution here
-function solution() {
-  return null
-}
+```js
+// largest container
+
+// Problem: Given an array of the heights of vertical lines, find two lines that, together with the horizontal axis, form a container that holds the most water.
+// Example:
+// Input: height = [1,8,6,2,5,4,8,3,7]
+// Output: 49 (because the lines at indices 1 and 8 form a container that holds 49 units of water)
+
+// same as C:\Users\manis\OneDrive\Documents\MKTechPrep\Grokking\Arrays\containerwithMostWater.js
 ```
+
 
 ## Time Complexity
 
