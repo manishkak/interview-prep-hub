@@ -1,71 +1,68 @@
-# cutting Wood
+﻿# cutting Wood
 
 ## Problem Statement
 
-Describe the problem statement for **cutting Wood** here.
+Given an array of wood heights and a required amount k of wood to cut, find the maximum height at which to cut the wood pieces such that the total wood harvested is at least k units. Cutting at height h from a piece of height H yields (H - h) wood.
 
 ## Examples
 
-- Example input:
-- Example output:
+- Input: heights = [4, 42, 40, 26, 46], k = 20
+  Output: 36 (cutting at 36: (42-36) + (40-36) + (46-36) = 6 + 4 + 10 = 20)
+- Input: heights = [1, 2, 3], k = 5
+  Output: 1 (cutting at 1: (2-1) + (3-1) = 1 + 2 = 3, cutting at 0: 2 + 3 = 5)
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+- Binary search the answer (saw height) from 0 to max(heights).
+- For each candidate height, calculate total wood harvested.
+- If wood >= k, try a higher height (go right).
+- If wood < k, try a lower height (go left).
+- Track the maximum valid height found.
 
 ## Solution
 
 ```js
-// Problem:
-// Given heights of trees/wood pieces and required wood amount k, find the maximum saw height so that cutting above that height gives at least k wood.
-
-// Example:
-// Input: heights = [4, 42, 40, 26, 46], k = 20
-// Output: 36
-// Explanation: Cutting at height 36 gives us (42-36) + (40-36) + (46-36) = 6 + 4 + 10 = 20 wood, which meets the requirement.
-
-/*
-Time Complexity:
-O(n log m), where n is the number of trees and m is the maximum height of the trees. The binary search runs in O(log m) and for each mid value, we calculate the total wood collected in O(n).
-Space Complexity:
-O(1), as we are using only a constant amount of extra space for variables.
-*/
-
-// Mental solution:
-// Binary search the answer (saw height): if enough wood, try higher; else go lower.
-
-function cuttingWood(trees, k) {
+function maxSawHeight(heights, k) {
   let left = 0;
-  let right = Math.max(...trees);
-  let ans = 0;
-
+  let right = Math.max(...heights);
+  let result = 0;
+  
   while (left <= right) {
     let mid = Math.floor((left + right) / 2);
-
     let wood = 0;
-    for (let h of trees) {
-      if (h > mid) wood += h - mid;
+    
+    for (let h of heights) {
+      wood += Math.max(0, h - mid);
     }
-
+    
     if (wood >= k) {
-      ans = mid;        // valid, try higher
+      result = mid;
       left = mid + 1;
     } else {
-      right = mid - 1;  // too high, lower it
+      right = mid - 1;
     }
   }
-
-  return ans;
+  
+  return result;
 }
-```
 
+const heights = [4, 42, 40, 26, 46];
+console.log(maxSawHeight(heights, 20)); // 36
+`
 
 ## Time Complexity
 
+- O(n log m) where n = number of trees, m = maximum height; binary search O(log m), each check O(n)
 
 ## Space Complexity
 
+- O(1) - only constant variables
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- Binary search on the answer: the search space is possible saw heights.
+- If no height yields k wood, return 0.
+- Greedy verification: higher heights always produce less or equal wood.
+- Problem variant: cut wood pieces to exact length (harder).
+
+

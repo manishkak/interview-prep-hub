@@ -1,4 +1,4 @@
-﻿# First&Last Post Of Target
+const n=`\uFEFF# First&Last Post Of Target
 
 ## Problem Statement
 
@@ -22,7 +22,7 @@ Given a sorted array of integers, find the starting and ending position (indices
 
 ## Solution
 
-```js
+\`\`\`js
 function searchRange(nums, target) {
   function findLeft(nums, target) {
     let left = 0, right = nums.length - 1;
@@ -71,7 +71,7 @@ function searchRange(nums, target) {
 const nums = [5, 7, 7, 8, 8, 10];
 console.log(searchRange(nums, 8)); // [3, 4]
 console.log(searchRange(nums, 6)); // [-1, -1]
-`
+\`
 
 ## Time Complexity
 
@@ -86,6 +86,7 @@ console.log(searchRange(nums, 6)); // [-1, -1]
 - Key: continue searching even after finding target to find boundaries.
 - Two functions: one minimizes index, other maximizes it.
 - Early exit: if left search returns -1, target doesn't exist.
-- Pattern: finding first and last occurrences of repeated elements.
-
-
+- Pattern: finding first and last occurrences of repeated elements.\r
+\r
+\r
+`;export{n as default};

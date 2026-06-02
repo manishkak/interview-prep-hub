@@ -1,4 +1,4 @@
-﻿# median Of Two Sorted Arrays
+const n=`\uFEFF# median Of Two Sorted Arrays
 
 ## Problem Statement
 
@@ -20,7 +20,7 @@ Given two sorted arrays nums1 and nums2 of sizes m and n respectively, return th
 
 ## Solution
 
-```js
+\`\`\`js
 function findMedianSortedArrays(nums1, nums2) {
   if (nums1.length > nums2.length) {
     return findMedianSortedArrays(nums2, nums1);
@@ -56,7 +56,7 @@ function findMedianSortedArrays(nums1, nums2) {
 
 const nums1 = [1, 3], nums2 = [2];
 console.log(findMedianSortedArrays(nums1, nums2)); // 2.0
-`
+\`
 
 ## Time Complexity
 
@@ -71,6 +71,7 @@ console.log(findMedianSortedArrays(nums1, nums2)); // 2.0
 - Ensure nums1 is the smaller array for efficiency.
 - Median position: (m + n + 1) / 2 for left partition.
 - Handle edge cases: empty array, single element, different lengths.
-- Naive merge: O((m+n)log(m+n)), this is much better.
-
-
+- Naive merge: O((m+n)log(m+n)), this is much better.\r
+\r
+\r
+`;export{n as default};

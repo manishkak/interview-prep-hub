@@ -1,4 +1,4 @@
-﻿# cutting Wood
+const t=`\uFEFF# cutting Wood
 
 ## Problem Statement
 
@@ -21,7 +21,7 @@ Given an array of wood heights and a required amount k of wood to cut, find the 
 
 ## Solution
 
-```js
+\`\`\`js
 function maxSawHeight(heights, k) {
   let left = 0;
   let right = Math.max(...heights);
@@ -48,7 +48,7 @@ function maxSawHeight(heights, k) {
 
 const heights = [4, 42, 40, 26, 46];
 console.log(maxSawHeight(heights, 20)); // 36
-`
+\`
 
 ## Time Complexity
 
@@ -63,6 +63,7 @@ console.log(maxSawHeight(heights, 20)); // 36
 - Binary search on the answer: the search space is possible saw heights.
 - If no height yields k wood, return 0.
 - Greedy verification: higher heights always produce less or equal wood.
-- Problem variant: cut wood pieces to exact length (harder).
-
-
+- Problem variant: cut wood pieces to exact length (harder).\r
+\r
+\r
+`;export{t as default};

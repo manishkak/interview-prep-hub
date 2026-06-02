@@ -1,4 +1,4 @@
-﻿# time Based Key Value Store
+const e=`\uFEFF# time Based Key Value Store
 
 ## Problem Statement
 
@@ -20,7 +20,7 @@ Design a time-based key-value store that supports storing multiple values for th
 
 ## Solution
 
-```js
+\`\`\`js
 class TimeMap {
   constructor() {
     this.map = new Map();
@@ -60,7 +60,7 @@ timeMap.set("foo", "baz", 4);
 console.log(timeMap.get("foo", 1)); // "bar"
 console.log(timeMap.get("foo", 3)); // "bar"
 console.log(timeMap.get("foo", 4)); // "baz"
-`
+\`
 
 ## Time Complexity
 
@@ -77,6 +77,7 @@ console.log(timeMap.get("foo", 4)); // "baz"
 - Binary search finds the rightmost timestamp <= query timestamp.
 - When timestamps exactly match, return that value immediately.
 - Handle case where no timestamp exists (return empty string).
-- TreeMap or similar structure would provide automatic sorting in other languages.
-
-
+- TreeMap or similar structure would provide automatic sorting in other languages.\r
+\r
+\r
+`;export{e as default};

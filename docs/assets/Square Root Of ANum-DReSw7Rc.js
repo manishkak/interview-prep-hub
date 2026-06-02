@@ -1,4 +1,4 @@
-﻿# Square Root Of ANum
+const n=`\uFEFF# Square Root Of ANum
 
 ## Problem Statement
 
@@ -23,7 +23,7 @@ Given a non-negative integer x, compute the integer square root (floor of sqrt(x
 
 ## Solution
 
-```js
+\`\`\`js
 function mySqrt(x) {
   if (x < 2) return x;
   
@@ -50,7 +50,7 @@ function mySqrt(x) {
 console.log(mySqrt(8)); // 2
 console.log(mySqrt(9)); // 3
 console.log(mySqrt(1)); // 1
-`
+\`
 
 ## Time Complexity
 
@@ -66,6 +66,7 @@ console.log(mySqrt(1)); // 1
 - Save candidate when mid² < x and continue searching right.
 - Handle perfect squares immediately for early exit.
 - Avoid overflow: use mid * mid instead of Math.pow(mid, 2).
-- Related: binary search for square root with floating point precision.
-
-
+- Related: binary search for square root with floating point precision.\r
+\r
+\r
+`;export{n as default};

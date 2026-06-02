@@ -1,4 +1,4 @@
-﻿# first Bad Version
+const n=`\uFEFF# first Bad Version
 
 ## Problem Statement
 
@@ -20,7 +20,7 @@ You have n versions numbered 1 to n. Some early versions are good, then from som
 
 ## Solution
 
-```js
+\`\`\`js
 function firstBadVersion(n, isBadVersion) {
   let left = 1;
   let right = n;
@@ -43,7 +43,7 @@ let badVersion = 4;
 const isBadVersion = (v) => v >= badVersion;
 
 console.log(firstBadVersion(10, isBadVersion)); // 4
-`
+\`
 
 ## Time Complexity
 
@@ -58,6 +58,7 @@ console.log(firstBadVersion(10, isBadVersion)); // 4
 - Key: use left < right (not <=) to exit when left == right (answer found).
 - This finds the leftmost bad version efficiently.
 - API calls minimized: O(log n) calls instead of O(n) linear search.
-- Pattern: finding boundary between two states (good/bad, valid/invalid).
-
-
+- Pattern: finding boundary between two states (good/bad, valid/invalid).\r
+\r
+\r
+`;export{n as default};

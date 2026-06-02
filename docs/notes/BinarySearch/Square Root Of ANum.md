@@ -1,73 +1,71 @@
-# Square Root Of ANum
+﻿# Square Root Of ANum
 
 ## Problem Statement
 
-Describe the problem statement for **Square Root Of ANum** here.
+Given a non-negative integer x, compute the integer square root (floor of sqrt(x)). Return the largest integer whose square is less than or equal to x. Must solve in O(log x) time.
 
 ## Examples
 
-- Example input:
-- Example output:
+- Input: x = 8
+  Output: 2 (2² = 4 ≤ 8, but 3² = 9 > 8)
+- Input: x = 9
+  Output: 3 (3² = 9 = 9)
+- Input: x = 1
+  Output: 1
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+- Binary search in range [0, x] for the square root.
+- If mid² = x, return mid immediately.
+- If mid² < x, save mid as candidate and search right for potentially larger root.
+- If mid² > x, search left for smaller values.
+- Return the largest integer whose square doesn't exceed x.
 
 ## Solution
 
 ```js
-/**
- * Square Root of a number using binary search method
- * Uses a binary search to find the square root by repeatedly narrowing the range [low, high] until the difference between high and low is within a specified precision.
- * This method ensures that the result is accurate to the specified precision.
- * just learn it somehow man
- */
-/*
-Time Complexity:
-	O(log x): The binary search halves the search range in each step.
-Space Complexity:
-	O(1): The algorithm uses only a constant amount of extra space
-*/
-/**
- * Mental flow:
-    too big, meaning mid*mid > x → go left
-    too small → save and go right
-    exact → done immediately
- */
-function squareRoot(x) {
-    if (x < 2) return x;
-
-    let left = 1, right = x, result = 0;
-    while (left <= right) {
-        let mid = Math.floor((left + right) / 2);
-        if (mid * mid === x) return mid;
-        if (mid * mid < x) {
-            result = mid; // we save the last mid value whose square is less than x, so that if we exit the loop without finding a perfect square root, we can return this result which is the largest integer whose square is ≤ x.
-			// result is set only here and not in the else below cos there are some nos. that do not have a perfect square root, so we need to save a num whose square is <= that num.
-			/** eg. last step of dry run with x = 8, result = 2 in one of the prev. steps
-			 * Now left > right (left = 3, right = 2), so the loop ends.
-			 * Final result = 2, which is the largest integer whose square is ≤ 8
-			 */
-            left = mid + 1;  // continue searching in the right half
-        } else {
-            right = mid - 1; // continue searching in the left half
-        }
+function mySqrt(x) {
+  if (x < 2) return x;
+  
+  let left = 2, right = x;
+  let result = 1;
+  
+  while (left <= right) {
+    let mid = Math.floor((left + right) / 2);
+    let square = mid * mid;
+    
+    if (square === x) {
+      return mid;
+    } else if (square < x) {
+      result = mid;
+      left = mid + 1;
+    } else {
+      right = mid - 1;
     }
-    return result;
+  }
+  
+  return result;
 }
 
-console.log(squareRoot(8)) // o/p- 2
-console.log(squareRoot(9)) // o/p- 3
-
-```
-
+console.log(mySqrt(8)); // 2
+console.log(mySqrt(9)); // 3
+console.log(mySqrt(1)); // 1
+`
 
 ## Time Complexity
 
+- O(log x) - binary search on range [0, x]
 
 ## Space Complexity
 
+- O(1) - only pointers and result variable
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- Optimization: start with left = 2 (since sqrt of 0, 1 are themselves).
+- Save candidate when mid² < x and continue searching right.
+- Handle perfect squares immediately for early exit.
+- Avoid overflow: use mid * mid instead of Math.pow(mid, 2).
+- Related: binary search for square root with floating point precision.
+
+

@@ -1,4 +1,4 @@
-﻿# Peak Element In Array
+const n=`\uFEFF# Peak Element In Array
 
 ## Problem Statement
 
@@ -20,7 +20,7 @@ Find any peak element in an array where a peak is defined as an element greater 
 
 ## Solution
 
-```js
+\`\`\`js
 function findPeakElement(nums) {
   let left = 0, right = nums.length - 1;
   
@@ -42,7 +42,7 @@ console.log(findPeakElement(nums)); // 2
 
 const nums2 = [1, 2, 1, 3, 5, 6, 4];
 console.log(findPeakElement(nums2)); // 5 (or 1)
-`
+\`
 
 ## Time Complexity
 
@@ -58,6 +58,7 @@ console.log(findPeakElement(nums2)); // 5 (or 1)
 - Compare with next neighbor to determine gradient direction.
 - Works because of the strictly increasing/decreasing property of slopes.
 - Any peak is acceptable; multiple peaks may exist.
-- Intuition: follow increasing slope until plateau/decline indicates peak nearby.
-
-
+- Intuition: follow increasing slope until plateau/decline indicates peak nearby.\r
+\r
+\r
+`;export{n as default};

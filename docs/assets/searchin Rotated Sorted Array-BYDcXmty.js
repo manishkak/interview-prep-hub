@@ -1,4 +1,4 @@
-﻿# searchin Rotated Sorted Array
+const n=`\uFEFF# searchin Rotated Sorted Array
 
 ## Problem Statement
 
@@ -20,7 +20,7 @@ Search for a target value in a rotated sorted array with distinct values. The ar
 
 ## Solution
 
-```js
+\`\`\`js
 function search(nums, target) {
   let left = 0, right = nums.length - 1;
   
@@ -52,7 +52,7 @@ function search(nums, target) {
 const nums = [4, 5, 6, 7, 0, 1, 2];
 console.log(search(nums, 0)); // 4
 console.log(search(nums, 3)); // -1
-`
+\`
 
 ## Time Complexity
 
@@ -68,6 +68,7 @@ console.log(search(nums, 3)); // -1
 - Rotation creates a pivot where array drops from larger to smaller value.
 - Check if target falls within the sorted range, then adjust search accordingly.
 - All elements are distinct, simplifying boundary checks.
-- Edge case: rotation could be at index 0 (no actual rotation, still sorted).
-
-
+- Edge case: rotation could be at index 0 (no actual rotation, still sorted).\r
+\r
+\r
+`;export{n as default};
