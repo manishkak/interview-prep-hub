@@ -1,51 +1,51 @@
-# majority Element
+﻿# majority Element
 
 ## Problem Statement
 
-Describe the problem statement for **majority Element** here.
+Given an array nums of size n, return the majority element. The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume the majority element always exists.
 
 ## Examples
 
-- Example input:
-- Example output:
+- Input: [3,2,3]
+  Output: 3
+- Input: [2,2,1,1,1,2,2]
+  Output: 2
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+- Use Boyer-Moore Voting to find the majority candidate in one pass.
+- The candidate is guaranteed to be the majority element in this problem.
 
 ## Solution
 
-```js
-/**
- * Problem: Given an array nums of size n, return the majority element.
-The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
- */
+`js
+function majorityElement(nums) {
+  let count = 0;
+  let candidate = null;
 
-function findMajorityElement(nums) {
-    let half = nums.length/2;
-    let hashMap = {};
-    for(let i = 0; i<nums.length; i++) {
-        // create a frequency map
-        hashMap[nums[i]] = (hashMap[nums[i]] | 0) + 1;
-        if(hashMap[nums[i]] > half) {
-            return nums[i];
-        }
+  for (const num of nums) {
+    if (count === 0) {
+      candidate = num;
     }
+    count += candidate === num ? 1 : -1;
+  }
+
+  return candidate;
 }
 
-/**
- * TC = O(n), hashMap is used and there is only one loop so 'linear' TC
- * SC = O(n), SC for a hashMap is linear
- */
-```
-
+console.log(majorityElement([3,2,3])); // 3
+console.log(majorityElement([2,2,1,1,1,2,2])); // 2
+`
 
 ## Time Complexity
 
+- O(n)
 
 ## Space Complexity
 
+- O(1)
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- This works because the majority element appears more than half the time.
+- Boyer-Moore finds the candidate in one pass.

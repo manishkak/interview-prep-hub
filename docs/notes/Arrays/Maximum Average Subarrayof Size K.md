@@ -1,75 +1,50 @@
-# Maximum Average Subarrayof Size K
+﻿# Maximum Average Subarrayof Size K
 
 ## Problem Statement
 
-Describe the problem statement for **Maximum Average Subarrayof Size K** here.
+Given an array nums and an integer k, find the maximum average value of any contiguous subarray of length k.
 
 ## Examples
 
-- Example input:
-- Example output:
+- Input: nums = [1,12,-5,-6,50,3], k = 4
+  Output: 12.75
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+- Use a sliding window of size k.
+- Track the sum of the current window and update the maximum sum.
+- Return the maximum sum divided by k.
 
 ## Solution
 
-```js
-// Maximum Average Subarray of Size K
-
-/**
- * Problem Statement:
- *      Given an array 'nums' and an integer 'k',
- *      find the maximum average of any contiguous subarray of length k.
- */
-
-/**
- * Idea:
-    - Find sum of first k elements — that's your first window
-    - Slide the window one step at a time:
-    - Subtract the element leaving
-    - Add the new element coming in
-    - Keep track of the max sum seen
- */
-
+`js
 function findMaxAverage(nums, k) {
-    let sum = 0;
-    
-    // Step 1: Initial window
-    for (let i = 0; i < k; i++) {
-        sum += nums[i];
-    }
-    
-    let maxSum = sum;
-    
-    // Step 2: Slide window
-    for (let i = k; i < nums.length; i++) {
-        sum = sum - nums[i - k] + nums[i];
-        maxSum = Math.max(maxSum, sum);
-    }
-    
-    // Step 3: Return max average
-    return maxSum / k;
+  let sum = 0;
+  for (let i = 0; i < k; i++) {
+    sum += nums[i];
+  }
+  let maxSum = sum;
+
+  for (let i = k; i < nums.length; i++) {
+    sum += nums[i] - nums[i - k];
+    maxSum = Math.max(maxSum, sum);
+  }
+
+  return maxSum / k;
 }
 
-/**
- * | Metric | Value |
-| ------ | ----- |
-| Time   | O(n)  |
-| Space  | O(1)  |
-*/
-
-
-```
-
+console.log(findMaxAverage([1,12,-5,-6,50,3], 4)); // 12.75
+`
 
 ## Time Complexity
 
+- O(n)
 
 ## Space Complexity
 
+- O(1)
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- Use a fixed-size sliding window.
+- Only the sum is updated when the window moves.

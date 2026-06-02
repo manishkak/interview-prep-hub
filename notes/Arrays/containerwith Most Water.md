@@ -2,81 +2,45 @@
 
 ## Problem Statement
 
-Describe the problem statement for **containerwith Most Water** here.
+Given an array of non-negative integers representing the heights of vertical lines on the x-axis, find two lines that together with the x-axis form a container that holds the most water. Return the maximum area.
 
 ## Examples
 
-- Example input:
-- Example output:
+- Input: [1,8,6,2,5,4,8,3,7]
+  Output: 49
+- Input: [1,1]
+  Output: 1
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+- Use a two-pointer technique: place one pointer at the start and one at the end.
+- Compute area = width * min(height[left], height[right]). Move the pointer at the smaller height inward.
+- Continue until pointers meet; track the maximum area seen.
 
 ## Solution
 
 ```js
-/**
- * Given an array of the heights of vertical lines, find two lines that, together with the horizontal axis, form a container that holds the most water.
- */
+function maxArea(height) {
+  let left = 0, right = height.length - 1, maxA = 0;
+  while (left < right) {
+    const area = (right - left) * Math.min(height[left], height[right]);
+    maxA = Math.max(maxA, area);
+    if (height[left] < height[right]) left++; else right--;
+  }
+  return maxA;
+}
 
-/**
- * Explanation-
- * https://www.youtube.com/watch?v=UuiTKBwPgAo
- */
-
- let maxWaterAreaContainer = function(height) {
-	// Initialize maxArea as zero and the left and right markers to the two ends
-	// of an array
-	let maxArea = 0, left = 0, right = height.length - 1;
-	
-	while (left < right) {
-		// Calculating the max area using the shortest height and the
-		// length of x-axis between the two heights (length * width)
-		const area = (right - left) * Math.min(height[left], height[right]);
-    	maxArea = Math.max(maxArea, area);
-
-		// Move the left bar if it has the shorter height
-		// Move the pointer pointing to the shorter line
-		if (height[left] < height[right])
-			left++;
-		// Otherwise move the right bar
-		else
-			right--;
-	}
-
-	// Return the maximum area container
-	return maxArea;
-};
-
-let inputList = [
-				  [1, 8, 6, 2, 5, 4, 8, 3, 7], 
-				  [20, 30, 9, 69],
-				  [13, 18, 12, 8],
-				  [45, 32, 56, 99], 
-				  [23, 20]
-				];
-let index =0;
-for (let input of inputList) {
-	// Using a custom function to print a neatly formatted array
-	console.log((++index) + ". maxWaterAreaContainer(" + printArray(input) + "):"
-			, maxWaterAreaContainer(input));
-	console.log("----------------------------------------------------------------------------------------------------\n")
-};
-
-/**
- * TC - O(n), linear.
- * SC - O(1), constant.
- */
+console.log(maxArea([1,8,6,2,5,4,8,3,7])); // 49
 ```
-
 
 ## Time Complexity
 
+- O(n)
 
 ## Space Complexity
 
+- O(1)
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- The greedy movement of the smaller pointer is key to the O(n) solution.
