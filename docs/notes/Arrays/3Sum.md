@@ -2,179 +2,88 @@
 
 ## Problem Statement
 
-Given an integer array nums, find all unique triplets in the array which give the sum of zero.
+Given an integer array nums, return all unique triplets [a, b, c] such that a + b + c === 0. The solution set must not contain duplicate triplets. Implement the solution in JavaScript and return an array of triplet arrays.
 
 ## Examples
 
-- Example input:
-- Example output:
+- Input: [-1, 0, 1, 2, -1, -4]
+-	Output: [[-1, -1, 2], [-1, 0, 1]]
+- Input: [0, 0, 0]
+-	Output: [[0, 0, 0]]
+- Input: [1, 2, -2, -1]
+-	Output: []
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+- Sort the array to enable a two-pointer search and to make it easy to skip duplicates.
+- Iterate i from 0 to n - 3, treat nums[i] as the fixed element.
+- Use two pointers left = i + 1 and right = n - 1 to find pairs whose sum equals -nums[i].
+- When a triplet is found, push it to the result and move both pointers while skipping duplicates.
+- Skip duplicate values for the fixed element i to avoid duplicate triplets.
+
+This yields an O(n²) time algorithm with in-place sorting.
 
 ## Solution
 
 ```js
 /**
- * Edge cases:
- * Array length < 3.
- * Presence of duplicate numbers (e.g., [-1, -1, 2, 2]).
- * All numbers are positive or all are negative.
+ * Return all unique triplets that sum to zero.
+ * @param {number[]} nums
+ * @returns {number[][]}
  */
-/*
-1. Triplet Sum to Zero - Old Grokking
-2. Sum of Three Values - Grokking JS
-3. Sum of Three Values - CodeRust
+function threeSum(nums) {
+	const res = [];
+	if (!nums || nums.length < 3) return res;
 
-1. 	Triplet Sum to Zero aka 3Sum
-	- Given an array of unsorted numbers,
-	- find "all unique triplets" 
-	- that add up to zero
+	nums.sort((a, b) => a - b);
 
-2. 	Sum of Three Values
-	- Given an array of integers
-	- and an integer value
-	- determine if there are "any three integers" in the array
-	- whose sum equals the target. 
-	- "Return "true if three such integers are found in the array. 
-	- Otherwise, return False.
+	for (let i = 0; i < nums.length - 2; i++) {
+		if (i > 0 && nums[i] === nums[i - 1]) continue; // skip duplicate fixed value
 
-3.	Sum of Three Values
-	- Given an array of integers
-	- and a value
-	- determine if there are "any three integers" in the array
-	- whose "sum equals the given value"
+		let left = i + 1;
+		let right = nums.length - 1;
+		const target = -nums[i];
 
-	* Approach:
-		- Sort the array.
-		- Iterate through the array, fixing one element at a time.
-		- Use a two-pointer technique to find the other two elements that sum up to zero with the fixed - element.
-		- Skip duplicate elements to ensure the uniqueness of triplets
+		while (left < right) {
+			const sum = nums[left] + nums[right];
+			if (sum === target) {
+				res.push([nums[i], nums[left], nums[right]]);
+				// skip duplicates for left and right
+				while (left < right && nums[left] === nums[left + 1]) left++;
+				while (left < right && nums[right] === nums[right - 1]) right--;
+				left++;
+				right--;
+			} else if (sum < target) {
+				left++;
+			} else {
+				right--;
+			}
+		}
+	}
 
-Overall TC will be O(n²)
-*/
-
-/**
- * Solution 2 from ChatGPT
- */
-
-function threeSum(nums, target) {
-    nums.sort((a, b) => a - b); // Sort the array in ascending order
-    const result = [];
-
-	// loop will run from 0 to 2nd last element (nums.length - 2), this is because the last element is set to the variable 'right'
-    for (let i = 0; i < nums.length - 2; i++) {
-        if (i === 0 || (i > 0 && nums[i] !== nums[i - 1])) { // Skip duplicate values
-            let left = i + 1;
-            let right = nums.length - 1;
-            const sum = target - nums[i];
-            
-            while (left < right) {
-                if (nums[left] + nums[right] === sum) {
-                    result.push([nums[i], nums[left], nums[right]]);
-                    while (left < right && nums[left] === nums[left + 1]) left++; // Skip duplicate values
-                    while (left < right && nums[right] === nums[right - 1]) right--; // Skip duplicate values
-                    left++;
-                    right--;
-                } else if (nums[left] + nums[right] < sum) {
-                    left++; // cos its a sorted arr and we need a larger sum, so just move left fwd
-                } else {
-                    right--;
-                }
-            }
-        }
-    }
-    
-    return result;
+	return res;
 }
 
-// Example usage:
-const nums1 = [-1, 0, 1, 2, -1, -4];
-const target1 = 0;
-console.log(threeSum(nums1, target1)); // Output: [[-1, -1, 2], [-1, 0, 1]]
-
-const nums2 = [0, 0, 0, 0];
-const target2 = 0;
-console.log(threeSum(nums2, target2)); // Output: [[0, 0, 0]]
-
-
-
-// 3 Sum or Triplet Sum to Zero : Solution 1 (Solution 2 is below)
-
-function search_triplets(arr) {
-	arr.sort((a, b) => a - b);
-	const triplets = [];
-	for (i = 0; i < arr.length; i++) {
-	  if (i > 0 && arr[i] === arr[i - 1]) { // skip same element to avoid duplicate triplets
-		continue;
-	  }
-	  search_pair(arr, -arr[i], i + 1, triplets);
-	}
-  
-	return triplets;
-  }
-  
-  
-  function search_pair(arr, target_sum, left, triplets) {
-	let right = arr.length - 1;
-	while (left < right) {
-	  const current_sum = arr[left] + arr[right];
-	  if (current_sum === target_sum) { // found the triplet
-		triplets.push([-target_sum, arr[left], arr[right]]);
-		left += 1;
-		right -= 1;
-		while (left < right && arr[left] === arr[left - 1]) {
-		  left += 1; // skip same element to avoid duplicate triplets
-		}
-		while (left < right && arr[right] === arr[right + 1]) {
-		  right -= 1; // skip same element to avoid duplicate triplets
-		}
-	  } else if (target_sum > current_sum) {
-		left += 1; // we need a pair with a bigger sum
-	  } else {
-		right -= 1; // we need a pair with a smaller sum
-	  }
-	}
-  }
-  
-  
-  console.log(search_triplets([-3, 0, 1, 2, -1, 1, -2]));
-  console.log(search_triplets([-5, 2, -1, -2, 3]));
-
-
-/**
- * TC = O(n^2), Sorting the array will take O(N * logN), if its already sorted then TC is O(n)-> for sorting an already sorted array; The searchPair() function will take O(N); As we are calling searchPair() for every number in the input array, this means that overall searchTriplets() will take O(N * logN + N^2), which is asymptotically equivalent to O(N^2).
- * SC = O(N), Ignoring the space required for the output array, SC of the above algorithm will be O(N) which is required for sorting. If the array is already sorted then the SC is O(1), excluding the result storage.
- */
-
-
-/*
-Time Complexity Breakdown
-1. Sorting the Array: O(n log n)
-First, you sort the array. Sorting typically takes O(n log n) time using algorithms like Timsort (which is used by JavaScript's .sort()).
-
-2. Two-Pointer Technique: O(n²)
-After sorting the array, the three-sum problem is reduced to a two-pointer problem. For each element in the array, you fix one element (nums[i]) and then look for pairs of numbers (nums[j] and nums[k]) that sum to the negative of nums[i] by using two pointers (j and k).
-
-You iterate through each element of the array, treating it as the fixed element.
-For each fixed element, you use the two-pointer technique to find pairs that sum to -nums[i].
-The two-pointer traversal takes O(n) for each element, and since you do this for every element, the total time complexity of this part is O(n²).
-Overall Time Complexity
-Sorting the array: O(n log n)
-Finding triplets using two pointers: O(n²)
-Therefore, the overall time complexity is dominated by the two-pointer approach, which is O(n²).
-
-*/
+// quick examples
+console.log(threeSum([-1, 0, 1, 2, -1, -4])); // [[-1,-1,2],[-1,0,1]]
+console.log(threeSum([0, 0, 0])); // [[0,0,0]]
 ```
-
 
 ## Time Complexity
 
+- Sorting: O(n log n)
+- Two-pointer scan: O(n²)
+- Overall: O(n²)
 
 ## Space Complexity
 
+- Output storage: O(k) where k is number of triplets returned.
+- Sorting in place: O(log n) auxiliary (implementation-dependent). Excluding output, auxiliary space is O(1) to O(log n).
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- Handle nums.length < 3 early and return an empty array.
+- Use sorting and duplicate-skipping to ensure uniqueness of triplets.
+- For a different target sum t, change target = t - nums[i] accordingly.
+- Watch out for large input sizes: O(n²) may be too slow when n is large.
+

@@ -2,7 +2,7 @@
 
 ## Problem Statement
 
-Describe the problem statement for **Best Time To Buy Sell Stock** here.
+ The solution set must not contain duplicate triplets. Implement the solution in JavaScript and return an array of triplet arrays.
 
 ## Examples
 

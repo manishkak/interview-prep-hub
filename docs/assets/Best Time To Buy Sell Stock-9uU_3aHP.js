@@ -1,21 +1,21 @@
-const n=`# Best Time To Buy Sell Stock
-
-## Problem Statement
-
-Describe the problem statement for **Best Time To Buy Sell Stock** here.
-
-## Examples
-
-- Example input:
-- Example output:
-
-## Approach
-
-Explain the general approach, intuition, and algorithms.
-
-## Solution
-
-\`\`\`js
+const r=`# Best Time To Buy Sell Stock\r
+\r
+## Problem Statement\r
+\r
+ The solution set must not contain duplicate triplets. Implement the solution in JavaScript and return an array of triplet arrays.\r
+\r
+## Examples\r
+\r
+- Example input:\r
+- Example output:\r
+\r
+## Approach\r
+\r
+Explain the general approach, intuition, and algorithms.\r
+\r
+## Solution\r
+\r
+\`\`\`js\r
 /**\r
  * Problem: You are given an array 'prices' where prices[i] is the price of a given stock on the i th day.\r
 You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.\r
@@ -69,17 +69,17 @@ console.log(maxProfit(prices));\r
 /**\r
  * TC = O(n), there is only one loop so 'linear' TC\r
  * SC = O(1), no extra space so 'constant' SC\r
- */
-\`\`\`
-
-
-## Time Complexity
-
-
-## Space Complexity
-
-
-## Notes
-
-- Add notes, edge cases, and patterns here.
-`;export{n as default};
+ */\r
+\`\`\`\r
+\r
+\r
+## Time Complexity\r
+\r
+\r
+## Space Complexity\r
+\r
+\r
+## Notes\r
+\r
+- Add notes, edge cases, and patterns here.\r
+`;export{r as default};
