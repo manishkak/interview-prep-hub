@@ -1,4 +1,4 @@
-﻿# tree BFSTraversal EDUCATIVE
+const e=`\uFEFF# tree BFSTraversal EDUCATIVE
 
 ## Problem Statement
 
@@ -21,7 +21,7 @@ Breadth-First Search (BFS) / Level Order Traversal - traverse binary tree level 
 
 ## Solution
 
-```js
+\`\`\`js
 class Tree {
   constructor(val) {
     this.val = val;
@@ -70,7 +70,7 @@ tree.right.left = new Tree(10);
 tree.right.right = new Tree(5);
 
 console.log(breadthFirstTraversal(tree)); // [[12], [7, 1], [9, 10, 5]]
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -85,5 +85,6 @@ console.log(breadthFirstTraversal(tree)); // [[12], [7, 1], [9, 10, 5]]
 - Critical to record levelSize at start of loop to maintain level grouping.
 - Queue naturally maintains level-by-level order.
 - Returns list of lists where each sublist represents one level.
-- Useful for problems requiring level-order output or level-by-level processing.
-
+- Useful for problems requiring level-order output or level-by-level processing.\r
+\r
+`;export{e as default};

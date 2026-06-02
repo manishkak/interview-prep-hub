@@ -1,4 +1,4 @@
-﻿# tree BFSTraversal
+const e=`\uFEFF# tree BFSTraversal
 
 ## Problem Statement
 
@@ -19,7 +19,7 @@ Breadth-First Search (BFS) / Level Order Traversal - traverse binary tree level 
 
 ## Solution
 
-```js
+\`\`\`js
 function bfs(root) {
   if (!root) return [];
   
@@ -40,7 +40,7 @@ function bfs(root) {
 
 const tree = { value: 10, left: { value: 5, left: null, right: null }, right: { value: 15, left: null, right: null } };
 console.log(bfs(tree)); // [10, 5, 15]
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -54,5 +54,6 @@ console.log(bfs(tree)); // [10, 5, 15]
 
 - Queue (FIFO) ensures level-by-level processing.
 - Unlike DFS which uses stack for depth traversal.
-- Useful for finding shortest path in unweighted graphs.
-
+- Useful for finding shortest path in unweighted graphs.\r
+\r
+`;export{e as default};

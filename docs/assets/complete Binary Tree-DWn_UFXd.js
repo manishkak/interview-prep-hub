@@ -1,4 +1,4 @@
-﻿# complete Binary Tree
+const e=`\uFEFF# complete Binary Tree
 
 ## Problem Statement
 
@@ -20,7 +20,7 @@ A complete binary tree is a binary tree in which all levels are fully filled exc
 
 ## Solution
 
-```js
+\`\`\`js
 function isCompleteTree(root) {
   if (!root) return true;
   
@@ -44,7 +44,7 @@ function isCompleteTree(root) {
 
 const tree = { val: 1, left: { val: 2, left: null, right: null }, right: { val: 3, left: null, right: null } };
 console.log(isCompleteTree(tree)); // true
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -58,5 +58,6 @@ console.log(isCompleteTree(tree)); // true
 
 - Complete tree has all levels filled except possibly last level.
 - Last level filled left-to-right means no gaps.
-- Key: once null found, no more non-null nodes can appear.
-
+- Key: once null found, no more non-null nodes can appear.\r
+\r
+`;export{e as default};

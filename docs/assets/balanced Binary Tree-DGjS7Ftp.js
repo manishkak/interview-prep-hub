@@ -1,4 +1,4 @@
-﻿# balanced Binary Tree
+const e=`\uFEFF# balanced Binary Tree
 
 ## Problem Statement
 
@@ -20,7 +20,7 @@ A balanced binary tree is a binary tree in which the difference between the heig
 
 ## Solution
 
-```js
+\`\`\`js
 function isBalanced(root) {
   function checkBalance(node) {
     if (!node) return { balanced: true, height: 0 };
@@ -39,7 +39,7 @@ function isBalanced(root) {
 
 const tree = { val: 3, left: { val: 9, left: null, right: null }, right: { val: 20, left: null, right: null } };
 console.log(isBalanced(tree)); // true
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -53,5 +53,6 @@ console.log(isBalanced(tree)); // true
 
 - Early termination: if any subtree is unbalanced, return false immediately.
 - Efficient to combine height calculation with balance check.
-- Alternative: check balance recursively without height combination (less efficient O(n²)).
-
+- Alternative: check balance recursively without height combination (less efficient O(n²)).\r
+\r
+`;export{e as default};

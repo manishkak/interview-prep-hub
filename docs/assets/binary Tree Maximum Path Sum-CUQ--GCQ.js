@@ -1,4 +1,4 @@
-﻿# binary Tree Maximum Path Sum
+const n=`\uFEFF# binary Tree Maximum Path Sum
 
 ## Problem Statement
 
@@ -20,7 +20,7 @@ Given a non-empty binary tree, find the maximum path sum. A path is defined as a
 
 ## Solution
 
-```js
+\`\`\`js
 function maxPathSum(root) {
   let max = -Infinity;
   
@@ -42,7 +42,7 @@ function maxPathSum(root) {
 
 const tree = { val: 1, left: { val: 2, left: null, right: null }, right: { val: 3, left: null, right: null } };
 console.log(maxPathSum(tree)); // 6
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -56,5 +56,6 @@ console.log(maxPathSum(tree)); // 6
 
 - Critical to ignore negative path sums (use Math.max with 0).
 - Max path may not include root node.
-- Return value differs from global max: must return single path for parent's calculation.
-
+- Return value differs from global max: must return single path for parent's calculation.\r
+\r
+`;export{n as default};

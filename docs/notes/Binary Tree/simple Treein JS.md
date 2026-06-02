@@ -1,27 +1,28 @@
-# simple Treein JS
+﻿# simple Treein JS
 
 ## Problem Statement
 
-Describe the problem statement for **simple Treein JS** here.
+Basic binary tree implementation demonstrating TreeNode class definition and manual tree construction.
 
 ## Examples
 
-- Example input:
-- Example output:
+- Input: Create tree with root 1, left subtree (2, 4, 5), right subtree (3, 6)
+  Output: Tree object with proper node references
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+- Direct class instantiation and manual node assignment using left and right pointers.
+- Create nodes individually and link them together.
 
 ## Solution
 
 ```js
 class Tree {
-    constructor(value) {
-        this.value = value;
-        this.left = null;
-        this.right = null;
-    }
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
 }
 
 let tree = new Tree(1);
@@ -31,16 +32,20 @@ tree.left.left = new Tree(4);
 tree.left.right = new Tree(5);
 tree.right.left = new Tree(6);
 
-console.log(tree)
+console.log(tree);
 ```
-
 
 ## Time Complexity
 
+- N/A (construction operation)
 
 ## Space Complexity
 
+- O(n) for n nodes
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- Foundational structure for binary trees.
+- Each node has left and right child pointers initialized to null.
+- Can be extended with methods like insert, search, delete, etc.
+

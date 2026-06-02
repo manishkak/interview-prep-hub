@@ -1,4 +1,4 @@
-﻿# construct Binary Tree From Preorder And Inorder Traversal
+const r=`\uFEFF# construct Binary Tree From Preorder And Inorder Traversal
 
 ## Problem Statement
 
@@ -20,7 +20,7 @@ Given preorder and inorder traversals of a binary tree, construct and return the
 
 ## Solution
 
-```js
+\`\`\`js
 function buildTree(preorder, inorder) {
   const inorderMap = new Map();
   for (let i = 0; i < inorder.length; i++) {
@@ -46,7 +46,7 @@ function buildTree(preorder, inorder) {
 
 const preorder = [3, 9, 20], inorder = [9, 3, 20];
 console.log(buildTree(preorder, inorder));
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -60,5 +60,6 @@ console.log(buildTree(preorder, inorder));
 
 - Hash map critical for O(1) root finding in inorder.
 - Calculate leftSize to determine index boundaries for recursion.
-- Without hash map, solution is O(n²) due to linear search.
-
+- Without hash map, solution is O(n²) due to linear search.\r
+\r
+`;export{r as default};

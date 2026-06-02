@@ -1,100 +1,64 @@
-# construct Binary Tree From Preorder And Inorder Traversal
+﻿# construct Binary Tree From Preorder And Inorder Traversal
 
 ## Problem Statement
 
-Describe the problem statement for **construct Binary Tree From Preorder And Inorder Traversal** here.
+Given preorder and inorder traversals of a binary tree, construct and return the binary tree. Preorder: root-left-right. Inorder: left-root-right.
 
 ## Examples
 
-- Example input:
-- Example output:
+- Input: preorder = [3, 9, 20, 15, 7], inorder = [9, 3, 15, 20, 7]
+  Output: Tree with root 3, left subtree (9), right subtree (20, 15, 7)
+- Input: preorder = [-1], inorder = [-1]
+  Output: Single node tree with value -1
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+- First element of preorder is root.
+- Find root in inorder to split left and right subtrees.
+- Recursively construct left and right subtrees using remaining elements.
+- Use hash map for O(1) inorder lookups.
 
 ## Solution
 
 ```js
-/**
- * Construct Binary Tree from Preorder and Inorder Traversal
- * Solution here-> https://dev.to/seanpgallivan/solution-construct-binary-tree-from-preorder-and-inorder-traversal-32c5#idea
- * Check the description on this page
- */
-
-/**
- * from chatgpt
- */
-
-// Key Insights
-//     - Preorder Traversal: The first element is always the root of the tree/subtree.
-//     - Inorder Traversal: Elements before the root element in inorder traversal belong to the left subtree, and elements after the root belong to the right subtree.
-
-// Approach
-//     - Identify the Root: The first element in the preorder list is the root of the current subtree.
-//     - Split the Inorder List: Locate the root in the inorder list. Elements to the left of this root in inorder traversal form the left subtree, and elements to the right form the right subtree.
-//     - Recursive Construction: Recursively build the left and right subtrees using the corresponding elements from preorder and inorder lists.
-
-// TC: O(n), each node will be processed once
-// SC: O(n), For the recursion stack (in the worst case) and storing the tree nodes
-
 function buildTree(preorder, inorder) {
-    if (!preorder.length || !inorder.length) return null;
-
-    // The first element in the preorder list is the root
-    const rootValue = preorder[0];
-    const root = { val: rootValue, left: null, right: null }; // start creating new tree
-
-    // Find the index of the root in inorder list
-    const rootIndex = inorder.indexOf(rootValue);
-
-    // Elements to the left in inorder are the left subtree
-    const leftInorder = inorder.slice(0, rootIndex);
-    // Elements to the right in inorder are the right subtree
-    const rightInorder = inorder.slice(rootIndex + 1);
-
-    // Elements in preorder corresponding to the left subtree
-    const leftPreorder = preorder.slice(1, leftInorder.length + 1);
-    // Elements in preorder corresponding to the right subtree
-    const rightPreorder = preorder.slice(leftInorder.length + 1);
-
-    // Recursively build the left and right subtrees
-    root.left = buildTree(leftPreorder, leftInorder);
-    root.right = buildTree(rightPreorder, rightInorder);
-
-    return root;
+  const inorderMap = new Map();
+  for (let i = 0; i < inorder.length; i++) {
+    inorderMap.set(inorder[i], i);
+  }
+  
+  function build(preStart, preEnd, inStart, inEnd) {
+    if (preStart > preEnd) return null;
+    
+    const rootVal = preorder[preStart];
+    const rootIndex = inorderMap.get(rootVal);
+    const leftSize = rootIndex - inStart;
+    
+    const node = { val: rootVal, left: null, right: null };
+    node.left = build(preStart + 1, preStart + leftSize, inStart, rootIndex - 1);
+    node.right = build(preStart + leftSize + 1, preEnd, rootIndex + 1, inEnd);
+    
+    return node;
+  }
+  
+  return build(0, preorder.length - 1, 0, inorder.length - 1);
 }
 
-const preorder = [3, 9, 20, 15, 7];
-const inorder = [9, 3, 15, 20, 7];
-
-const tree = buildTree(preorder, inorder);
-console.log(tree);
-
-/*
-Explanation:
-
-Base Case:
-If either preorder or inorder list is empty, return null, which means there's no subtree to construct.
-
-Root Identification:
-The first element of the preorder list is the root of the current subtree.
-
-Splitting Inorder List:
-The index of the root in the inorder list helps us determine which elements belong to the left and right subtrees.
-
-Recursive Construction:
-Recursively call the buildTree function for the left and right subtrees using the appropriate slices of preorder and inorder lists.
-*/
+const preorder = [3, 9, 20], inorder = [9, 3, 20];
+console.log(buildTree(preorder, inorder));
 ```
-
 
 ## Time Complexity
 
+- O(n) where n is number of nodes; hash map enables O(1) lookups
 
 ## Space Complexity
 
+- O(n) for hash map and recursion stack
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- Hash map critical for O(1) root finding in inorder.
+- Calculate leftSize to determine index boundaries for recursion.
+- Without hash map, solution is O(n²) due to linear search.
+

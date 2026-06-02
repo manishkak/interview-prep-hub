@@ -1,4 +1,4 @@
-﻿# binary Tree Right Side View
+const e=`\uFEFF# binary Tree Right Side View
 
 ## Problem Statement
 
@@ -19,7 +19,7 @@ Given a binary tree, return all values visible from the right side when looking 
 
 ## Solution
 
-```js
+\`\`\`js
 function rightSideView(root) {
   if (!root) return [];
   
@@ -46,7 +46,7 @@ function rightSideView(root) {
 
 const tree = { val: 1, left: { val: 2, left: null, right: null }, right: { val: 3, left: null, right: null } };
 console.log(rightSideView(tree)); // [1, 3]
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -60,5 +60,6 @@ console.log(rightSideView(tree)); // [1, 3]
 
 - Record last node at each level (automatically rightmost in BFS).
 - Alternative: use DFS with level tracking and depth-first map.
-- Key insight: rightmost node is always the last one processed in BFS.
-
+- Key insight: rightmost node is always the last one processed in BFS.\r
+\r
+`;export{e as default};

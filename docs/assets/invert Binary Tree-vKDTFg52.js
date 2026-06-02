@@ -1,4 +1,4 @@
-﻿# invert Binary Tree
+const n=`\uFEFF# invert Binary Tree
 
 ## Problem Statement
 
@@ -18,7 +18,7 @@ Invert a binary tree. After inversion, all left children become right children a
 
 ## Solution
 
-```js
+\`\`\`js
 function invertTree(root) {
   if (!root) return null;
   
@@ -34,7 +34,7 @@ function invertTree(root) {
 
 const tree = { val: 4, left: { val: 2, left: null, right: null }, right: { val: 7, left: null, right: null } };
 console.log(invertTree(tree));
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -48,5 +48,6 @@ console.log(invertTree(tree));
 
 - Simple swap operation at each node.
 - Can be done iteratively with queue/stack as well.
-- Useful for understanding tree traversal and modification.
-
+- Useful for understanding tree traversal and modification.\r
+\r
+`;export{n as default};

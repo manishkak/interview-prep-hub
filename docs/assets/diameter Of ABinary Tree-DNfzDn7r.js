@@ -1,4 +1,4 @@
-﻿# diameter Of ABinary Tree
+const e=`\uFEFF# diameter Of ABinary Tree
 
 ## Problem Statement
 
@@ -18,7 +18,7 @@ The diameter of a binary tree is the length of the longest path between any two 
 
 ## Solution
 
-```js
+\`\`\`js
 function diameterOfBinaryTree(root) {
   let maxDiameter = 0;
   
@@ -39,7 +39,7 @@ function diameterOfBinaryTree(root) {
 
 const tree = { val: 1, left: { val: 2, left: { val: 4, left: null, right: null }, right: { val: 5, left: null, right: null } }, right: { val: 3, left: null, right: null } };
 console.log(diameterOfBinaryTree(tree)); // 3
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -53,5 +53,6 @@ console.log(diameterOfBinaryTree(tree)); // 3
 
 - Diameter is number of edges, not nodes
 - Optimal path may not pass through root
-- Height of leaf node is 0
-
+- Height of leaf node is 0\r
+\r
+`;export{e as default};

@@ -1,4 +1,4 @@
-﻿# simple Treein JS
+const e=`\uFEFF# simple Treein JS
 
 ## Problem Statement
 
@@ -16,7 +16,7 @@ Basic binary tree implementation demonstrating TreeNode class definition and man
 
 ## Solution
 
-```js
+\`\`\`js
 class Tree {
   constructor(value) {
     this.value = value;
@@ -33,7 +33,7 @@ tree.left.right = new Tree(5);
 tree.right.left = new Tree(6);
 
 console.log(tree);
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -47,5 +47,6 @@ console.log(tree);
 
 - Foundational structure for binary trees.
 - Each node has left and right child pointers initialized to null.
-- Can be extended with methods like insert, search, delete, etc.
-
+- Can be extended with methods like insert, search, delete, etc.\r
+\r
+`;export{e as default};

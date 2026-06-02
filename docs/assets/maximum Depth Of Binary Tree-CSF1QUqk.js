@@ -1,4 +1,4 @@
-﻿# maximum Depth Of Binary Tree
+const n=`\uFEFF# maximum Depth Of Binary Tree
 
 ## Problem Statement
 
@@ -21,7 +21,7 @@ Given a binary tree, find its maximum depth. The maximum depth is the number of 
 
 ## Solution
 
-```js
+\`\`\`js
 function maxDepth(root) {
   if (!root) return 0;
   
@@ -33,7 +33,7 @@ function maxDepth(root) {
 
 const tree = { val: 3, left: { val: 9, left: null, right: null }, right: { val: 20, left: null, right: null } };
 console.log(maxDepth(tree)); // 3
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -48,5 +48,6 @@ console.log(maxDepth(tree)); // 3
 - Depth is number of nodes on longest path, not edges.
 - Base case: null node has depth 0.
 - Alternative: BFS level counting (iterative approach).
-- Common interview question, multiple solutions exist.
-
+- Common interview question, multiple solutions exist.\r
+\r
+`;export{n as default};

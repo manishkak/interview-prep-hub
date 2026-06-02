@@ -1,4 +1,4 @@
-﻿# path Sum1Binary Tree
+const n=`\uFEFF# path Sum1Binary Tree
 
 ## Problem Statement
 
@@ -19,7 +19,7 @@ Given a binary tree and a target sum, determine if the tree has a root-to-leaf p
 
 ## Solution
 
-```js
+\`\`\`js
 function hasPathSum(root, targetSum) {
   if (!root) return false;
   
@@ -33,7 +33,7 @@ function hasPathSum(root, targetSum) {
 
 const tree = { val: 1, left: { val: 2, left: null, right: null }, right: { val: 3, left: null, right: null } };
 console.log(hasPathSum(tree, 4)); // true
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -47,5 +47,6 @@ console.log(hasPathSum(tree, 4)); // true
 
 - Only checks whether one valid path exists, not all paths.
 - Important to verify leaf node before checking sum equality.
-- Leaf node condition: node.left === null && node.right === null
-
+- Leaf node condition: node.left === null && node.right === null\r
+\r
+`;export{n as default};

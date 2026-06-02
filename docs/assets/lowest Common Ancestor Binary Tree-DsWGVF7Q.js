@@ -1,4 +1,4 @@
-﻿# lowest Common Ancestor Binary Tree
+const n=`\uFEFF# lowest Common Ancestor Binary Tree
 
 ## Problem Statement
 
@@ -20,7 +20,7 @@ Given a binary tree and two nodes p and q, find the Lowest Common Ancestor (LCA)
 
 ## Solution
 
-```js
+\`\`\`js
 function lowestCommonAncestor(root, p, q) {
   if (!root) return null;
   if (root === p || root === q) return root;
@@ -35,7 +35,7 @@ function lowestCommonAncestor(root, p, q) {
 const root = { val: 3, left: { val: 5, left: null, right: null }, right: { val: 1, left: null, right: null } };
 const p = { val: 5 }, q = { val: 1 };
 console.log(lowestCommonAncestor(root, p, q)); // root
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -50,5 +50,6 @@ console.log(lowestCommonAncestor(root, p, q)); // root
 - LCA is the deepest node with both p and q as descendants.
 - Works for both Binary Trees and BSTs.
 - If both found in left subtree, LCA is in left; if both in right, LCA is in right.
-- If split (one in left, one in right), current node is LCA.
-
+- If split (one in left, one in right), current node is LCA.\r
+\r
+`;export{n as default};

@@ -1,4 +1,4 @@
-﻿# tree DFSTraversal
+const e=`\uFEFF# tree DFSTraversal
 
 ## Problem Statement
 
@@ -21,7 +21,7 @@ Depth-First Search (DFS) traversals of binary tree in three orders: Inorder (Lef
 
 ## Solution
 
-```js
+\`\`\`js
 const inOrderTraversal = (node, cb) => {
   if (node !== undefined) {
     inOrderTraversal(node.left, cb);
@@ -49,7 +49,7 @@ const postOrderTraversal = (node, cb) => {
 const tree = { value: 1, left: { value: 2, left: null, right: null }, right: { value: 3, left: null, right: null } };
 console.log("Inorder: ");
 inOrderTraversal(tree, console.log); // 2, 1, 3
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -64,5 +64,6 @@ inOrderTraversal(tree, console.log); // 2, 1, 3
 - Inorder on BST gives sorted order.
 - Preorder useful for copying tree or serialization.
 - Postorder useful for deletion operations.
-- Choose based on problem requirements.
-
+- Choose based on problem requirements.\r
+\r
+`;export{e as default};

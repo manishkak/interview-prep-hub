@@ -1,4 +1,4 @@
-﻿# symmetric Tree
+const e=`\uFEFF# symmetric Tree
 
 ## Problem Statement
 
@@ -19,7 +19,7 @@ Given the root of a binary tree, check whether it is a mirror of itself (i.e., s
 
 ## Solution
 
-```js
+\`\`\`js
 function isSymmetric(root) {
   function isMirror(left, right) {
     if (!left && !right) return true;
@@ -34,7 +34,7 @@ function isSymmetric(root) {
 
 const tree = { val: 1, left: { val: 2, left: null, right: null }, right: { val: 2, left: null, right: null } };
 console.log(isSymmetric(tree)); // true
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -49,5 +49,6 @@ console.log(isSymmetric(tree)); // true
 - Key insight: mirror comparison requires left-right cross matching.
 - Compare left.left with right.right (not left.left with right.left).
 - Values must match AND structure must be symmetric.
-- Alternative: BFS level-by-level comparison.
-
+- Alternative: BFS level-by-level comparison.\r
+\r
+`;export{e as default};

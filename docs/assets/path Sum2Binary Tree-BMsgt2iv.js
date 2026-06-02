@@ -1,4 +1,4 @@
-﻿# path Sum2Binary Tree
+const n=`\uFEFF# path Sum2Binary Tree
 
 ## Problem Statement
 
@@ -19,7 +19,7 @@ Given a binary tree and a target sum, find all root-to-leaf paths where each pat
 
 ## Solution
 
-```js
+\`\`\`js
 function pathSum(root, targetSum) {
   let result = [];
   
@@ -45,7 +45,7 @@ function pathSum(root, targetSum) {
 
 const tree = { val: 1, left: { val: 2, left: null, right: null }, right: { val: 3, left: null, right: null } };
 console.log(pathSum(tree, 4));
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -59,5 +59,6 @@ console.log(pathSum(tree, 4));
 
 - Critical: Use current.pop() for backtracking to remove nodes before exploring other branches.
 - Without backtracking, path array would accumulate incorrect nodes from previous recursive calls.
-- Make a copy with [...current] when storing valid paths.
-
+- Make a copy with [...current] when storing valid paths.\r
+\r
+`;export{n as default};

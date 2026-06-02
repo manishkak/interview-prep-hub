@@ -1,4 +1,4 @@
-﻿# maximum Width Of ABinary Tree
+const n=`\uFEFF# maximum Width Of ABinary Tree
 
 ## Problem Statement
 
@@ -19,7 +19,7 @@ Find the maximum width of a binary tree. Width at any level is the number of nod
 
 ## Solution
 
-```js
+\`\`\`js
 function widthOfBinaryTree(root) {
   if (!root) return 0;
   
@@ -51,7 +51,7 @@ function widthOfBinaryTree(root) {
 
 const tree = { val: 1, left: { val: 3, left: null, right: null }, right: { val: 2, left: null, right: null } };
 console.log(widthOfBinaryTree(tree)); // 2
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -65,5 +65,6 @@ console.log(widthOfBinaryTree(tree)); // 2
 
 - Use BigInt for indices to avoid integer overflow in deep/wide trees.
 - Index-based approach handles null nodes without storing them.
-- Width includes null positions between leftmost and rightmost non-null nodes.
-
+- Width includes null positions between leftmost and rightmost non-null nodes.\r
+\r
+`;export{n as default};

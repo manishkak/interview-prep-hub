@@ -1,4 +1,4 @@
-﻿# is Same Tree
+const e=`\uFEFF# is Same Tree
 
 ## Problem Statement
 
@@ -19,7 +19,7 @@ Given the roots of two binary trees p and q, check if they are the same. Two tre
 
 ## Solution
 
-```js
+\`\`\`js
 function isSameTree(p, q) {
   if (!p && !q) return true;
   if (!p || !q) return false;
@@ -31,7 +31,7 @@ function isSameTree(p, q) {
 const p = { val: 1, left: { val: 2, left: null, right: null }, right: { val: 3, left: null, right: null } };
 const q = { val: 1, left: { val: 2, left: null, right: null }, right: { val: 3, left: null, right: null } };
 console.log(isSameTree(p, q)); // true
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -45,5 +45,6 @@ console.log(isSameTree(p, q)); // true
 
 - Compare structure and values simultaneously.
 - Early exit if values differ at any node.
-- Handles all edge cases with clear base conditions.
-
+- Handles all edge cases with clear base conditions.\r
+\r
+`;export{e as default};

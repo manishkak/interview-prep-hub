@@ -1,4 +1,4 @@
-﻿# subtreeof Another Tree
+const t=`\uFEFF# subtreeof Another Tree
 
 ## Problem Statement
 
@@ -18,7 +18,7 @@ Given two binary trees root and subRoot, determine whether subRoot is a subtree 
 
 ## Solution
 
-```js
+\`\`\`js
 function isSubtree(root, subRoot) {
   if (!root) return false;
   
@@ -38,7 +38,7 @@ function isSame(s, t) {
 const root = { val: 3, left: { val: 4, left: null, right: null }, right: { val: 5, left: null, right: null } };
 const subRoot = { val: 4, left: null, right: null };
 console.log(isSubtree(root, subRoot)); // true
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -52,5 +52,6 @@ console.log(isSubtree(root, subRoot)); // true
 
 - The isSame function must verify both structure and values match exactly.
 - Must check both children recursively.
-- Subtree means entire structure must match, not just some nodes.
-
+- Subtree means entire structure must match, not just some nodes.\r
+\r
+`;export{t as default};

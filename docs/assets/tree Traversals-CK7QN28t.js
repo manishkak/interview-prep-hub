@@ -1,4 +1,4 @@
-﻿# tree Traversals
+const r=`\uFEFF# tree Traversals
 
 ## Problem Statement
 
@@ -19,7 +19,7 @@ BST tree construction and three DFS traversal methods (Preorder, Inorder, Postor
 
 ## Solution
 
-```js
+\`\`\`js
 class BinarySearchTree {
   constructor(value) {
     this.value = value;
@@ -56,7 +56,7 @@ const tree = new BinarySearchTree(30);
 tree.left = new BinarySearchTree(20);
 tree.right = new BinarySearchTree(50);
 tree.preorderTrav(tree);
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -70,5 +70,6 @@ tree.preorderTrav(tree);
 
 - Inorder traversal of BST yields values in ascending order.
 - Preorder preserves tree structure for serialization.
-- Postorder processes children before parent.
-
+- Postorder processes children before parent.\r
+\r
+`;export{r as default};

@@ -1,130 +1,74 @@
-# tree Traversals
+﻿# tree Traversals
 
 ## Problem Statement
 
-Describe the problem statement for **tree Traversals** here.
+BST tree construction and three DFS traversal methods (Preorder, Inorder, Postorder) implemented as class methods.
 
 ## Examples
 
-- Example input:
-- Example output:
+- Input: BST with values: 30 (root), 50, 20, 14, 44, 34, 26, 10, 19, 54
+  Output:
+  - Preorder: 30, 20, 14, 10, 19, 26, 24, 50, 44, 34, 54
+  - Inorder: 10, 14, 19, 20, 26, 34, 44, 50, 54
+  - Postorder: 10, 19, 14, 26, 20, 34, 44, 54, 50, 30
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+- Class-based BST implementation with insert method.
+- Three traversal method variants using recursive DFS.
 
 ## Solution
 
 ```js
-// treeTraversals
+class BinarySearchTree {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+  
+  preorderTrav(root) {
+    if (root !== null) {
+      console.log(root.value);
+      this.preorderTrav(root.left);
+      this.preorderTrav(root.right);
+    }
+  }
+  
+  inorderTrav(root) {
+    if (root !== null) {
+      this.inorderTrav(root.left);
+      console.log(root.value);
+      this.inorderTrav(root.right);
+    }
+  }
+  
+  postorderTrav(root) {
+    if (root !== null) {
+      this.postorderTrav(root.left);
+      this.postorderTrav(root.right);
+      console.log(root.value);
+    }
+  }
+}
 
-<! DOCTYPE html>
-<html>
-   <head>
-      <script>
-         class Node {
-            constructor(value) {
-               this.value = value;
-               this.left = null;
-               this.right = null;
-            }
-         }
-         class BinarySearchTree {
-            constructor() {
-               this.root = null;
-            }
-
-            inserting(value) {
-               let node = new Node(value);
-               if(this.root == null) {
-                  this.root = node;
-               }else {
-                  this.insertNode(this.root, node);
-               }
-            }
-
-            insertNode(root, newNode) {
-               if(newNode.value < root.value) {
-                  if(root.left == null) {
-                     root.left = newNode;
-                  } else {
-                     this.insertNode(root.left, newNode);
-                  }
-               } else if(newNode.value > root.value) {
-                  if(root.right == null) {
-                     root.right = newNode;
-                  } else {
-                     this.insertNode(root.right, newNode);
-                  }
-               }
-            }
-            getRootNode() {
-               return this.root;
-            }
-
-            /* implementation of individual operations of traversal in tree */
-
-            preorderTrav(root) {
-               if(root != null) {
-                  console.log(root.value); // Traverse the root node
-                  this.preorderTrav(root.left); /* Traverse the left subtree */
-                  this.preorderTrav(root.right); /* Traverse the right subtree */
-               }
-            }
-
-            inorderTrav(root) {
-               if(root != null) {
-                  this.inorderTrav(root.left); /* Traverse the left subtree */
-                  console.log(root.value); // Traverse the root node
-                  this.inorderTrav(root.right); /* Traverse the right subtree */
-               }
-            }
-
-            postorderTrav(root) {
-               if(root != null) {
-                  this.postorderTrav(root.left); /* Traverse the left subtree */
-                  this.postorderTrav(root.right); /* Traverse the right subtree */
-                  console.log(root.value); // Traverse the root node
-               }
-            }
-         }
-         
-         var bst = new BinarySearchTree();
-         bst.inserting(30);
-         bst.inserting(50);
-         bst.inserting(20);
-         bst.inserting(14);
-         bst.inserting(44);
-         bst.inserting(34);
-         bst.inserting(26);
-         bst.inserting(10);
-         bst.inserting(19);
-         bst.inserting(54);
-         
-         var root = bst.getRootNode();
-         document.write("preorder traversal of the binary tree is <br>");
-         bst.preorderTrav(root);
-         document.write('<br>');
-         document.write('inorder traversal of the binary tree is <br>');
-         bst.inorderTrav(root);
-         document.write('<br>');
-         document.write('Postorder traversal of the binary tree is <br>');
-         bst.postorderTrav(root);
-         document.write('<br>');
-      </script>
-   </head>
-   <body>
-   </body>
-</html>
+const tree = new BinarySearchTree(30);
+tree.left = new BinarySearchTree(20);
+tree.right = new BinarySearchTree(50);
+tree.preorderTrav(tree);
 ```
-
 
 ## Time Complexity
 
+- O(n) where n is number of nodes
 
 ## Space Complexity
 
+- O(h) for recursion stack where h is tree height
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- Inorder traversal of BST yields values in ascending order.
+- Preorder preserves tree structure for serialization.
+- Postorder processes children before parent.
+

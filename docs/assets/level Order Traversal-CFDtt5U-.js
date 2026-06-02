@@ -1,4 +1,4 @@
-﻿# level Order Traversal
+const e=`\uFEFF# level Order Traversal
 
 ## Problem Statement
 
@@ -20,7 +20,7 @@ Given a binary tree, return the level order traversal (breadth-first) as a list 
 
 ## Solution
 
-```js
+\`\`\`js
 function levelOrder(root) {
   if (!root) return [];
   
@@ -47,7 +47,7 @@ function levelOrder(root) {
 
 const tree = { val: 3, left: { val: 9, left: null, right: null }, right: { val: 20, left: null, right: null } };
 console.log(levelOrder(tree)); // [[3], [9, 20]]
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -61,5 +61,6 @@ console.log(levelOrder(tree)); // [[3], [9, 20]]
 
 - Critical to record levelSize at loop start to process exactly one level.
 - Without levelSize, would flatten all nodes instead of grouping by level.
-- Alternative: use recursion with depth parameter.
-
+- Alternative: use recursion with depth parameter.\r
+\r
+`;export{e as default};
