@@ -16,8 +16,7 @@ Given n non-negative integers representing an elevation map where the width of e
 - Water trapped at each position is min(leftMax, rightMax) - height[i].
 
 ## Solution
-
-\`js
+\`\`\`js
 function trap(height) {
   let left = 0;
   let right = height.length - 1;
@@ -41,7 +40,7 @@ function trap(height) {
 }
 
 console.log(trap([0,1,0,2,1,0,1,3,2,1,2,1])); // 6
-\`
+\`\`\`
 
 ## Time Complexity
 
@@ -55,4 +54,6 @@ console.log(trap([0,1,0,2,1,0,1,3,2,1,2,1])); // 6
 
 - Use the smaller side to decide the trapped water.
 - Two-pointer method is optimal for this problem.\r
+\r
+\r
 `;export{t as default};

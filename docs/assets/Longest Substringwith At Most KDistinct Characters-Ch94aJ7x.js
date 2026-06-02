@@ -18,8 +18,7 @@ Given a string s and an integer k, find the length of the longest substring that
 - Shrink from the left until the window is valid again.
 
 ## Solution
-
-\`js
+\`\`\`js
 function lengthOfLongestSubstringKDistinct(s, k) {
   if (k === 0) return 0;
   const count = new Map();
@@ -45,7 +44,7 @@ function lengthOfLongestSubstringKDistinct(s, k) {
 
 console.log(lengthOfLongestSubstringKDistinct(eceba, 2)); // 3
 console.log(lengthOfLongestSubstringKDistinct(aa, 1)); // 2
-\`
+\`\`\`
 
 ## Time Complexity
 
@@ -59,4 +58,6 @@ console.log(lengthOfLongestSubstringKDistinct(aa, 1)); // 2
 
 - The window expands until there are more than k distinct characters.
 - The map stores counts for the current window.\r
+\r
+\r
 `;export{n as default};

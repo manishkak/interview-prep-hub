@@ -18,8 +18,7 @@ Given an integer array nums and a target value, find the sum of three integers i
 - Track the closest sum found so far.
 
 ## Solution
-
-`js
+```js
 function threeSumClosest(nums, target) {
   nums.sort((a, b) => a - b);
   let closest = nums[0] + nums[1] + nums[2];
@@ -44,7 +43,7 @@ function threeSumClosest(nums, target) {
 }
 
 console.log(threeSumClosest([-1,2,1,-4], 1)); // 2
-`
+```
 
 ## Time Complexity
 
@@ -58,3 +57,5 @@ console.log(threeSumClosest([-1,2,1,-4], 1)); // 2
 
 - Sorting enables the two-pointer search.
 - Keep the closest sum updated while scanning pairs.
+
+

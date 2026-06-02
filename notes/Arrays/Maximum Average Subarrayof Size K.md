@@ -16,8 +16,7 @@ Given an array nums and an integer k, find the maximum average value of any cont
 - Return the maximum sum divided by k.
 
 ## Solution
-
-`js
+```js
 function findMaxAverage(nums, k) {
   let sum = 0;
   for (let i = 0; i < k; i++) {
@@ -34,7 +33,7 @@ function findMaxAverage(nums, k) {
 }
 
 console.log(findMaxAverage([1,12,-5,-6,50,3], 4)); // 12.75
-`
+```
 
 ## Time Complexity
 
@@ -48,3 +47,5 @@ console.log(findMaxAverage([1,12,-5,-6,50,3], 4)); // 12.75
 
 - Use a fixed-size sliding window.
 - Only the sum is updated when the window moves.
+
+

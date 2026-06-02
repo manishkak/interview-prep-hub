@@ -14,8 +14,7 @@ Given an integer array nums, find the contiguous subarray with the largest sum a
 - Use Kadane's algorithm to keep a running maximum subarray sum ending at each position.
 
 ## Solution
-
-\`js
+\`\`\`js
 function maxSubArray(nums) {
   let maxEndingHere = nums[0];
   let maxSoFar = nums[0];
@@ -27,7 +26,7 @@ function maxSubArray(nums) {
 }
 
 console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4])); // 6
-\`
+\`\`\`
 
 ## Time Complexity
 
@@ -40,4 +39,6 @@ console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4])); // 6
 ## Notes
 
 - Works with negative numbers because the algorithm can restart the subarray at the current element.\r
+\r
+\r
 `;export{n as default};

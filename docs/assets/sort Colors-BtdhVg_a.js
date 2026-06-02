@@ -15,8 +15,7 @@ Given an array nums with n objects colored 0, 1, or 2, sort them in-place so tha
 - Move 0s to the front, 2s to the back, and leave 1s in the middle.
 
 ## Solution
-
-\`js
+\`\`\`js
 function sortColors(nums) {
   let low = 0;
   let mid = 0;
@@ -39,7 +38,7 @@ function sortColors(nums) {
 const nums = [2,0,2,1,1,0];
 sortColors(nums);
 console.log(nums); // [0,0,1,1,2,2]
-\`
+\`\`\`
 
 ## Time Complexity
 
@@ -53,4 +52,6 @@ console.log(nums); // [0,0,1,1,2,2]
 
 - The algorithm sorts in one pass.
 - Works in-place with constant extra memory.\r
+\r
+\r
 `;export{n as default};

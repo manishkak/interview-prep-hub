@@ -18,8 +18,7 @@ Given an array of meeting intervals where intervals[i] = [start_i, end_i], retur
 - Reuse a room when the earliest meeting ends before the next one starts.
 
 ## Solution
-
-\`js
+\`\`\`js
 class MinHeap {
   constructor() { this.data = []; }
   add(val) { this.data.push(val); this._bubbleUp(this.data.length - 1); }
@@ -47,7 +46,7 @@ function minMeetingRooms(intervals) {
 
 console.log(minMeetingRooms([[0,30],[5,10],[15,20]])); // 2
 console.log(minMeetingRooms([[7,10],[2,4]])); // 1
-\`
+\`\`\`
 
 ## Time Complexity
 
@@ -60,4 +59,6 @@ console.log(minMeetingRooms([[7,10],[2,4]])); // 1
 ## Notes
 
 - Use min-heap on end times to reuse rooms as soon as possible.\r
+\r
+\r
 `;export{t as default};

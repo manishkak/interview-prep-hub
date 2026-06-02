@@ -18,8 +18,7 @@ Given a binary array nums, find the maximum length of a contiguous subarray with
 - If the same sum appears again, the subarray between the two indices has equal numbers of 0 and 1.
 
 ## Solution
-
-\`js
+\`\`\`js
 function findMaxLength(nums) {
   const indexMap = new Map([[0, -1]]);
   let maxLength = 0;
@@ -39,7 +38,7 @@ function findMaxLength(nums) {
 
 console.log(findMaxLength([0,1,0])); // 2
 console.log(findMaxLength([0,1,0,0,1,1,0])); // 6
-\`
+\`\`\`
 
 ## Time Complexity
 
@@ -53,4 +52,6 @@ console.log(findMaxLength([0,1,0,0,1,1,0])); // 6
 
 - Use a cumulative sum with 0 → -1 and 1 → +1.
 - Store the first occurrence of each sum in a map.\r
+\r
+\r
 `;export{n as default};

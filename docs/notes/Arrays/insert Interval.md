@@ -18,8 +18,7 @@ Given a list of non-overlapping intervals sorted by start time, insert a new int
 - Add remaining intervals after the new interval.
 
 ## Solution
-
-`js
+```js
 function insertInterval(intervals, newInterval) {
   const result = [];
   let i = 0;
@@ -47,7 +46,7 @@ function insertInterval(intervals, newInterval) {
 
 console.log(insertInterval([[1,3],[6,9]], [2,5])); // [[1,5],[6,9]]
 console.log(insertInterval([[1,2],[3,5],[6,7],[8,10],[12,16]], [4,8])); // [[1,2],[3,10],[12,16]]
-`
+```
 
 ## Time Complexity
 
@@ -61,3 +60,5 @@ console.log(insertInterval([[1,2],[3,5],[6,7],[8,10],[12,16]], [4,8])); // [[1,2
 
 - The intervals list is already sorted by start time.
 - Merge by growing the new interval until it no longer overlaps.
+
+

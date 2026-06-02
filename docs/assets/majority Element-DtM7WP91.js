@@ -17,8 +17,7 @@ Given an array nums of size n, return the majority element. The majority element
 - The candidate is guaranteed to be the majority element in this problem.
 
 ## Solution
-
-\`js
+\`\`\`js
 function majorityElement(nums) {
   let count = 0;
   let candidate = null;
@@ -35,7 +34,7 @@ function majorityElement(nums) {
 
 console.log(majorityElement([3,2,3])); // 3
 console.log(majorityElement([2,2,1,1,1,2,2])); // 2
-\`
+\`\`\`
 
 ## Time Complexity
 
@@ -49,4 +48,6 @@ console.log(majorityElement([2,2,1,1,1,2,2])); // 2
 
 - This works because the majority element appears more than half the time.
 - Boyer-Moore finds the candidate in one pass.\r
+\r
+\r
 `;export{n as default};

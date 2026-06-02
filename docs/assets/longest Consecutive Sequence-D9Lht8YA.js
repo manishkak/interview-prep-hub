@@ -16,8 +16,7 @@ Given an unsorted array of integers, return the length of the longest consecutiv
 - Count consecutive numbers from that starting point.
 
 ## Solution
-
-\`js
+\`\`\`js
 function longestConsecutive(nums) {
   const numSet = new Set(nums);
   let longestStreak = 0;
@@ -38,7 +37,7 @@ function longestConsecutive(nums) {
 }
 
 console.log(longestConsecutive([100,4,200,1,3,2])); // 4
-\`
+\`\`\`
 
 ## Time Complexity
 
@@ -52,4 +51,6 @@ console.log(longestConsecutive([100,4,200,1,3,2])); // 4
 
 - Use the set to skip non-starting values.
 - A sequence starts when num-1 is absent.\r
+\r
+\r
 `;export{n as default};

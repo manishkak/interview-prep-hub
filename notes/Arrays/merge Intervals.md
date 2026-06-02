@@ -17,8 +17,7 @@ Given an array of intervals where intervals[i] = [start_i, end_i], merge all ove
 - Use a result list and merge each interval into the last one if they overlap.
 
 ## Solution
-
-`js
+```js
 function merge(intervals) {
   if (intervals.length === 0) return [];
   intervals.sort((a, b) => a[0] - b[0]);
@@ -37,7 +36,7 @@ function merge(intervals) {
 
 console.log(merge([[1,3],[2,6],[8,10],[15,18]])); // [[1,6],[8,10],[15,18]]
 console.log(merge([[1,4],[4,5]])); // [[1,5]]
-`
+```
 
 ## Time Complexity
 
@@ -51,3 +50,4 @@ console.log(merge([[1,4],[4,5]])); // [[1,5]]
 
 - Sort first so overlap checks are local to adjacent intervals.
 - Two intervals overlap when the next start is <= current end.
+
