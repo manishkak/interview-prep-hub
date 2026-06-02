@@ -56,7 +56,7 @@ function findMedianSortedArrays(nums1, nums2) {
 
 const nums1 = [1, 3], nums2 = [2];
 console.log(findMedianSortedArrays(nums1, nums2)); // 2.0
-\`
+\`\`\`
 
 ## Time Complexity
 
@@ -71,7 +71,7 @@ console.log(findMedianSortedArrays(nums1, nums2)); // 2.0
 - Ensure nums1 is the smaller array for efficiency.
 - Median position: (m + n + 1) / 2 for left partition.
 - Handle edge cases: empty array, single element, different lengths.
-- Naive merge: O((m+n)log(m+n)), this is much better.\r
-\r
-\r
+- Naive merge: O((m+n)log(m+n)), this is much better.
+
+
 `;export{n as default};

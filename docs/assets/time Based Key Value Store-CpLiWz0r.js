@@ -60,7 +60,7 @@ timeMap.set("foo", "baz", 4);
 console.log(timeMap.get("foo", 1)); // "bar"
 console.log(timeMap.get("foo", 3)); // "bar"
 console.log(timeMap.get("foo", 4)); // "baz"
-\`
+\`\`\`
 
 ## Time Complexity
 
@@ -77,7 +77,7 @@ console.log(timeMap.get("foo", 4)); // "baz"
 - Binary search finds the rightmost timestamp <= query timestamp.
 - When timestamps exactly match, return that value immediately.
 - Handle case where no timestamp exists (return empty string).
-- TreeMap or similar structure would provide automatic sorting in other languages.\r
-\r
-\r
+- TreeMap or similar structure would provide automatic sorting in other languages.
+
+
 `;export{e as default};

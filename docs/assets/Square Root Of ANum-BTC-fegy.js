@@ -50,7 +50,7 @@ function mySqrt(x) {
 console.log(mySqrt(8)); // 2
 console.log(mySqrt(9)); // 3
 console.log(mySqrt(1)); // 1
-\`
+\`\`\`
 
 ## Time Complexity
 
@@ -66,7 +66,7 @@ console.log(mySqrt(1)); // 1
 - Save candidate when mid² < x and continue searching right.
 - Handle perfect squares immediately for early exit.
 - Avoid overflow: use mid * mid instead of Math.pow(mid, 2).
-- Related: binary search for square root with floating point precision.\r
-\r
-\r
+- Related: binary search for square root with floating point precision.
+
+
 `;export{n as default};

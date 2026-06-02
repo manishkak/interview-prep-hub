@@ -44,7 +44,7 @@ function binarySearch(nums, target) {
 const nums = [1, 3, 5, 7, 9];
 console.log(binarySearch(nums, 5)); // 2
 console.log(binarySearch(nums, 6)); // -1
-`
+```
 
 ## Time Complexity
 

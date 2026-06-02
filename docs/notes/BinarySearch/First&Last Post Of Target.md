@@ -71,7 +71,7 @@ function searchRange(nums, target) {
 const nums = [5, 7, 7, 8, 8, 10];
 console.log(searchRange(nums, 8)); // [3, 4]
 console.log(searchRange(nums, 6)); // [-1, -1]
-`
+```
 
 ## Time Complexity
 

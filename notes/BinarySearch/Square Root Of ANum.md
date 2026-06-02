@@ -50,7 +50,7 @@ function mySqrt(x) {
 console.log(mySqrt(8)); // 2
 console.log(mySqrt(9)); // 3
 console.log(mySqrt(1)); // 1
-`
+```
 
 ## Time Complexity
 

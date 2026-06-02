@@ -48,7 +48,7 @@ function maxSawHeight(heights, k) {
 
 const heights = [4, 42, 40, 26, 46];
 console.log(maxSawHeight(heights, 20)); // 36
-`
+```
 
 ## Time Complexity
 

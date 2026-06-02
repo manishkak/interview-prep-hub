@@ -52,7 +52,7 @@ function search(nums, target) {
 const nums = [4, 5, 6, 7, 0, 1, 2];
 console.log(search(nums, 0)); // 4
 console.log(search(nums, 3)); // -1
-`
+```
 
 ## Time Complexity
 

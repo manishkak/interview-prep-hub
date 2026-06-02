@@ -71,7 +71,7 @@ function searchRange(nums, target) {
 const nums = [5, 7, 7, 8, 8, 10];
 console.log(searchRange(nums, 8)); // [3, 4]
 console.log(searchRange(nums, 6)); // [-1, -1]
-\`
+\`\`\`
 
 ## Time Complexity
 
@@ -86,7 +86,7 @@ console.log(searchRange(nums, 6)); // [-1, -1]
 - Key: continue searching even after finding target to find boundaries.
 - Two functions: one minimizes index, other maximizes it.
 - Early exit: if left search returns -1, target doesn't exist.
-- Pattern: finding first and last occurrences of repeated elements.\r
-\r
-\r
+- Pattern: finding first and last occurrences of repeated elements.
+
+
 `;export{n as default};

@@ -60,7 +60,7 @@ timeMap.set("foo", "baz", 4);
 console.log(timeMap.get("foo", 1)); // "bar"
 console.log(timeMap.get("foo", 3)); // "bar"
 console.log(timeMap.get("foo", 4)); // "baz"
-`
+```
 
 ## Time Complexity
 

@@ -44,7 +44,7 @@ function binarySearch(nums, target) {
 const nums = [1, 3, 5, 7, 9];
 console.log(binarySearch(nums, 5)); // 2
 console.log(binarySearch(nums, 6)); // -1
-\`
+\`\`\`
 
 ## Time Complexity
 
@@ -59,7 +59,7 @@ console.log(binarySearch(nums, 6)); // -1
 - Works only on sorted arrays.
 - Ensure left <= right to include case when both point to same element.
 - Average case faster than linear search: log(1,000,000) ≈ 20 vs 1,000,000.
-- Can implement recursively or iteratively; iterative is more space-efficient.\r
-\r
-\r
+- Can implement recursively or iteratively; iterative is more space-efficient.
+
+
 `;export{e as default};

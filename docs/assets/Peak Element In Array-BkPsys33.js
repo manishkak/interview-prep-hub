@@ -42,7 +42,7 @@ console.log(findPeakElement(nums)); // 2
 
 const nums2 = [1, 2, 1, 3, 5, 6, 4];
 console.log(findPeakElement(nums2)); // 5 (or 1)
-\`
+\`\`\`
 
 ## Time Complexity
 
@@ -58,7 +58,7 @@ console.log(findPeakElement(nums2)); // 5 (or 1)
 - Compare with next neighbor to determine gradient direction.
 - Works because of the strictly increasing/decreasing property of slopes.
 - Any peak is acceptable; multiple peaks may exist.
-- Intuition: follow increasing slope until plateau/decline indicates peak nearby.\r
-\r
-\r
+- Intuition: follow increasing slope until plateau/decline indicates peak nearby.
+
+
 `;export{n as default};

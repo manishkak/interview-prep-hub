@@ -42,7 +42,7 @@ console.log(findPeakElement(nums)); // 2
 
 const nums2 = [1, 2, 1, 3, 5, 6, 4];
 console.log(findPeakElement(nums2)); // 5 (or 1)
-`
+```
 
 ## Time Complexity
 

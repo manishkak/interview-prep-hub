@@ -43,7 +43,7 @@ let badVersion = 4;
 const isBadVersion = (v) => v >= badVersion;
 
 console.log(firstBadVersion(10, isBadVersion)); // 4
-`
+```
 
 ## Time Complexity
 
