@@ -1,51 +1,50 @@
 # Reverse Linked List
 
 ## Problem Statement
-Reverse a singly linked list and return the reversed list.
+
+Given the head of a singly linked list, reverse the list and return the new head.
 
 ## Examples
 
-```txt
-Input: head = [1,2,3,4,5]
-Output: [5,4,3,2,1]
-```
+- Input: 1 -> 2 -> 3 -> 4 -> 5 -> null
+- Output: 5 -> 4 -> 3 -> 2 -> 1 -> null
+
+- Input: 1 -> 2 -> null
+- Output: 2 -> 1 -> null
 
 ## Approach
-Iteratively reverse pointers while traversing the list. Keep track of the previous node and update the next pointer on each step.
+
+Iterative pointer reversal. Traverse the list while keeping track of the previous node. At each step, reverse the current node's next pointer to point backward, then advance both pointers forward.
+
+Three pointers: prev (starts null), current (starts at head), next (saved before overwriting).
 
 ## Solution
 
-```ts
-class ListNode {
-  val: number
-  next: ListNode | null
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val
-    this.next = next === undefined ? null : next
-  }
-}
+```js
+function reverseList(head) {
+    let prev = null;
+    let current = head;
 
-function reverseList(head: ListNode | null): ListNode | null {
-  let prev: ListNode | null = null
-  let current = head
+    while (current) {
+        const nextNode = current.next;
+        current.next = prev;
+        prev = current;
+        current = nextNode;
+    }
 
-  while (current) {
-    const nextNode = current.next
-    current.next = prev
-    prev = current
-    current = nextNode
-  }
-
-  return prev
+    return prev;
 }
 ```
 
 ## Time Complexity
-O(n)
+
+**O(n)** — each node is visited once.
 
 ## Space Complexity
-O(1)
+
+**O(1)** — only three pointers used, no extra data structures.
 
 ## Notes
-- Use `prev` and `current` pointers.
-- This is a classic iterative linked list reversal.
+
+- At the end of the loop, prev points to the new head (the original tail).
+- LeetCode #206.

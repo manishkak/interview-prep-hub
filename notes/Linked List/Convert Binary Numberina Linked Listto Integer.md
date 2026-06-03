@@ -2,82 +2,46 @@
 
 ## Problem Statement
 
-Describe the problem statement for **Convert Binary Numberina Linked Listto Integer** here.
+Given the head of a singly linked list where each node's value is either 0 or 1, return the decimal integer value of the binary number represented by the list. The most significant bit is at the head.
 
 ## Examples
 
-- Example input:
-- Example output:
+- Input: 1 -> 0 -> 1
+- Output: 5
+- Explanation: Binary 101 = 5 in decimal.
+
+- Input: 0
+- Output: 0
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+Read the binary number left to right (MSB first). At each step, shift the accumulated result one bit to the left (multiply by 2) and add the current node's value. This is equivalent to building the decimal value digit by digit.
 
 ## Solution
 
 ```js
-/**
- * Convert Binary Number in a Linked List to Integer
- * Given a singly linked list where each node represents a binary digit (0 or 1), return the decimal value of the number it represents.
- * Example
- * If the linked list is 1 -> 0 -> 1, it represents the binary number 101, which is 5 in decimal.
- * This approach efficiently converts a binary number represented by a linked list into its decimal equivalent using constant space (O(1)) and linear time (O(n)), where n is the number of nodes in the linked list.
- */
-
-// Definition for singly-linked list.
-function ListNode(val, next = null) {
-    this.val = val;
-    this.next = next;
-}
-
-// Function to convert binary linked list to integer
 function getDecimalValue(head) {
     let result = 0;
     let current = head;
 
     while (current !== null) {
-        // Shift result to the left to make space for the next bit
         result = result * 2 + current.val;
         current = current.next;
     }
 
     return result;
 }
-// Example usage:
-
-// Creating the linked list representing binary number 1 -> 0 -> 1
-let head = new ListNode(1);
-head.next = new ListNode(0);
-head.next.next = new ListNode(1);
-
-// Printing the linked list
-console.log("Linked List:");
-printLinkedList(head); // Output: 1 -> 0 -> 1
-
-// Convert linked list to decimal value
-let decimalValue = getDecimalValue(head);
-console.log("Decimal Value:", decimalValue); // Output: Decimal Value: 5
-
-// Helper function to print the linked list
-function printLinkedList(head) {
-    let result = [];
-    let current = head;
-    while (current) {
-        result.push(current.val);
-        current = current.next;
-    }
-    console.log(result.join(" -> "));
-}
-
 ```
-
 
 ## Time Complexity
 
+**O(n)** — each node is visited once.
 
 ## Space Complexity
 
+**O(1)** — only a single accumulator variable is used.
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- The operation result = result * 2 + bit is the standard left-to-right binary-to-decimal conversion — each step shifts existing bits one position left and adds the new bit.
+- LeetCode #1290.

@@ -2,76 +2,65 @@
 
 ## Problem Statement
 
-Describe the problem statement for **Linked List Cycle2** here.
+Given the head of a linked list, return the node where the cycle begins. If there is no cycle, return null.
 
 ## Examples
 
-- Example input:
-- Example output:
+- Input: 3 -> 2 -> 0 -> -4, where -4 points back to node 2
+- Output: node with value 2
+
+- Input: 1 -> 2, where 2 points back to 1
+- Output: node with value 1
+
+- Input: 1 -> null
+- Output: null
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+Floyd's Tortoise and Hare — two phases.
+
+Phase 1 (detect cycle): move slow one step and fast two steps until they meet. If fast reaches null, there is no cycle.
+
+Phase 2 (find entry point): reset slow to head, keep fast at the meeting point. Move both one step at a time. They will meet exactly at the cycle entry node.
+
+The math behind phase 2: if the distance from head to cycle entry is F, and the meeting point is D steps into the cycle, then F = cycle_length - D. Moving slow from head F steps and fast from meeting point F steps (which wraps around the cycle) lands both at the entry.
 
 ## Solution
 
 ```js
-/**
- * linked list cycle 2
- */
-
-function ListNode(val, next = null) {
-    this.val = val;
-    this.next = next;
-}
-
 function detectCycle(head) {
-    if (!head || !head.next) {
-        return null;
-    }
+    if (!head || !head.next) return null;
 
     let slow = head;
     let fast = head;
 
-    // Step 1: Detect if a cycle exists using Floyd's Tortoise and Hare algorithm
     while (fast && fast.next) {
         slow = slow.next;
         fast = fast.next.next;
-        if (slow === fast) {
-            break;
-        }
+        if (slow === fast) break;
     }
 
-    // If no cycle is detected, return null
-    // If fast pointer reaches the end, there's no cycle
-    if (!fast || !fast.next) {
-        return null;
-    }
+    if (!fast || !fast.next) return null;
 
-    // Step 2: Find the start of the cycle
-    slow = head; // keep fast where it is and move slow to the head of the list
-	// keep moving slow and fast one step until they are the same
+    slow = head;
     while (slow !== fast) {
         slow = slow.next;
         fast = fast.next;
     }
 
-    return slow; // or return fast, as they are now equal
+    return slow;
 }
-/** 
-Time and Space Complexity
-Time Complexity: O(n), where n is the number of nodes in the linked list. In the worst case, we traverse the list twice.
-Space Complexity: O(1), since we only use a constant amount of extra space for pointers (slow, fast).
-*/
 ```
-
 
 ## Time Complexity
 
+**O(n)** — the list is traversed at most twice.
 
 ## Space Complexity
 
+**O(1)** — only two pointers used.
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- Phase 2 works because of a mathematical property of Floyd's algorithm: the distance from head to the cycle entry equals the distance from the meeting point to the cycle entry (going forward in the cycle).
+- LeetCode #142.

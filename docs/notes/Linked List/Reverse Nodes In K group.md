@@ -2,135 +2,79 @@
 
 ## Problem Statement
 
-Describe the problem statement for **Reverse Nodes In K group** here.
+Given the head of a linked list, reverse the nodes of the list k at a time and return the modified list. If the number of remaining nodes is not a multiple of k, leave those nodes as-is in their original order.
 
 ## Examples
 
-- Example input:
-- Example output:
+- Input: 1 -> 2 -> 3 -> 4 -> 5, k = 2
+- Output: 2 -> 1 -> 4 -> 3 -> 5
+
+- Input: 1 -> 2 -> 3 -> 4 -> 5, k = 3
+- Output: 3 -> 2 -> 1 -> 4 -> 5
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+Calculate the list length first. Use a dummy node and a prevGroupEnd pointer that tracks the end of the previously processed group.
+
+While remaining length >= k:
+1. Set groupStart = prevGroupEnd.next and advance groupEnd k steps to find the group boundary.
+2. Reverse nodes from groupStart up to (but not including) groupEnd.
+3. Reconnect: prevGroupEnd.next = reversed head, groupStart.next = groupEnd.
+4. Advance prevGroupEnd to groupStart (which is now the tail of the reversed group).
+5. Decrease remaining length by k.
 
 ## Solution
 
 ```js
-/**
- * Given a singly linked list, reverse the nodes of the list k at a time and return the modified list. If the number of nodes is not a multiple of k, leave the remaining nodes as-is.
- */
-
-class ListNode {
-    constructor(val = 0, next = null) {
-      this.val = val;
-      this.next = next;
-    }
-  }
-  
-  function reverseKGroup(head, k) {
+function reverseKGroup(head, k) {
     if (!head || k === 1) return head;
-  
+
     const getLength = (node) => {
-      let length = 0;
-      while (node) {
-        length++;
-        node = node.next;
-      }
-      return length;
+        let length = 0;
+        while (node) { length++; node = node.next; }
+        return length;
     };
-  
+
     const reverse = (start, end) => {
-      let prev = null;
-      let current = start;
-      while (current !== end) {
-        const nextNode = current.next;
-        current.next = prev;
-        prev = current;
-        current = nextNode;
-      }
-      return prev;
+        let prev = null, current = start;
+        while (current !== end) {
+            const next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        return prev;
     };
-  
+
     let length = getLength(head);
-    let dummy = new ListNode(0, head); // dummy points to the head ('next' part of ListNode is set to head)... dummy -> [1 -> 2 -> 3 -> 4 -> 5]
-    let prevGroupEnd = dummy; // Initialize Pointers
-  
+    let dummy = { val: 0, next: head };
+    let prevGroupEnd = dummy;
+
     while (length >= k) {
-      let groupStart = prevGroupEnd.next; // points to the first node of the group to reverse
-      let groupEnd = groupStart; // groupEnd is initialized to the same node as groupStart
-      for (let i = 0; i < k; i++) {
-        groupEnd = groupEnd.next; // The loop moves groupEnd forward by k steps
-      }
-      const newGroupStart = reverse(groupStart, groupEnd);
-      prevGroupEnd.next = newGroupStart;
-      groupStart.next = groupEnd;
-      prevGroupEnd = groupStart;
-      length -= k; // This line reduces the remaining length of the linked list 'by k' after a group of k nodes has been processed (reversed and reconnected)... length = length - k;
+        let groupStart = prevGroupEnd.next;
+        let groupEnd = groupStart;
+        for (let i = 0; i < k; i++) groupEnd = groupEnd.next;
+
+        prevGroupEnd.next = reverse(groupStart, groupEnd);
+        groupStart.next = groupEnd;
+        prevGroupEnd = groupStart;
+        length -= k;
     }
-  
+
     return dummy.next;
-  }
-  
-  // Helper to create a linked list from an array
-  function createLinkedList(arr) {
-    let dummy = new ListNode();
-    let current = dummy;
-    for (let val of arr) {
-      current.next = new ListNode(val);
-      current = current.next;
-    }
-    return dummy.next;
-  }
-  
-  // Helper to convert linked list to array
-  function toArray(head) {
-    const result = [];
-    while (head) {
-      result.push(head.val);
-      head = head.next;
-    }
-    return result;
-  }
-  
-  // Test case
-  const head = createLinkedList([1, 2, 3, 4, 5]);
-  const k = 3;
-  const result = reverseKGroup(head, k);
-  console.log(toArray(result)); // Output: [3, 2, 1, 4, 5]
-  
-/*
-Explanation
-
-Helper Functions:
-    getLength: Computes the length of the linked list.
-    reverse: Reverses a portion of the list from start to end.
-
-Main Function:
-    Uses a dummy node to simplify handling the head of the list.
-    Iterates through the list in chunks of k nodes.
-    For each group, reverses the nodes and reconnects the reversed group to the rest of the list.
-
-Edge Cases:
-    If k is 1, no reversal is needed.
-    If the list's length is less than k, the remaining nodes are left as-is.
-
-Time Complexity
-    Reversal: Each node is visited once, resulting in O(n) for the entire list.
-    Getting Length: Linear, O(n), done once.
-    Total: O(n).
-
-Space Complexity
-Iterative approach uses constant extra space: O(1).
-*/
+}
 ```
-
 
 ## Time Complexity
 
+**O(n)** — each node is visited a constant number of times (once for length, once during reversal).
 
 ## Space Complexity
 
+**O(1)** — iterative reversal with a constant number of pointers.
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- groupEnd points to the node AFTER the group (exclusive boundary), so the reverse helper stops before it and groupStart.next = groupEnd reconnects the tail.
+- If length < k, the while loop never executes and the remaining nodes stay unchanged.
+- LeetCode #25.

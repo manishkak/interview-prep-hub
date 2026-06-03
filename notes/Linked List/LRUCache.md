@@ -2,75 +2,33 @@
 
 ## Problem Statement
 
-Describe the problem statement for **LRUCache** here.
+Design a data structure for an LRU (Least Recently Used) cache with a fixed capacity. It must support:
+1. get(key) — return the value if the key exists, otherwise return -1. Accessing a key marks it as most recently used.
+2. put(key, value) — insert or update the key-value pair. If capacity is exceeded, evict the least recently used key first.
+
+Both operations must run in O(1) time.
 
 ## Examples
 
-- Example input:
-- Example output:
+- LRUCache(2) → capacity 2
+- put(1,1), put(2,2) → cache: {1:1, 2:2}
+- get(1) → 1, cache: {2:2, 1:1} (1 is now most recent)
+- put(3,3) → evicts key 2, cache: {1:1, 3:3}
+- get(2) → -1 (evicted)
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+Combine a doubly linked list with a hash map.
+
+- Doubly linked list: most recently used node sits just after the dummy head; least recently used sits just before the dummy tail. Nodes can be removed and re-inserted at the front in O(1).
+- Hash map: maps each key to its node, enabling O(1) access to any node without traversal.
+
+On get: if key exists, remove its node from current position, re-insert at front, return value.
+On put: if key exists, update value and move to front. If new key, create node, insert at front, add to map. If over capacity, remove the node just before tail (LRU), delete its key from map.
 
 ## Solution
 
 ```js
-/*
-### Problem Statement
-/**
- * The Least Recently Used (LRU) cache problem defines the behavior of a fixed-size cache that stores key–value pairs and evicts entries based on recent usage.
-
-The cache has a maximum capacity. It supports two operations:
-
-1. **get(key)**
-   * Returns the value associated with the key if it exists in the cache.
-   * If the key is not present, it returns `-1`.
-   * Accessing a key marks it as the most recently used.
-
-2. **put(key, value)**
-   * Inserts a key–value pair into the cache.
-   * If the key already exists, its value is updated and it becomes the most recently used.
-   * If inserting a new key causes the cache to exceed its capacity, the least recently used key is removed.
-
-- “Least recently used” means the entry that has not been accessed (via `get` or `put`) for the longest time.
-- The goal of the problem is to design this cache so that both `get` and `put` operations run in constant time, O(1).
- */
-
-// Approach
-
-/* We can use a combination of a "doubly linked list" and a "hash map" to achieve O(1) time complexity for both `get` and `put` operations.
-    1. **Doubly Linked List**:
-        - Each node will store a key-value pair.
-        - The most recently used node will be moved to the head of the list.
-        - The least recently used node will be at the tail of the list.
-    2. **Hash Map**:
-        - The hash map will store key-node pairs, allowing O(1) access to any node in the doubly linked list.
-*/
-
-// Steps
-
-/*
-1. **Initialization**:
-   - Create a head and a tail (both dummy nodes) for the doubly linked list to facilitate easy addition and removal of nodes.
-   - Create a hash map to store key-node pairs.
-   - Define the capacity of the LRU cache.
-2. **Get Operation**:
-   - Check if the key exists in the hash map.
-   - If it exists, move the corresponding node to the head of the list and return its value.
-   - If it does not exist, return `-1`.
-3. **Put Operation**:
-   - Check if the key already exists in the hash map.
-   - If it exists, update the node's value and move it to the head of the list.
-   - If it does not exist, create a new node and add it to the head of the list.
-   - If the cache exceeds its capacity, remove the node at the tail of the list and delete its entry from the hash map.
-*/
-
-// ### Implementation
-
-// Here's the JavaScript implementation:
-
-
 class ListNode {
     constructor(key, value) {
         this.key = key;
@@ -103,9 +61,7 @@ class LRUCache {
     }
 
     get(key) {
-        if (!this.map.has(key)) {
-            return -1;
-        }
+        if (!this.map.has(key)) return -1;
         const node = this.map.get(key);
         this._remove(node);
         this._addToHead(node);
@@ -120,9 +76,9 @@ class LRUCache {
             this._addToHead(node);
         } else {
             if (this.map.size === this.capacity) {
-                const tailNode = this.tail.prev;
-                this._remove(tailNode);
-                this.map.delete(tailNode.key);
+                const lru = this.tail.prev;
+                this._remove(lru);
+                this.map.delete(lru.key);
             }
             const newNode = new ListNode(key, value);
             this.map.set(key, newNode);
@@ -130,42 +86,18 @@ class LRUCache {
         }
     }
 }
-
-
-// ### Dry Run
-
-// Let's do a dry run with a capacity of 2 and a series of operations:
-
-
-let cache = new LRUCache(2); // Capacity is 2
-cache.put(1, 1); // Cache is {1=1}
-cache.put(2, 2); // Cache is {1=1, 2=2}
-cache.get(1);    // Returns 1, Cache is {2=2, 1=1}
-cache.put(3, 3); // Evicts key 2, Cache is {1=1, 3=3}
-cache.get(2);    // Returns -1 (not found)
-cache.put(4, 4); // Evicts key 1, Cache is {3=3, 4=4}
-cache.get(1);    // Returns -1 (not found)
-cache.get(3);    // Returns 3, Cache is {4=4, 3=3}
-cache.get(4);    // Returns 4, Cache is {3=3, 4=4}
-
-
-// ### Time Complexity
-
-// Get Operation**: O(1) because both accessing the hash map and updating the linked list take constant time.
-// Put Operation**: O(1) for the same reasons as the get operation.
-
-// ### Space Complexity
-
-// Space Complexity**: O(capacity), where capacity is the number of elements the cache can hold. The space complexity is due to the hash map and the doubly linked list, each storing up to capacity elements.
 ```
-
 
 ## Time Complexity
 
+**O(1)** for both get and put — map lookup is O(1) and doubly linked list insert/remove with known node references is O(1).
 
 ## Space Complexity
 
+**O(capacity)** — the map and list together store at most capacity entries.
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- The dummy head and tail nodes eliminate all edge-case checks for empty list or boundary positions.
+- The node must store its key so that when it is evicted from the tail, we can delete its entry from the map.
+- LeetCode #146.

@@ -2,93 +2,60 @@
 
 ## Problem Statement
 
-Describe the problem statement for **Remove Nth Node From Endof List** here.
+Given the head of a linked list, remove the nth node from the end of the list and return the head.
 
 ## Examples
 
-- Example input:
-- Example output:
+- Input: 1 -> 2 -> 3 -> 4 -> 5, n = 2
+- Output: 1 -> 2 -> 3 -> 5
+
+- Input: 1, n = 1
+- Output: null (empty list)
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+Two-pointer technique with a single pass.
+
+1. Advance the right pointer n steps ahead of left.
+2. Move both pointers forward simultaneously until right reaches the last node.
+3. At this point, left points to the node just before the one to delete.
+4. Set left.next = left.next.next.
+
+Edge case: if right becomes null after step 1, the node to delete is the head — return head.next.
 
 ## Solution
 
 ```js
-/** PROBLEM->
- * Given the head of a linked list, remove the nth node from the end of the list and return its head.
- */
-
-/** SOLUTION->
- * Set two pointers, right and left, at the head of the linked list.
- * Move the right pointer n steps forward.
- * Move both the right and left pointers forward until the right pointer reaches the last node. At this point, the left pointer will be pointing to the node behind the nth last node.
- * Relink the left node to the node next to left’s next node.
- * Return the head of the linked list.
- */
-
-/**
- * The time complexity is O(n), where n is the number of nodes in the linked list
- * The space complexity is O(1) because we use constant space to store two pointers
- */
-
-// this is also the Floyd’s Tortoise and Hare Algorithm
 function removeNthLastNode(head, n) {
-    let right = head;  //Set two pointers, at the head of the linked list
+    let right = head;
     let left = head;
 
     for (let i = 0; i < n; i++) {
-        right = right.next;  //Move the right pointer n steps forward
+        right = right.next;
     }
 
-    if (!right) {
-        return head.next;
-    }
+    if (!right) return head.next;
 
-    while (right.next != null) {  //Move both pointers forward until the right pointer reaches the last node
-        right = right.next;  
+    while (right.next !== null) {
+        right = right.next;
         left = left.next;
     }
-	//At this point, the left pointer will be pointing to the node behind the nth last node
 
-    left.next = left.next.next;  //Relink the left node to the node next to left’s next node
+    left.next = left.next.next;
 
-    return head;  //Return the head of the linked list
+    return head;
 }
-
-function main() {
-    const inputs = [
-        [23, 89, 10, 5, 67, 39, 70, 28],
-        [34, 53, 6, 95, 38, 28, 17, 63, 16, 76],
-        [288, 224, 275, 390, 4, 383, 330, 60, 193],
-        [1, 2, 3, 4, 5, 6, 7, 8, 9],
-        [69, 8, 49, 106, 116, 112, 104, 129, 39, 14, 27, 12]
-    ];
-
-    const n = [4, 1, 6, 9, 11];
-
-    for (let i = 0; i < inputs.length; i++) {
-        const inputLinkedList = new LinkedList();
-        inputLinkedList.createLinkedList(inputs[i]);
-        console.log((i + 1) + ".\tLinked List:\t\t", printListWithForwardArrow(inputLinkedList.head));
-        console.log("\tn = " + n[i]);
-        let result = removeNthLastNode(inputLinkedList.head, n[i]);
-        console.log("\tUpdated Linked List:\t", printListWithForwardArrow(result));
-        console.log("-".repeat(100));
-    }
-}
-
-main();
 ```
-
 
 ## Time Complexity
 
+**O(n)** — the list is traversed once with both pointers in a single pass.
 
 ## Space Complexity
 
+**O(1)** — only two pointers used.
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- The n-step gap between the pointers ensures left stops exactly one node before the target, allowing the deletion by rewiring left.next.
+- LeetCode #19.

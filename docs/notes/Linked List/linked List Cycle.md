@@ -2,27 +2,28 @@
 
 ## Problem Statement
 
-Describe the problem statement for **linked List Cycle** here.
+Given the head of a linked list, determine if the list contains a cycle. A cycle exists if some node can be reached again by continuously following the next pointer. Return true if a cycle exists, false otherwise.
 
 ## Examples
 
-- Example input:
-- Example output:
+- Input: 3 -> 2 -> 0 -> -4, where -4 points back to 2
+- Output: true
+
+- Input: 1 -> 2, where 2 points back to 1
+- Output: true
+
+- Input: 1 -> null
+- Output: false
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+Floyd's Tortoise and Hare algorithm. Use two pointers: slow moves one step at a time, fast moves two steps at a time. If there is a cycle, the fast pointer will eventually lap the slow pointer and they will meet. If there is no cycle, the fast pointer will reach null.
 
 ## Solution
 
 ```js
-/**
- * Problem: Check whether or not a linked list contains a cycle. If a cycle exists, return TRUE. Otherwise, return FALSE. The cycle means that at least one node can be reached again by traversing the next pointer.
- */
 function detectCycle(head) {
-    if (!head) {
-        return false;
-    }
+    if (!head) return false;
 
     let slow = head;
     let fast = head;
@@ -31,27 +32,22 @@ function detectCycle(head) {
         slow = slow.next;
         fast = fast.next.next;
 
-        if (slow === fast) {
-            return true;
-        }
+        if (slow === fast) return true;
     }
-    
+
     return false;
 }
-
-/**
- * TC = O(n)
- * SC = O(1) (When we say that an algorithm has a space complexity of O(1), it means that the amount of memory used by the algorithm remains constant regardless of the size of the input)
- */
 ```
-
 
 ## Time Complexity
 
+**O(n)** — in the worst case (no cycle) fast traverses the whole list; with a cycle, the pointers meet within one full loop.
 
 ## Space Complexity
 
+**O(1)** — only two pointers used regardless of list size.
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- Floyd's algorithm works because if a cycle exists, the fast pointer gains one step per iteration on the slow pointer and is guaranteed to catch up.
+- LeetCode #141.

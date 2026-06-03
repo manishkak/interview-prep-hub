@@ -2,160 +2,114 @@
 
 ## Problem Statement
 
-Describe the problem statement for **implementation Of Linked List** here.
+Implement a singly linked list with the following operations: append (add to end), prepend (add to front), delete (remove by value), insertAtNthPosition, and reverse.
 
 ## Examples
 
-- Example input:
-- Example output:
+- append(1), append(2), append(3), prepend(0) → 0 -> 1 -> 2 -> 3
+- delete(2) → 0 -> 1 -> 3
+- insertAtNthPosition(10, 2) → 0 -> 1 -> 10 -> 3
+- reverse() → 3 -> 10 -> 1 -> 0
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+Each node holds a data value and a next pointer. The LinkedList class holds a head pointer.
+
+- append: traverse to the last node (where next is null), then set current.next to the new node.
+- prepend: point new node's next to current head, then update head.
+- delete: if head matches, update head. Otherwise traverse until current.next matches the target value, then skip that node.
+- insertAtNthPosition: traverse to position - 1, wire new node in between.
+- reverse: iterate through the list, reversing each next pointer, tracking prev and current.
 
 ## Solution
 
 ```js
-/**
- * Implementation of LinkedList class
- */
-
 class Node {
-  constructor(data) {
-      this.data = data;
-      this.next = null;
-  }
+    constructor(data) {
+        this.data = data;
+        this.next = null;
+    }
 }
 
 class LinkedList {
-  constructor() {
-      this.head = null;
-  }
+    constructor() {
+        this.head = null;
+    }
 
-  // Method to add a new node at the end of the linked list
-  append(data) {
-      const newNode = new Node(data);
+    append(data) {
+        const newNode = new Node(data);
+        if (!this.head) { this.head = newNode; return; }
+        let current = this.head;
+        while (current.next !== null) current = current.next;
+        current.next = newNode;
+    }
 
-      // !head means there is no node, then just add newNode to head
-      if (!this.head) {
-          this.head = newNode;
-          return;
-      }
-
-      let current = this.head;
-      while (current.next !== null) {
-        // traverse current until last node (until curr.nxt == null is reached)
-          current = current.next;
-      }
-      current.next = newNode; // set newNode to curr.next
-  }
-
-  // Method to add a new node at the beginning of the linked list
-  prepend(data) {
-    const newNode = new Node(data);
-    if (this.head == null){
-        this.head = newNode;
-    } else {
+    prepend(data) {
+        const newNode = new Node(data);
         newNode.next = this.head;
         this.head = newNode;
     }
-  }
 
-  // Method to delete a node by its value
-  // For delete in linked list there is no actual 'delete' per se, its just next or current= curr.next;
-  delete(data) {
-      if (!this.head) {
-          return;
-      }
-
-     // if value to be removed is the head of the ll
-      if (this.head.data === data) {
-          this.head = this.head.next;
-          return;
-      }
-
-      // value to be removed is NOT the head of the ll, need to traverse from start/head until you reach the node to be deleted
-      let current = this.head;
-      while (current.next !== null) {
-          if (current.next.data === data) {
-              current.next = current.next.next;
-              return;
-          }
-          current = current.next;
-      }
-  }
-
-  // Method to print the linked list
-  print() {
-      let current = this.head;
-      while (current !== null) {
-          console.log(current.data);
-          current = current.next;
-      }
-  }
-
-  insertAtNthPosition(data, position) {
-    const newNode = new Node(data);
-
-    // Special case: insert at head
-    if (position === 0 || !this.head) {
-        newNode.next = this.head;
-        this.head = newNode;
-        return;
+    delete(data) {
+        if (!this.head) return;
+        if (this.head.data === data) { this.head = this.head.next; return; }
+        let current = this.head;
+        while (current.next !== null) {
+            if (current.next.data === data) { current.next = current.next.next; return; }
+            current = current.next;
+        }
     }
 
-    let current = this.head;
-    let count = 0;
-
-    // Traverse to the (position-1)th node
-    while (current.next && count < position - 1) {
-        current = current.next;
-        count++;
+    insertAtNthPosition(data, position) {
+        const newNode = new Node(data);
+        if (position === 0 || !this.head) { newNode.next = this.head; this.head = newNode; return; }
+        let current = this.head;
+        let count = 0;
+        while (current.next && count < position - 1) { current = current.next; count++; }
+        newNode.next = current.next;
+        current.next = newNode;
     }
 
-    // Insert new node
-    newNode.next = current.next;
-    current.next = newNode;
-  }
-
-  reverse() {
-    let prev = null;
-    let current = this.head;
-    let next = null;
-
-    while (current) {
-        next = current.next;   // save next
-        current.next = prev;   // reverse pointer
-        prev = current;        // move prev forward
-        current = next;        // move current forward
+    reverse() {
+        let prev = null;
+        let current = this.head;
+        while (current) {
+            const next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        this.head = prev;
     }
 
-    this.head = prev;         // new head
- }
+    print() {
+        let current = this.head;
+        const values = [];
+        while (current !== null) { values.push(current.data); current = current.next; }
+        console.log(values.join(" -> "));
+    }
 }
 
-// Example usage:
-const linkedList1 = new LinkedList();
-linkedList1.append(1);
-linkedList1.append(2);
-linkedList1.append(3);
-linkedList1.prepend(0);
-linkedList1.delete(2);
-linkedList1.print(); // 0 -> 1 -> 3
-linkedList1.insertAtNthPosition(10, 2);
-linkedList1.print(); // e.g., 0 -> 1 -> 10 -> 3
-linkedList1.reverse();
-linkedList1.print(); // original list reversed
-
+const list = new LinkedList();
+list.append(1); list.append(2); list.append(3); list.prepend(0);
+list.delete(2);
+list.print();                      // 0 -> 1 -> 3
+list.insertAtNthPosition(10, 2);
+list.print();                      // 0 -> 1 -> 10 -> 3
+list.reverse();
+list.print();                      // 3 -> 10 -> 1 -> 0
 ```
-
 
 ## Time Complexity
 
+**O(n)** for append, delete, insertAtNthPosition, and reverse — all require traversal in the worst case.
+**O(1)** for prepend — always inserts at head.
 
 ## Space Complexity
 
+**O(n)** total to store n nodes. Each individual operation uses O(1) extra space.
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- For delete, there is no actual "delete" keyword needed — simply bypassing a node with current.next = current.next.next removes it from the list.
+- The reverse operation uses three pointers: prev, current, and a saved next to avoid losing the rest of the list.
