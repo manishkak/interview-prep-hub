@@ -1,4 +1,4 @@
-# Memoization Examples
+const e=`# Memoization Examples
 
 ## Problem Statement
 
@@ -28,7 +28,7 @@ Two common patterns:
 
 ## Solution
 
-```js
+\`\`\`js
 // 1. Closure-based memoization — single parameter
 const memoizedMultiply = () => {
   const cache = {};
@@ -82,7 +82,7 @@ const memoizedAdd3 = memoize(add3);
 console.log(memoizedAdd3(1, 2, 3)); // Computing for: 1 2 3 → 6
 console.log(memoizedAdd3(1, 2, 3)); // From cache → 6
 console.log(memoizedAdd3(1, 2, 3)); // From cache → 6
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -97,3 +97,4 @@ console.log(memoizedAdd3(1, 2, 3)); // From cache → 6
 - Memoization only works correctly on **pure functions** — functions that return the same output for the same input with no side effects.
 - JSON.stringify(args) as a cache key works for primitive arguments; for object/array arguments, deep equality is not checked — two different objects with the same shape produce the same key, which can cause subtle bugs.
 - Memoization trades space for time. It is most effective when: (1) the function is called repeatedly with the same arguments, and (2) the computation is expensive relative to cache lookup.
+`;export{e as default};

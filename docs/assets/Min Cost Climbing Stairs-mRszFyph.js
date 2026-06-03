@@ -1,4 +1,4 @@
-# Min Cost Climbing Stairs
+const n=`# Min Cost Climbing Stairs
 
 ## Problem Statement
 
@@ -36,7 +36,7 @@ The space-optimized version uses only two variables since only the previous two 
 
 ## Solution
 
-```js
+\`\`\`js
 // Standard DP tabulation
 function minCostClimbingStairs(cost) {
   const n = cost.length;
@@ -71,7 +71,7 @@ function minCostClimbingStairs(cost) {
 
   return prev1;
 }
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -88,3 +88,4 @@ function minCostClimbingStairs(cost) {
 - The "top of floor" is index n (one beyond the last element), not n-1 — so we iterate up to and including n.
 - You can start at either index 0 or index 1 for free, which is why both dp[0] and dp[1] are initialized to 0.
 - LeetCode #746.
+`;export{n as default};

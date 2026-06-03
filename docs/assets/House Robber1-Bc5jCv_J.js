@@ -1,4 +1,4 @@
-# House Robber1
+const n=`# House Robber1
 
 ## Problem Statement
 
@@ -37,7 +37,7 @@ Instead of maintaining a full DP array, two variables (prev2, prev1) are enough 
 
 ## Solution
 
-```js
+\`\`\`js
 function rob(nums) {
   if (nums.length === 0) return 0;
   if (nums.length === 1) return nums[0];
@@ -53,7 +53,7 @@ function rob(nums) {
 
   return prev1;
 }
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -68,3 +68,4 @@ function rob(nums) {
 - Classic 1D Dynamic Programming pattern: each state depends only on the previous two states.
 - The key constraint "no two adjacent houses" directly maps to the recurrence: you can either take the current house and skip back two, or skip the current house entirely.
 - LeetCode #198.
+`;export{n as default};
