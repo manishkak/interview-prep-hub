@@ -1,4 +1,4 @@
-# 01 Matrix
+const n=`# 01 Matrix
 
 ## Problem Statement
 
@@ -25,7 +25,7 @@ The condition result[newRow][newCol] > result[row][col] + 1 acts as both the vis
 
 ## Solution
 
-```js
+\`\`\`js
 function updateMatrix(mat) {
     const rows = mat.length;
     const cols = mat[0].length;
@@ -62,7 +62,7 @@ function updateMatrix(mat) {
 
     return result;
 }
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -76,3 +76,4 @@ function updateMatrix(mat) {
 
 - Multi-source BFS: all 0s are treated as simultaneous starting points at distance 0, so BFS naturally computes the shortest distance to the nearest 0 for every cell in one pass.
 - LeetCode #542.
+`;export{n as default};

@@ -1,4 +1,4 @@
-# Word Search
+const e=`# Word Search
 
 ## Problem Statement
 
@@ -20,7 +20,7 @@ One-line mental trigger: start DFS from every cell, match char, mark visited, ex
 
 ## Solution
 
-```js
+\`\`\`js
 var exist = function (board, word) {
     const rows = board.length;
     const cols = board[0].length;
@@ -58,7 +58,7 @@ var exist = function (board, word) {
 
     return false;
 };
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -73,3 +73,4 @@ var exist = function (board, word) {
 - Backtracking (restoring board[r][c] = temp) is essential — without it, a character used in one failed path would be unavailable for other valid paths.
 - The '#' marker is an in-place visited technique that avoids allocating a separate visited array.
 - LeetCode #79.
+`;export{e as default};

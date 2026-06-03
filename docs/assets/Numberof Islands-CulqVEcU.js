@@ -1,4 +1,4 @@
-# Numberof Islands
+const n=`# Numberof Islands
 
 ## Problem Statement
 
@@ -20,7 +20,7 @@ DFS base case: stop if the cell is out of bounds or is already '0'.
 
 ## Solution
 
-```js
+\`\`\`js
 function numIslands(grid) {
     if (!grid || grid.length === 0) return 0;
 
@@ -54,7 +54,7 @@ function numIslands(grid) {
 
     return islandCount;
 }
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -69,3 +69,4 @@ function numIslands(grid) {
 - Marking cells as '0' in-place acts as the visited mechanism — no separate visited array needed.
 - The island count is incremented before DFS, not after — the moment a new '1' is found, that is a new island; DFS just clears its footprint.
 - LeetCode #200.
+`;export{n as default};

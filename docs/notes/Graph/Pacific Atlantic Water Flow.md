@@ -2,37 +2,42 @@
 
 ## Problem Statement
 
-Describe the problem statement for **Pacific Atlantic Water Flow** here.
+Given an m x n matrix of non-negative integers heights representing the height of each cell, find all cells from which water can flow to both the Pacific Ocean and the Atlantic Ocean. Water flows from a cell to an adjacent cell (4-directionally) only if the adjacent cell's height is less than or equal to the current cell's height. The Pacific Ocean touches the top and left borders; the Atlantic Ocean touches the bottom and right borders.
 
 ## Examples
 
-- Example input:
-- Example output:
+- Input: heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]
+- Output: [[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]
+
+- Input: heights = [[1]]
+- Output: [[0,0]]
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+Reverse DFS from ocean borders instead of forward-simulating water flow from every cell.
+
+Key insight: instead of asking "can water flow from cell X to an ocean?", ask "can the ocean expand to reach cell X?". In reverse, a cell is reachable from an ocean border if its height is >= the border cell's height (since water flows down, the reverse is up).
+
+Steps:
+1. Run DFS from all Pacific border cells (top row and left column), marking every reachable cell in pacificReachable.
+2. Run DFS from all Atlantic border cells (bottom row and right column), marking every reachable cell in atlanticReachable.
+3. Collect all cells where both arrays are true.
+
+In DFS, move to a neighbor only if it is not yet marked and its height >= the current cell's height.
 
 ## Solution
 
 ```js
-// Pacific Atlantic Water Flow
-// Given an m x n matrix of non-negative integers representing the height of each unit cell in a continent, the "Pacific ocean" touches the left and top edges of the matrix and the "Atlantic ocean" touches the right and bottom edges.
-// Water can only flow in four directions (up, down, left, or right) from a cell to another one with height equal or lower.
-// Find the list of grid coordinates where water can flow to both the Pacific and Atlantic ocean.
 var pacificAtlantic = function (heights) {
     const rows = heights.length;
     const cols = heights[0].length;
     const pacificReachable = Array.from({ length: rows }, () => Array(cols).fill(false));
     const atlanticReachable = Array.from({ length: rows }, () => Array(cols).fill(false));
-    const result = []; // To store coordinates that can reach both oceans
+    const result = [];
 
-    // DFS function to mark reachable cells
     function dfs(r, c, reachable) {
         reachable[r][c] = true;
-        const directions = [
-            [0, 1], [1, 0], [0, -1], [-1, 0]
-        ];
+        const directions = [[0, 1], [1, 0], [0, -1], [-1, 0]];
         for (let [dr, dc] of directions) {
             const newRow = r + dr;
             const newCol = c + dc;
@@ -46,16 +51,16 @@ var pacificAtlantic = function (heights) {
             }
         }
     }
-    // Start DFS from Pacific Ocean borders
+
     for (let r = 0; r < rows; r++) {
-        dfs(r, 0, pacificReachable); // Left border
-        dfs(r, cols - 1, atlanticReachable); // Right border
+        dfs(r, 0, pacificReachable);
+        dfs(r, cols - 1, atlanticReachable);
     }
     for (let c = 0; c < cols; c++) {
-        dfs(0, c, pacificReachable); // Top border
-        dfs(rows - 1, c, atlanticReachable); // Bottom border
+        dfs(0, c, pacificReachable);
+        dfs(rows - 1, c, atlanticReachable);
     }
-    // Collect cells that can reach both oceans
+
     for (let r = 0; r < rows; r++) {
         for (let c = 0; c < cols; c++) {
             if (pacificReachable[r][c] && atlanticReachable[r][c]) {
@@ -65,34 +70,18 @@ var pacificAtlantic = function (heights) {
     }
     return result;
 };
-// Example usage:
-const heights = [
-    [1, 2, 2, 3, 5],
-    [3, 2, 3, 4, 4],
-    [2, 4, 5, 3, 1],
-    [6, 7, 1, 4, 5],
-    [5, 1, 1, 2, 4]
-];
-console.log(pacificAtlantic(heights)); // Output: [[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]
-
-/*
-Time Complexity (TC):
-O(m * n):
-- We perform DFS from each cell on the borders of the matrix. The number of border cells is proportional to m + n.
-- Each DFS traversal can visit each cell at most once, leading to a total time complexity of O(m * n) for both oceans combined.
-Space Complexity (SC):
-O(m * n):
-- We use two additional m x n matrices to keep track of cells reachable from the Pacific and Atlantic oceans, leading to a space complexity of O(m * n).
-*/
 ```
-
 
 ## Time Complexity
 
+**O(M x N)** where M and N are the grid dimensions. Each cell is visited at most twice — once per ocean's DFS pass.
 
 ## Space Complexity
 
+**O(M x N)** for the two reachable matrices and the recursion stack.
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- The reversal trick — starting BFS/DFS from the ocean borders and moving uphill — is the core insight. It converts a hard many-to-many problem into two simple multi-source traversals.
+- The condition heights[newRow][newCol] >= heights[r][c] is the reverse of "water flows downhill."
+- LeetCode #417.

@@ -1,4 +1,4 @@
-# Flood Fill
+const n=`# Flood Fill
 
 ## Problem Statement
 
@@ -20,7 +20,7 @@ The check image[row][col] !== originalColor naturally stops both out-of-color ce
 
 ## Solution
 
-```js
+\`\`\`js
 function floodFillDFS(image, sr, sc, newColor) {
     const originalColor = image[sr][sc];
     if (originalColor === newColor) return image;
@@ -45,7 +45,7 @@ function floodFillDFS(image, sr, sc, newColor) {
         dfs(row, col - 1);
     }
 }
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -60,3 +60,4 @@ function floodFillDFS(image, sr, sc, newColor) {
 - The early return when originalColor === newColor is essential — without it, the recursion would loop infinitely since every cell would keep matching.
 - No separate visited array is needed because changing the color to newColor prevents revisiting.
 - LeetCode #733.
+`;export{n as default};

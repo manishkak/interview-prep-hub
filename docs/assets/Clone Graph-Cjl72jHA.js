@@ -1,4 +1,4 @@
-# Clone Graph
+const e=`# Clone Graph
 
 ## Problem Statement
 
@@ -30,7 +30,7 @@ The map is the key — it prevents infinite recursion on cyclic graphs and ensur
 
 ## Solution
 
-```js
+\`\`\`js
 function cloneGraph(node) {
     if (!node) return null;
 
@@ -58,7 +58,7 @@ function Node(val, neighbors) {
     this.val = val;
     this.neighbors = neighbors || [];
 }
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -73,3 +73,4 @@ function Node(val, neighbors) {
 - Core rule: create a clone when a node is first seen, reuse the clone from the map for every subsequent encounter.
 - Without the map, cyclic graphs would cause infinite recursion, and shared neighbors would get duplicated.
 - LeetCode #133.
+`;export{e as default};

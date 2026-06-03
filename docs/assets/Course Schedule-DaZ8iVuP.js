@@ -1,4 +1,4 @@
-# Course Schedule
+const e=`# Course Schedule
 
 ## Problem Statement
 
@@ -24,7 +24,7 @@ This is equivalent to looking for back edges in a directed graph.
 
 ## Solution
 
-```js
+\`\`\`js
 function canFinish(numCourses, prerequisites) {
     const graph = Array.from({ length: numCourses }, () => []);
     for (const [course, prereq] of prerequisites) {
@@ -56,7 +56,7 @@ function canFinish(numCourses, prerequisites) {
 
     return true;
 }
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -71,3 +71,4 @@ function canFinish(numCourses, prerequisites) {
 - The two-array approach is the standard DFS cycle detection for directed graphs: visited tracks the current path (detects back edges), checked avoids reprocessing already-safe nodes.
 - This is essentially checking whether a topological ordering exists.
 - LeetCode #207.
+`;export{e as default};

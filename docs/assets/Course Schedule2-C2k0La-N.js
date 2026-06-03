@@ -1,4 +1,4 @@
-# Course Schedule2
+const e=`# Course Schedule2
 
 ## Problem Statement
 
@@ -24,7 +24,7 @@ Steps:
 
 ## Solution
 
-```js
+\`\`\`js
 function findCourseOrder(numCourses, prerequisites) {
     const graph = {};
     const inDegree = new Array(numCourses).fill(0);
@@ -53,7 +53,7 @@ function findCourseOrder(numCourses, prerequisites) {
 
     return courseOrder.length === numCourses ? courseOrder : [];
 }
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -69,3 +69,4 @@ function findCourseOrder(numCourses, prerequisites) {
 - If the result array has fewer than numCourses entries after BFS, a cycle exists and prevented some nodes from ever reaching in-degree 0.
 - Compared to Course Schedule (which only needs true/false), this problem needs the actual order — hence Kahn's algorithm instead of DFS.
 - LeetCode #210.
+`;export{e as default};

@@ -1,4 +1,4 @@
-# Pacific Atlantic Water Flow
+const e=`# Pacific Atlantic Water Flow
 
 ## Problem Statement
 
@@ -27,7 +27,7 @@ In DFS, move to a neighbor only if it is not yet marked and its height >= the cu
 
 ## Solution
 
-```js
+\`\`\`js
 var pacificAtlantic = function (heights) {
     const rows = heights.length;
     const cols = heights[0].length;
@@ -70,7 +70,7 @@ var pacificAtlantic = function (heights) {
     }
     return result;
 };
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -85,3 +85,4 @@ var pacificAtlantic = function (heights) {
 - The reversal trick — starting BFS/DFS from the ocean borders and moving uphill — is the core insight. It converts a hard many-to-many problem into two simple multi-source traversals.
 - The condition heights[newRow][newCol] >= heights[r][c] is the reverse of "water flows downhill."
 - LeetCode #417.
+`;export{e as default};

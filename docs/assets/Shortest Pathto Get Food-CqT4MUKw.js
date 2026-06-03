@@ -1,4 +1,4 @@
-# Shortest Pathto Get Food
+const n=`# Shortest Pathto Get Food
 
 ## Problem Statement
 
@@ -29,7 +29,7 @@ The distance is stored in the queue tuple as [row, col, dist] to avoid maintaini
 
 ## Solution
 
-```js
+\`\`\`js
 function shortestPathToGetFood(grid) {
     const rows = grid.length;
     const cols = grid[0].length;
@@ -71,7 +71,7 @@ function shortestPathToGetFood(grid) {
 
     return -1;
 }
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -86,3 +86,4 @@ function shortestPathToGetFood(grid) {
 - BFS is the correct choice for shortest path on unweighted grids — DFS would not guarantee the minimum distance.
 - Storing distance in the queue tuple is a clean alternative to a separate distance matrix, especially when only one source exists.
 - LeetCode #1730.
+`;export{n as default};

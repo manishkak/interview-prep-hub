@@ -1,4 +1,4 @@
-# Graph Valid Tree
+const e=`# Graph Valid Tree
 
 ## Problem Statement
 
@@ -23,7 +23,7 @@ DFS cycle detection combined with a connectivity check.
 
 ## Solution
 
-```js
+\`\`\`js
 function isValidTree(graph) {
     const visited = new Set();
     const nodes = Object.keys(graph).length;
@@ -47,7 +47,7 @@ function isValidTree(graph) {
         return true;
     }
 }
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -62,3 +62,4 @@ function isValidTree(graph) {
 - Two conditions must both be true for a valid tree: no cycles (DFS returns true) AND all nodes are connected (visited.size === nodes).
 - In an undirected graph, every edge appears twice in the adjacency list — skipping the parent prevents a false cycle detection on the back edge.
 - LeetCode #261.
+`;export{e as default};

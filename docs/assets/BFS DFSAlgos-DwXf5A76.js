@@ -1,4 +1,4 @@
-# BFS DFSAlgos
+const n=`# BFS DFSAlgos
 
 ## Problem Statement
 
@@ -30,7 +30,7 @@ For 2D grids (matrix):
 
 ## Solution
 
-```js
+\`\`\`js
 // Iterative DFS on a graph (adjacency list)
 function dfsIterative(graph, start) {
     const stack = [start];
@@ -117,7 +117,7 @@ function bfsGrid(grid, startRow, startCol) {
 
     while (queue.length > 0) {
         const [r, c] = queue.shift();
-        console.log(`Visiting: (${r}, ${c})`);
+        console.log(\`Visiting: (\${r}, \${c})\`);
 
         for (const [dr, dc] of directions) {
             const nr = r + dr;
@@ -129,7 +129,7 @@ function bfsGrid(grid, startRow, startCol) {
         }
     }
 }
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -147,3 +147,4 @@ function bfsGrid(grid, startRow, startCol) {
 - Use BFS when the goal is shortest path (unweighted). Use DFS when exploring all paths, detecting cycles, or doing topological sort.
 - In 2D grid DFS, the out-of-bounds and visited checks are combined in the same base case to keep the code concise.
 - Common problems that use these patterns: Number of Islands (DFS), Flood Fill (DFS), Rotting Oranges (multi-source BFS), 01 Matrix (multi-source BFS), Clone Graph (DFS + map).
+`;export{n as default};

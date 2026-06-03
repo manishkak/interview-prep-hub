@@ -1,4 +1,4 @@
-# Rotting Oranges
+const e=`# Rotting Oranges
 
 ## Problem Statement
 
@@ -28,7 +28,7 @@ Steps:
 
 ## Solution
 
-```js
+\`\`\`js
 function orangesRotting(grid) {
     const rows = grid.length;
     const cols = grid[0].length;
@@ -76,7 +76,7 @@ function orangesRotting(grid) {
 
     return freshCount === 0 ? minutes : -1;
 }
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -92,3 +92,4 @@ function orangesRotting(grid) {
 - Incrementing minutes only when newQueue is non-empty prevents counting an extra minute after the last round of rotting.
 - The final freshCount check handles isolated fresh oranges that BFS can never reach.
 - LeetCode #994.
+`;export{e as default};

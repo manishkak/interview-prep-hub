@@ -2,47 +2,29 @@
 
 ## Problem Statement
 
-Describe the problem statement for **Numberof Connected Componentsinan Undirected Graph** here.
+Given an undirected graph represented as an adjacency list, return the number of connected components. A connected component is a maximal set of nodes where there is a path between every pair of nodes.
 
 ## Examples
 
-- Example input:
-- Example output:
+- Input: graph = {0:[1,2], 1:[0], 2:[0], 3:[4], 4:[3], 5:[]}
+- Output: 3
+  (Component 1: {0,1,2}, Component 2: {3,4}, Component 3: {5})
+
+- Input: graph = {0:[1], 1:[0], 2:[3], 3:[2]}
+- Output: 2
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+DFS from each unvisited node. Maintain a visited set. Iterate through every node in the graph: if the node has not been visited, run DFS from it (which marks all reachable nodes as visited) and increment the component count by 1. Each DFS call from the outer loop represents discovering exactly one new connected component.
 
 ## Solution
 
 ```js
-// Number of Connected Components in an Undirected Graph
-/*
-Problem Statement:
-Given an undirected graph, represented as an adjacency list, determine the number of connected components in the graph. A connected component is a set of nodes such that there is a path between any two nodes in the set.
-Approach:
-1. Initialize a visited set to keep track of visited nodes.
-2. Initialize a count variable to count the number of connected components.
-3. Iterate through each node in the graph:
-   - If the node has not been visited, perform a DFS or BFS starting from that node to mark all reachable nodes as visited.
-   - Increment the count of connected components.
-4. Return the count.
-Time Complexity:
-O(V + E):
-V is the number of vertices (nodes).
-E is the number of edges.
-Each node and edge is visited exactly once.
-Space Complexity:
-O(V):
-The space used by the visited set.
-The recursion stack or queue used for DFS/BFS in the worst-case scenario.
-*/
 function countConnectedComponents(graph) {
     const visited = new Set();
     let count = 0;
 
     for (let node in graph) {
-        // convert node to number, otherwise node becomes '0','1',.. and not numbers 0,1,...
         const n = Number(node);
         if (!visited.has(n)) {
             dfs(n);
@@ -52,7 +34,6 @@ function countConnectedComponents(graph) {
 
     function dfs(node) {
         visited.add(node);
-        // visit all neighbors, if not visited, call dfs recursively
         for (let neighbor of graph[node]) {
             if (!visited.has(neighbor)) {
                 dfs(neighbor);
@@ -62,91 +43,18 @@ function countConnectedComponents(graph) {
 
     return count;
 }
-
-// Example usage:
-const graph = {
-    0: [1, 2],
-    1: [0],
-    2: [0],
-    3: [4],
-    4: [3],
-    5: []
-};
-console.log(countConnectedComponents(graph)); // Output: 3
-
-// Dry Run:
-/*
-Perfect example. I’ll do a **tight DFS-style dry run**, no code.
----
-## Problem reminder (mental model)
-
-* Undirected graph
-* Connected component = nodes connected directly or indirectly
-* Goal: count connected components
----
-## Graph with components highlighted
 ```
-  0
- / \
-1---2   3
-       |
-       4   5
-```
----
-## Dry Run (step-by-step)
-### 1️⃣ Start at node 0
-* Not visited → Start DFS
-* Mark 0 as visited
-* Visit neighbors:
-  * 1: Not visited → DFS
-    * Mark 1 as visited
-    * Visit neighbors:
-      * 0: Already visited → skip
-  * 2: Not visited → DFS
-    * Mark 2 as visited
-    * Visit neighbors:
-      * 0: Already visited → skip
-* All reachable nodes (0,1,2) marked visited
-* **Component count = 1**
----
-### 2️⃣ Next node: 1
-* Already visited → skip
----
-### 3️⃣ Next node: 2
-* Already visited → skip
----
-### 4️⃣ Next node: 3
-* Not visited → Start DFS
-* Mark 3 as visited
-* Visit neighbors:
-  * 4: Not visited → DFS
-    * Mark 4 as visited
-    * Visit neighbors:
-      * 3: Already visited → skip
-* All reachable nodes (3,4) marked visited
-* **Component count = 2**
----
-### 5️⃣ Next node: 4
-* Already visited → skip
----
-### 6️⃣ Next node: 5
-* Not visited → Start DFS
-* Mark 5 as visited
-* No neighbors to visit
-* **Component count = 3**
----
-### Final Result
-* Total connected components = 3
-*/
-```
-
 
 ## Time Complexity
 
+**O(V + E)** where V = number of nodes and E = number of edges. Each node and edge is visited exactly once across all DFS calls.
 
 ## Space Complexity
 
+**O(V)** for the visited set and the recursion stack.
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- Object keys in JS are strings — converting with Number(node) is necessary to avoid type mismatch bugs when using a numeric Set.
+- The outer loop ensures every disconnected node or subgraph is accounted for.
+- LeetCode #323.

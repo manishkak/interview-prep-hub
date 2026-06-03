@@ -1,4 +1,4 @@
-# Numberof Connected Componentsinan Undirected Graph
+const n=`# Numberof Connected Componentsinan Undirected Graph
 
 ## Problem Statement
 
@@ -19,7 +19,7 @@ DFS from each unvisited node. Maintain a visited set. Iterate through every node
 
 ## Solution
 
-```js
+\`\`\`js
 function countConnectedComponents(graph) {
     const visited = new Set();
     let count = 0;
@@ -43,7 +43,7 @@ function countConnectedComponents(graph) {
 
     return count;
 }
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -58,3 +58,4 @@ function countConnectedComponents(graph) {
 - Object keys in JS are strings — converting with Number(node) is necessary to avoid type mismatch bugs when using a numeric Set.
 - The outer loop ensures every disconnected node or subgraph is accounted for.
 - LeetCode #323.
+`;export{n as default};

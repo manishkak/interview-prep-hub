@@ -2,265 +2,148 @@
 
 ## Problem Statement
 
-Describe the problem statement for **BFS DFSAlgos** here.
+BFS (Breadth-First Search) and DFS (Depth-First Search) are two fundamental graph traversal algorithms used across most graph and grid problems.
+
+- DFS explores as deep as possible along each branch before backtracking. Uses a stack (explicit or via recursion).
+- BFS explores all neighbors at the current level before moving deeper. Uses a queue.
+
+Both run in O(V + E) time and O(V) space on graphs. On 2D grids, both run in O(M x N) time and space.
 
 ## Examples
 
-- Example input:
-- Example output:
+Graph: A connects to [B, C], B connects to [D], C connects to [E], D connects to [F]
+
+- DFS from A: [A, B, D, F, C, E]
+- BFS from A: [A, B, C, D, E, F]
+
+2D grid traversal starting from (0,0): visits every cell exactly once in DFS or BFS order.
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+For graphs (adjacency list representation):
+- Iterative DFS: use a stack, pop a node, if unvisited mark it and push neighbors in reverse order (reverse order matches recursive DFS visit sequence).
+- BFS: use a queue, mark start as visited, dequeue a node, enqueue all unvisited neighbors.
+
+For 2D grids (matrix):
+- Recursive DFS: check bounds and visited status as base case, mark visited, recurse in 4 directions.
+- Iterative BFS: initialize queue with start cell, mark visited, dequeue each cell, enqueue valid unvisited neighbors.
 
 ## Solution
 
 ```js
-// Iterative DFS from ChatGPT
-/*
-Iterative DFS Traversal – Steps
-    - Use a Stack – Instead of recursion, maintain a stack for nodes.
-    - Initialize:
-        - Push the start node to the stack.
-        - Use a Set to track visited nodes.
-        - Create an array result to store the traversal order.
-    - Loop until stack is empty:
-        - Pop the top node from the stack.
-        - If not visited:
-            - Mark as visited.
-            - Add to result.
-            - Push all unvisited neighbors to the stack (often in reverse order to mimic recursion).
-    - Return result.
-*/
+// Iterative DFS on a graph (adjacency list)
 function dfsIterative(graph, start) {
     const stack = [start];
     const visited = new Set();
     const result = [];
-  
+
     while (stack.length > 0) {
-      const node = stack.pop();
-      if (!visited.has(node)) {
-        visited.add(node);
-        result.push(node);
-        // Push neighbors (reverse order to mimic recursive DFS)
-        for (let i = graph[node].length - 1; i >= 0; i--) {
-          stack.push(graph[node][i]); // pushes [C,B] into the 'stack', in two iterations
+        const node = stack.pop();
+        if (!visited.has(node)) {
+            visited.add(node);
+            result.push(node);
+            for (let i = graph[node].length - 1; i >= 0; i--) {
+                stack.push(graph[node][i]);
+            }
         }
-      }
     }
     return result;
 }
-/* The reason for inverse for loop is:
-A: [B, C] -> Recursive DFS from A: Visit A → Visit B → Visit C
-but stack pops the last element first, so-
-Next pop → C gets visited before B. So the order becomes: A → C → B
 
-Fix: reverse neighbors
-Push neighbors in reverse order: for (let i = graph[node].length - 1; i >= 0; i--)
-*/
-  
-  // Example
-  const graph = {
-    A: ['B', 'C'],
-    B: ['D'],
-    C: ['E'],
-    D: ['F'],
-    E: [],
-    F: []
-  };
-  
-console.log(dfsIterative(graph, 'A')); // Output: [ 'A', 'B', 'D', 'F', 'C', 'E' ]
+const graph = {
+    A: ['B', 'C'], B: ['D'], C: ['E'], D: ['F'], E: [], F: []
+};
+console.log(dfsIterative(graph, 'A')); // [A, B, D, F, C, E]
 
 
-
-// Iterative BFS from ChatGPT
-/* Iterative BFS for a Graph – Steps
-
-1. Use a Queue – BFS works level by level, so use a queue (FIFO).
-2. Initialize:
-    - Push the start node into the queue.
-    - Use a Set to track visited nodes.
-    - Create an array result for traversal order.
-3. Loop until queue is empty:
-    - Dequeue (shift) the first node.
-    - If not visited:
-        - Mark as visited.
-        - Add to result.
-        - Enqueue all its unvisited neighbors.
-4. Return result. */
-
+// Iterative BFS on a graph (adjacency list)
 function bfs(graph, start) {
-    const queue = [start]; // Use a queue for BFS
+    const queue = [start];
     const visited = new Set();
     const result = [];
 
-    visited.add(start); // Mark the starting node as visited
+    visited.add(start);
 
     while (queue.length > 0) {
-        const node = queue.shift(); // Dequeue the first node
+        const node = queue.shift();
         result.push(node);
 
-        // Add unvisited neighbors to the queue
         for (let neighbor of graph[node]) {
             if (!visited.has(neighbor)) {
-                visited.add(neighbor); // Mark as visited
+                visited.add(neighbor);
                 queue.push(neighbor);
             }
         }
     }
     return result;
 }
-// TC for both: O(V+E)
-// SC for both: O(V)
 
 
-
-
-// Recursive DFS on a 2D grid (matrix)
-// Starting from one cell, visit every reachable neighboring cell exactly once.
-/**
- * If you see:
- * “2D grid”, “matrix”, “neighbors”, “islands”, “regions”, 👉 This pattern is almost guaranteed.
- * Using a visited array matters here to avoid cycles/infinite recursion and re-visiting cells.
- */
-function dfs(matrix, x, y, visited) {
-    // Check if current position is out of bounds or already visited
+// Recursive DFS on a 2D grid
+function dfsGrid(matrix, x, y, visited) {
     if (
-        x < 0 || y < 0 || 
-        x >= matrix.length || 
-        y >= matrix[0].length || 
+        x < 0 || y < 0 ||
+        x >= matrix.length ||
+        y >= matrix[0].length ||
         visited[x][y]
     ) {
         return;
     }
 
-    // Mark the current cell as visited
     visited[x][y] = true;
-
-    // Process the current cell (if needed)
-    // For example, you can print or modify the matrix here
     console.log(matrix[x][y]);
 
-    // Explore the four possible directions (up, down, left, right)
-    const directions = [
-        [1, 0],  // down
-        [-1, 0], // up
-        [0, 1],  // right
-        [0, -1]  // left
-    ];
-
+    const directions = [[1, 0], [-1, 0], [0, 1], [0, -1]];
     for (let [dx, dy] of directions) {
-        dfs(matrix, x + dx, y + dy, visited);
+        dfsGrid(matrix, x + dx, y + dy, visited);
     }
 }
 
-// Example usage:
-let matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-];
-
-let visited = Array(matrix.length).fill(null).map(() => Array(matrix[0].length).fill(false));
-/*
-The visited array would look like this initially:
-let visited = [
-    [false, false, false],
-    [false, false, false],
-    [false, false, false]
-];
-*/
+const matrix = [[1,2,3],[4,5,6],[7,8,9]];
+const visited = Array(matrix.length).fill(null).map(() => Array(matrix[0].length).fill(false));
+dfsGrid(matrix, 0, 0, visited);
 
 
-// Start DFS from the top-left corner (0, 0)
-dfs(matrix, 0, 0, visited);
+// Iterative BFS on a 2D grid
+function bfsGrid(grid, startRow, startCol) {
+    const rows = grid.length;
+    const cols = grid[0].length;
+    const visited = Array.from({ length: rows }, () => Array(cols).fill(false));
+    const directions = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+    const queue = [];
 
+    visited[startRow][startCol] = true;
+    queue.push([startRow, startCol]);
 
-
-
-// Recursive BFS on a 2D grid (matrix)
-function recursiveBFS(grid, startRow, startCol) {
-    const rows = grid.length; // number of rows
-    const cols = grid[0].length; // number of columns
-
-    const visited = Array.from({ length: rows }, () =>
-        Array(cols).fill(false)
-    ); // 2D array to track visited cells
-
-    // Possible directions to move in the grid (up, down, left, right)
-    const directions = [
-        [1, 0],  // down
-        [-1, 0], // up
-        [0, 1],  // right
-        [0, -1]  // left
-    ];
-
-    const queue = [];   // Initialize an empty queue
-
-    // Helper function to check if a cell is within bounds and not visited
-    function isValid(r, c) {
-        return (
-            r >= 0 &&
-            r < rows &&
-            c >= 0 &&
-            c < cols &&
-            !visited[r][c]
-        );
-    }
-
-    function bfs() {
-        if (queue.length === 0) return; // Base case: if queue is empty, return
-
-        const [r, c] = queue.shift(); // Dequeue the first cell
-
-        // Process first cell
+    while (queue.length > 0) {
+        const [r, c] = queue.shift();
         console.log(`Visiting: (${r}, ${c})`);
 
-        // Explore all four directions
         for (const [dr, dc] of directions) {
             const nr = r + dr;
             const nc = c + dc;
-
-            // If the new cell is valid (meaning it's within bounds and not visited), mark it visited and push to the queue
-            if (isValid(nr, nc)) {
+            if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && !visited[nr][nc]) {
                 visited[nr][nc] = true;
                 queue.push([nr, nc]);
             }
         }
-
-        bfs(); // recursive call
     }
-
-    // Initialize BFS
-    visited[startRow][startCol] = true;
-    queue.push([startRow, startCol]);
-    bfs();
 }
-
-
-
-
-/**
- * number of islands- DFS
- * flood fill- DFS
- * clone graph- DFS with hashmap (Map())
- * rotten oranges- BFS
- * grid[newRow][newCol] = 2;
-    freshOranges -= 1;
-    queue.push([newRow, newCol]);
- * 01 Matrix- BFS 
-    distance[newRow][newCol] = distance[row][col] + 1;
-    queue.push([newRow, newCol]);
- */
 ```
-
 
 ## Time Complexity
 
+**O(V + E)** for graph traversal (V = vertices, E = edges).
+**O(M x N)** for 2D grid traversal where M and N are the grid dimensions.
 
 ## Space Complexity
 
+**O(V)** for graph traversal (visited set + stack/queue).
+**O(M x N)** for grid traversal (visited array + stack/queue).
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- For iterative DFS on a graph, push neighbors in reverse order so the leftmost neighbor is processed first — matching the order of recursive DFS.
+- Use BFS when the goal is shortest path (unweighted). Use DFS when exploring all paths, detecting cycles, or doing topological sort.
+- In 2D grid DFS, the out-of-bounds and visited checks are combined in the same base case to keep the code concise.
+- Common problems that use these patterns: Number of Islands (DFS), Flood Fill (DFS), Rotting Oranges (multi-source BFS), 01 Matrix (multi-source BFS), Clone Graph (DFS + map).
