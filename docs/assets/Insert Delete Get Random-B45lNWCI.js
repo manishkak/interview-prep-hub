@@ -1,4 +1,4 @@
-# Insert Delete Get Random
+const e=`# Insert Delete Get Random
 
 ## Problem Statement
 
@@ -33,7 +33,7 @@ Operations:
 
 ## Solution
 
-```js
+\`\`\`js
 class RandomizedSet {
   constructor() {
     this.arr = [];
@@ -68,7 +68,7 @@ class RandomizedSet {
     return this.arr[randIdx];
   }
 }
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -83,3 +83,4 @@ class RandomizedSet {
 - Memory hook: array gives randomness, map gives location, swap-with-last avoids shifting.
 - Edge case in remove: if the element being removed is already the last element, the swap is a no-op but the code still works correctly.
 - LeetCode #380.
+`;export{e as default};

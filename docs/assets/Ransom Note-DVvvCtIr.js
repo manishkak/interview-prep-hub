@@ -1,4 +1,4 @@
-# Ransom Note
+const n=`# Ransom Note
 
 ## Problem Statement
 
@@ -25,7 +25,7 @@ Character frequency counting using a hash map.
 
 ## Solution
 
-```js
+\`\`\`js
 function canConstruct(ransomNote, magazine) {
     const charCount = {};
 
@@ -42,7 +42,7 @@ function canConstruct(ransomNote, magazine) {
 
     return true;
 }
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -56,3 +56,4 @@ function canConstruct(ransomNote, magazine) {
 
 - The check !charCount[char] covers both the case where the character is absent (undefined) and where its count has been depleted to 0.
 - LeetCode #383.
+`;export{n as default};

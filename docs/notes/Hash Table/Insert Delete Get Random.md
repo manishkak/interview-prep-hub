@@ -2,87 +2,38 @@
 
 ## Problem Statement
 
-Describe the problem statement for **Insert Delete Get Random** here.
+Design a data structure that supports the following three operations each in average O(1) time:
+
+1. insert(val) — inserts val into the set if not already present. Returns true if inserted, false otherwise.
+2. remove(val) — removes val from the set if present. Returns true if removed, false otherwise.
+3. getRandom() — returns a random element from the current set, with every element having equal probability.
 
 ## Examples
 
-- Example input:
-- Example output:
+- insert(1) → true, insert(2) → true, insert(2) → false (already exists)
+- remove(1) → true, remove(3) → false (not present)
+- getRandom() → returns either 1 or 2 with equal probability
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+Neither an array alone nor a map alone can satisfy all three constraints:
+- Arrays give O(1) random access but O(n) deletion (requires shifting).
+- Maps give O(1) insert/delete but no random index access.
+
+The trick is to combine both:
+- An array stores the values for O(1) random index access.
+- A map stores value → index in array for O(1) lookup.
+
+The critical insight for O(1) deletion is the swap-with-last technique: instead of removing an element and shifting the array, swap the target element with the last element, update the last element's index in the map, then pop the end of the array. This avoids any shifting.
+
+Operations:
+- insert: push to array, map the value to its index (arr.length - 1).
+- remove: get index of val, swap with last element, update map for the moved element, pop array, delete val from map.
+- getRandom: return arr[random index from 0 to arr.length - 1].
 
 ## Solution
 
 ```js
-/**
- * Insert Delete GetRandom O(1) — LeetCode #380
- * ### Insert Delete GetRandom O(1) — LeetCode #380
-
-**Problem statement**
-Design a data structure that supports the following operations in **average O(1) time**:
-
-1. **insert(val)** → Inserts `val` if it doesn’t already exist. Returns `true` if inserted, `false` otherwise.
-2. **remove(val)** → Removes `val` if it exists. Returns `true` if removed, `false` otherwise.
-3. **getRandom()** → Returns a random element from the current set, with **equal probability**.
-
----
-
-### Why this problem is tricky
-
-* Arrays give **O(1) getRandom**, but **O(n) delete**.
-* HashMaps give **O(1) insert/delete**, but **no random access**.
-
-The trick is to **combine both**.
-
----
-
-### Core Idea (the only way this works)
-
-Use **two data structures together**:
-
-1. **Array (`arr`)** → stores values for O(1) random access
-2. **Map (`map`)** → stores `value → index in arr` for O(1) lookup
-
----
-
-### How each operation stays O(1)
-
-#### 1️⃣ insert(val)
-
-* If `val` exists in `map` → return `false`
-* Otherwise:
-
-  * Push `val` into `arr`
-  * Store `map[val] = arr.length - 1`
-* Return `true`
-
-#### 2️⃣ remove(val)
-
-To remove in O(1), **never shift the array**.
-
-Steps:
-
-1. Get index of `val` from `map`
-2. Take the **last element** in `arr`
-3. Swap last element with `val`
-4. Update the moved element’s index in `map`
-5. Pop last element
-6. Delete `val` from `map`
-
-This avoids O(n) shifting.
-
-#### 3️⃣ getRandom()
-
-* Generate random index `0 → arr.length - 1`
-* Return `arr[randomIndex]`
-
----
-
-### JavaScript Implementation
-*/
-
 class RandomizedSet {
   constructor() {
     this.arr = [];
@@ -92,22 +43,20 @@ class RandomizedSet {
   insert(val) {
     if (this.map.has(val)) return false;
 
-    this.arr.push(val);                         // Push val into arr (at the end)
-    this.map.set(val, this.arr.length - 1);     // Map val to its index in arr (cos val is at the end of arr ie. at arr.length - 1)
+    this.arr.push(val);
+    this.map.set(val, this.arr.length - 1);
     return true;
   }
 
   remove(val) {
     if (!this.map.has(val)) return false;
 
-    const idx = this.map.get(val);                  // from map, get index of val in arr
-    const lastVal = this.arr[this.arr.length - 1];  // get last value in arr
+    const idx = this.map.get(val);
+    const lastVal = this.arr[this.arr.length - 1];
 
-    // swap with last
-    this.arr[idx] = lastVal;                        // put lastVal in place of val to be removed
-    this.map.set(lastVal, idx);                     // update map with new index of lastVal
+    this.arr[idx] = lastVal;
+    this.map.set(lastVal, idx);
 
-    // remove last
     this.arr.pop();
     this.map.delete(val);
 
@@ -115,43 +64,22 @@ class RandomizedSet {
   }
 
   getRandom() {
-    const randIdx = Math.floor(Math.random() * this.arr.length);    // Generate random index between 0 and arr.length - 1
-    /* Math.random() returns a floating-point number between 0 (inclusive) and 1 (exclusive).
-    Example outputs: 0.0, 0.237, 0.9999, but never 1 */
+    const randIdx = Math.floor(Math.random() * this.arr.length);
     return this.arr[randIdx];
   }
 }
-
-/*
----
-
-### Complexity
-
-* **insert:** O(1)
-* **remove:** O(1)
-* **getRandom:** O(1)
-* **Space:** O(n)
-
----
-
-### Memory hook (important)
-
-> **Array gives randomness, Map gives location, swap-with-last avoids shifting.**
-
-If you remember that sentence, you can rebuild the solution from scratch.
-
-This is a **design + data-structure thinking problem**, not backtracking or DP, and is a common interview favorite exactly because it tests this hybrid idea.
-
- */
 ```
-
 
 ## Time Complexity
 
+**O(1) average** for all three operations — insert, remove, and getRandom each perform a constant number of array and map operations.
 
 ## Space Complexity
 
+**O(n)** where n is the number of elements currently in the set, for the array and map combined.
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- Memory hook: array gives randomness, map gives location, swap-with-last avoids shifting.
+- Edge case in remove: if the element being removed is already the last element, the swap is a no-op but the code still works correctly.
+- LeetCode #380.
