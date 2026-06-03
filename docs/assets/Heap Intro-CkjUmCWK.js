@@ -1,4 +1,4 @@
-# Heap Intro
+const e=`# Heap Intro
 
 ## Problem Statement
 
@@ -29,7 +29,7 @@ bubbleDown: compare root replacement with both children, swap with the smaller c
 
 ## Solution
 
-```js
+\`\`\`js
 class MinHeap {
     constructor() {
         this.heap = [];
@@ -85,7 +85,7 @@ function findKthLargest(nums, k) {
 }
 
 console.log(findKthLargest([3, 2, 1, 5, 6, 4], 2)); // 5
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -102,3 +102,4 @@ console.log(findKthLargest([3, 2, 1, 5, 6, 4], 2)); // 5
 - To find k largest: use a min-heap of size k (the smallest of the k largest sits at the top as the eviction candidate).
 - To find k smallest: use a max-heap of size k (the largest of the k smallest sits at the top).
 - Heap vs full sort: sorting is O(n log n); heap gives O(n log k) — significant when k is much smaller than n.
+`;export{e as default};

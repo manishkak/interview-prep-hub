@@ -1,4 +1,4 @@
-# Min Heap Functions
+const e=`# Min Heap Functions
 
 ## Problem Statement
 
@@ -24,7 +24,7 @@ buildHeap: call __minHeapify on every node from the last down to the root (botto
 
 ## Solution
 
-```js
+\`\`\`js
 class minHeap {
     constructor() {
         this.heap = [];
@@ -107,7 +107,7 @@ heap2.buildHeap([6, 9, 3, 4, 13, 22, 1, 30, 17]);
 console.log(heap2.getMin()); // 1
 heap2.removeMin();
 console.log(heap2.getMin()); // 3
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -124,3 +124,4 @@ console.log(heap2.getMin()); // 3
 - __percolateUp and __minHeapify are mirror images of each other — one moves up, one moves down.
 - To find k smallest elements: buildHeap, then call removeMin k times — O(n + k log n).
 - To find k largest elements: buildHeap using maxHeap, then call removeMax k times — O(n + k log n).
+`;export{e as default};

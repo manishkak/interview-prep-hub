@@ -2,42 +2,31 @@
 
 ## Problem Statement
 
-Describe the problem statement for **Sort Characters By Frequency** here.
+Given a string s, sort it in decreasing order based on the frequency of each character. Return the sorted string. If multiple characters have the same frequency, their relative order does not matter.
 
 ## Examples
 
-- Example input:
-- Example output:
+- Input: "tree"
+- Output: "eert" (or "eetr") — 'e' appears 2 times, 't' and 'r' once each
+
+- Input: "cccaaa"
+- Output: "cccaaa" (or "aaaccc") — 'c' and 'a' both appear 3 times
+
+- Input: "Aabb"
+- Output: "bbAa" (or "bbaA") — 'b' appears 2 times
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+Build a frequency map, then use a max-heap (ordered by frequency descending) to extract characters in frequency order. Append each character repeated by its frequency to build the result string.
+
+Steps:
+1. Count frequency of each character using a Map.
+2. Insert all [char, freq] pairs into a max-heap sorted by freq descending.
+3. Extract from the max-heap one by one, appending char.repeat(freq) to the result.
 
 ## Solution
 
 ```js
-/*Explanation
-Frequency Map: Count the occurrences of each character in the string.
-
-Example for tree: { t: 1, r: 1, e: 2 }.
-Max-Heap: Use a custom comparator to prioritize characters with higher frequencies.
-
-Build Result: Extract the most frequent characters from the heap and append them to the result string.
-
-TC:
-freq map- O(n)
-heap insertions- O(m log m), where m is the number of unique characters
-result contruction- O(n)
-Total: O(n + m log m)
-
-SC:
-O(m) for the frequency map.
-O(m) for the heap. 
-O(n) for the result string.
-Thus, the total space complexity is: O(m+n)
-*/
-
-
 class MaxHeap {
     constructor(compare) {
         this.heap = [];
@@ -70,12 +59,8 @@ class MaxHeap {
         const right = 2 * index + 2;
         let largest = index;
 
-        if (left < this.heap.length && this.compare(this.heap[left], this.heap[largest]) > 0) {
-            largest = left;
-        }
-        if (right < this.heap.length && this.compare(this.heap[right], this.heap[largest]) > 0) {
-            largest = right;
-        }
+        if (left < this.heap.length && this.compare(this.heap[left], this.heap[largest]) > 0) largest = left;
+        if (right < this.heap.length && this.compare(this.heap[right], this.heap[largest]) > 0) largest = right;
 
         if (largest !== index) {
             [this.heap[index], this.heap[largest]] = [this.heap[largest], this.heap[index]];
@@ -86,22 +71,15 @@ class MaxHeap {
 
 function frequencySort(s) {
     const freqMap = new Map();
-
-    // Build frequency map
     for (let char of s) {
         freqMap.set(char, (freqMap.get(char) || 0) + 1);
     }
 
-    // Define comparator for max-heap
-    const compare = (a, b) => a[1] - b[1];
-
-    // Build max-heap
-    const maxHeap = new MaxHeap(compare);
+    const maxHeap = new MaxHeap((a, b) => a[1] - b[1]);
     for (let entry of freqMap) {
         maxHeap.insert(entry);
     }
 
-    // Build result string
     let result = '';
     while (maxHeap.heap.length > 0) {
         const [char, freq] = maxHeap.extractMax();
@@ -111,18 +89,18 @@ function frequencySort(s) {
     return result;
 }
 
-// Example usage
-console.log(frequencySort("tree")); // Output: "eert" or "eetr"
-
+console.log(frequencySort("tree")); // "eert" or "eetr"
 ```
-
 
 ## Time Complexity
 
+**O(n + m log m)** where n is the string length and m is the number of unique characters. Building the frequency map is O(n), heap insertions are O(m log m), and result construction is O(n).
 
 ## Space Complexity
 
+**O(m + n)** — O(m) for the frequency map and heap, O(n) for the result string.
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- The comparator (a, b) => a[1] - b[1] returns negative when a's frequency is less, so the heap treats lower-frequency entries as smaller — placing higher-frequency entries at the top (max-heap behavior).
+- LeetCode #451.

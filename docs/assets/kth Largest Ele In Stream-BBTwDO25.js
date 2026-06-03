@@ -1,4 +1,4 @@
-# kth Largest Ele In Stream
+const e=`# kth Largest Ele In Stream
 
 ## Problem Statement
 
@@ -25,7 +25,7 @@ This avoids full sorting (O(n log n)) and runs in O(n log k).
 
 ## Solution
 
-```js
+\`\`\`js
 class MinHeap {
     constructor() { this.heap = []; }
 
@@ -82,7 +82,7 @@ function findKthLargest(nums, k) {
 }
 
 console.log(findKthLargest([3, 2, 1, 5, 6, 4], 2)); // 5
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -96,3 +96,4 @@ console.log(findKthLargest([3, 2, 1, 5, 6, 4], 2)); // 5
 
 - The min-heap of size k trick works because: after seeing all n elements, the k largest are in the heap, and the smallest of those k (the heap top) is the kth largest by definition.
 - LeetCode #215.
+`;export{e as default};

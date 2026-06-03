@@ -1,4 +1,4 @@
-# Find Medianfrom Data Stream
+const e=`# Find Medianfrom Data Stream
 
 ## Problem Statement
 
@@ -31,7 +31,7 @@ Since JS has no built-in heap, simulate a max-heap by negating values in a min-h
 
 ## Solution
 
-```js
+\`\`\`js
 class MinHeap {
     constructor() { this.heap = []; }
 
@@ -96,7 +96,7 @@ mf.addNum(2);
 console.log(mf.findMedian()); // 1.5
 mf.addNum(3);
 console.log(mf.findMedian()); // 2.0
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -113,3 +113,4 @@ console.log(mf.findMedian()); // 2.0
 - The lo.size() >= hi.size() invariant ensures lo is never smaller than hi, so lo's top is always the correct middle element for odd counts.
 - Negating values simulates a max-heap using a min-heap implementation.
 - LeetCode #295.
+`;export{e as default};

@@ -1,4 +1,4 @@
-# find KClosest Elements
+const e=`# find KClosest Elements
 
 ## Problem Statement
 
@@ -20,7 +20,7 @@ The comparison Math.abs(arr[left] - x) > Math.abs(arr[right] - x) tells us the l
 
 ## Solution
 
-```js
+\`\`\`js
 function findClosestElements(arr, k, x) {
     let left = 0;
     let right = arr.length - 1;
@@ -37,7 +37,7 @@ function findClosestElements(arr, k, x) {
 }
 
 console.log(findClosestElements([1, 2, 3, 4, 5], 4, 3)); // [1, 2, 3, 4]
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -52,3 +52,4 @@ console.log(findClosestElements([1, 2, 3, 4, 5], 4, 3)); // [1, 2, 3, 4]
 - The tie-breaking rule (prefer smaller) is handled naturally: when distances are equal, the else branch decrements right (removes the larger element), keeping the smaller one.
 - The loop condition is right - left >= k (not > k) because when right - left == k, the window already has k+1 elements and still needs one more shrink.
 - LeetCode #658.
+`;export{e as default};

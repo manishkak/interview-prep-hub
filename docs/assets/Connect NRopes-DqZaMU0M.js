@@ -1,4 +1,4 @@
-# Connect NRopes
+const n=`# Connect NRopes
 
 ## Problem Statement
 
@@ -24,7 +24,7 @@ Steps:
 
 ## Solution
 
-```js
+\`\`\`js
 class MinHeap {
     constructor() {
         this.heap = [];
@@ -87,7 +87,7 @@ function connectRopes(ropes) {
 }
 
 console.log(connectRopes([4, 3, 2, 6])); // 29
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -102,3 +102,4 @@ console.log(connectRopes([4, 3, 2, 6])); // 29
 - This is a classic greedy + min-heap problem. The greedy choice is always merging the two smallest ropes because larger ropes added early get re-summed in every subsequent merge.
 - This is the same idea as Huffman encoding.
 - LeetCode #1167 (Minimum Cost to Connect Sticks).
+`;export{n as default};

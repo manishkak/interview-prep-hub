@@ -1,4 +1,4 @@
-# Max Heap And Heap Info
+const e=`# Max Heap And Heap Info
 
 ## Problem Statement
 
@@ -29,7 +29,7 @@ buildHeap: call __maxHeapify on every node from the last down to the root (botto
 
 ## Solution
 
-```js
+\`\`\`js
 class maxHeap {
     constructor() {
         this.heap = [];
@@ -112,7 +112,7 @@ heap.insert(100);
 console.log(heap.getMax());  // 100
 heap.removeMax();
 console.log(heap.getMax());  // 12
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -129,3 +129,4 @@ console.log(heap.getMax());  // 12
 - __percolateUp is used after insert (new element may be too large, needs to move up).
 - __maxHeapify is used after removeMax (replacement element at root may be too small, needs to move down).
 - buildHeap in O(n) is more efficient than inserting n elements one by one (which would be O(n log n)).
+`;export{e as default};

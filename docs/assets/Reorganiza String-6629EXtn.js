@@ -1,4 +1,4 @@
-# Reorganiza String
+const n=`# Reorganiza String
 
 ## Problem Statement
 
@@ -28,7 +28,7 @@ Steps:
 
 ## Solution
 
-```js
+\`\`\`js
 function reorganizeString(str) {
     const freqMap = new Map();
     for (let char of str) {
@@ -66,7 +66,7 @@ function reorganizeString(str) {
 console.log(reorganizeString("aab"));    // "aba"
 console.log(reorganizeString("aaab"));   // ""
 console.log(reorganizeString("aabbcc")); // "abcabc" or similar
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -80,3 +80,4 @@ console.log(reorganizeString("aabbcc")); // "abcabc" or similar
 
 - The feasibility check (max frequency > (n+1)/2) is the key guard. For a string of length n, the most any single character can appear without causing adjacency conflicts is ceil(n/2).
 - LeetCode #767.
+`;export{n as default};

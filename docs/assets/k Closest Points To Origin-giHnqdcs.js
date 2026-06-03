@@ -1,4 +1,4 @@
-# k Closest Points To Origin
+const n=`# k Closest Points To Origin
 
 ## Problem Statement
 
@@ -25,7 +25,7 @@ The sort approach is simpler to write and is O(n log n). The heap approach is O(
 
 ## Solution
 
-```js
+\`\`\`js
 function kClosest(points, k) {
     points.sort((a, b) => {
         const distA = a[0] * a[0] + a[1] * a[1];
@@ -38,7 +38,7 @@ function kClosest(points, k) {
 
 console.log(kClosest([[1,3],[-2,2]], 1));          // [[-2,2]]
 console.log(kClosest([[3,3],[5,-1],[-2,4]], 2));   // [[3,3],[-2,4]]
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -53,3 +53,4 @@ console.log(kClosest([[3,3],[5,-1],[-2,4]], 2));   // [[3,3],[-2,4]]
 - Comparing squared distances (x^2 + y^2) avoids the sqrt call and is sufficient for ordering.
 - For large n and small k, the max-heap approach (O(n log k)) outperforms sorting (O(n log n)).
 - LeetCode #973.
+`;export{n as default};

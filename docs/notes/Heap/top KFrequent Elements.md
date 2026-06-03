@@ -2,55 +2,39 @@
 
 ## Problem Statement
 
-Describe the problem statement for **top KFrequent Elements** here.
+Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
 
 ## Examples
 
-- Example input:
-- Example output:
+- Input: nums = [1, 1, 1, 2, 2, 3], k = 2
+- Output: [1, 2]
+
+- Input: nums = [1], k = 1
+- Output: [1]
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+Build a frequency map, then use a min-heap of size k to keep track of the k most frequent elements.
+
+Steps:
+1. Count frequency of each number using a Map.
+2. For each [num, freq] pair, insert into the min-heap (ordered by frequency ascending).
+3. If the heap size exceeds k, pop the element with the smallest frequency — it is not in the top k.
+4. After processing all unique elements, extract the remaining k elements from the heap.
+
+The min-heap keeps the least-frequent of the top-k at the top, making it easy to evict it when a more frequent element arrives.
 
 ## Solution
 
 ```js
-/*
-Problem
-Given an array of integers- nums and an integer k, return the k most frequent elements.
-You may return the answer in any order.
-
-Approach
-
-Build a Frequency Map:
-	- Use a Map to count the frequency of each element in the array.
-
-Use a Min-Heap:
-	- Use a min-heap (priority queue) of size k to store the k most frequent elements.
-	- Push elements into the heap based on their frequency.
-	- If the size of the heap exceeds k, remove the element with the smallest frequency to ensure only the k most frequent elements remain.
-
-Extract the Elements:
-	- After processing the entire array, the heap will contain the k most frequent elements.
-	- Extract these elements and return them.
-*/
-
-
-// MinHeap class with a comparator
 class MinHeap {
     constructor(compare) {
         this.data = [];
-        this.compare = compare; // function(a, b) -> true if a < b
+        this.compare = compare;
     }
 
-    size() {
-        return this.data.length;
-    }
-
-    peek() {
-        return this.data[0];
-    }
+    size() { return this.data.length; }
+    peek() { return this.data[0]; }
 
     insert(value) {
         this.data.push(value);
@@ -83,86 +67,48 @@ class MinHeap {
             let smallest = index;
             const left = 2 * index + 1;
             const right = 2 * index + 2;
-
             if (left < size && this.compare(this.data[left], this.data[smallest])) smallest = left;
             if (right < size && this.compare(this.data[right], this.data[smallest])) smallest = right;
-
             if (smallest === index) break;
-
             [this.data[index], this.data[smallest]] = [this.data[smallest], this.data[index]];
             index = smallest;
         }
     }
 }
 
-// Function to get top k frequent elements
 function topKFrequent(nums, k) {
     const freqMap = new Map();
-
-    // Step 1: Build frequency map
     for (let num of nums) {
         freqMap.set(num, (freqMap.get(num) || 0) + 1);
     }
 
-    // Step 2: Use min-heap with comparator based on frequency
-    const minHeap = new MinHeap((a, b) => a[1] < b[1]); // compare by frequency
+    const minHeap = new MinHeap((a, b) => a[1] < b[1]);
 
     for (let [num, freq] of freqMap) {
         minHeap.insert([num, freq]);
-        if (minHeap.size() > k) {
-            minHeap.extractMin();
-        }
+        if (minHeap.size() > k) minHeap.extractMin();
     }
 
-    // Step 3: Extract elements from the heap
     const result = [];
     while (minHeap.size() > 0) {
         result.push(minHeap.extractMin()[0]);
     }
 
-    // Optional: reverse to get descending frequency
     return result.reverse();
 }
 
-// Example usage
-const nums = [1, 1, 1, 2, 2, 3];
-const k = 2;
-
-console.log(topKFrequent(nums, k)); // Output: [1, 2]
-
-
-/*
-Explanation
-
-1. Frequency Map:
-	- For the input nums = [1, 1, 1, 2, 2, 3], the frequency map will be:
-	{ 1: 3, 2: 2, 3: 1 }
-
-2. Heap Operations:
-	- Insert [1, 3] into the heap.
-	- Insert [2, 2] into the heap.
-	- Insert [3, 1] into the heap.
-	- The heap maintains the top 2 frequent elements:
-		- After processing, the heap contains [[2, 2], [1, 3]].
-
-3. Extract Results:
-	- Extract the elements from the heap to get the top k frequent elements: [1, 2].
-
-TC: Building Frequency Map- O(n)- n is size of nums, Insertion and deletion in the heap- O(log k), For each unique element in the frequency map, we perform one insertion and at most one deletion.
-If there are m unique elements, the heap operations cost: O(m log k).
-overall- O(n+ m log k)
-SC: freq map- O(m)- m is num of unique ele., Heap- O(k), k is the size of the heap.
-overall- O(m+k)
-*/
+console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2)); // [1, 2]
 ```
-
 
 ## Time Complexity
 
+**O(n + m log k)** where n is the array length and m is the number of unique elements. Building the frequency map is O(n); each of the m heap operations costs O(log k).
 
 ## Space Complexity
 
+**O(m + k)** — O(m) for the frequency map, O(k) for the heap.
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- Min-heap of size k is the standard pattern for "top k by some metric": the top of the min-heap is always the weakest candidate, so it is the first to be evicted.
+- LeetCode #347.

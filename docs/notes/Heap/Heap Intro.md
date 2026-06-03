@@ -2,217 +2,103 @@
 
 ## Problem Statement
 
-Describe the problem statement for **Heap Intro** here.
+A heap is a complete binary tree data structure that satisfies the heap property. In a min-heap, every parent node is smaller than or equal to its children — the root is always the minimum. In a max-heap, every parent node is larger — the root is always the maximum.
+
+Heaps are used to implement priority queues and to efficiently solve "top K" problems. The key advantage over sorting is that maintaining a heap of size k costs O(n log k) rather than O(n log n).
+
+Top K Elements pattern: to find the k largest elements, maintain a min-heap of size k. As you scan the array, if an element is larger than the heap's min (the top), pop the min and push the new element. After processing all n elements, the heap contains exactly the k largest.
 
 ## Examples
 
-- Example input:
-- Example output:
+- Insert [3, 1, 6, 2] into a min-heap → root = 1, heap = [1, 2, 6, 3]
+- extractMin() → returns 1, heap rebalances to [2, 3, 6]
+
+- Top 2 largest in [3, 1, 6, 2]: min-heap of size 2 ends up as [3, 6] → answer: [3, 6]
 
 ## Approach
 
-Explain the general approach, intuition, and algorithms.
+Core heap operations:
+- insert: push to end of array, then bubbleUp (swap with parent while smaller than parent).
+- extractMin: save root, replace root with last element, pop last, then bubbleDown (swap with smaller child while larger than a child).
+- Parent of index i: Math.floor((i - 1) / 2)
+- Left child of i: 2*i + 1
+- Right child of i: 2*i + 2
+
+bubbleUp: compare inserted node with parent, swap if violates heap property, repeat up the tree.
+bubbleDown: compare root replacement with both children, swap with the smaller child if needed, repeat down the tree.
 
 ## Solution
 
 ```js
-// Heap Intro
-/*
-Time Complexity
-    Insert: O(logn) (due to bubbleUp).
-    Extract Min: O(logn) (due to bubbleDown).
-    Space Complexity: O(n) (to store n elements in the heap array).
-*/
-/*
-Key Operations Explained
-
-Insert (insert(val)):
-Add the new value to the end of the heap array.
-Restore the heap property by calling bubbleUp to move the value to its correct position.
-
-Extract Min (extractMin()):
-The root (heap[0]) is the minimum value.
-Replace the root with the last element of the heap.
-Remove the last element and call bubbleDown to restore the heap property.
-
-Bubble Up (bubbleUp(index)):
-Compare the value at index with its parent.
-If the value is smaller than its parent, swap them.
-Repeat the process until the heap property is satisfied.
-
-Bubble Down (bubbleDown(index)):
-Compare the value at index with its left and right children.
-Swap it with the smallest child if the heap property is violated.
-Repeat the process until the heap property is restored.
-*/
-
 class MinHeap {
     constructor() {
         this.heap = [];
     }
 
-    // Insert a value into the heap
     insert(val) {
-        this.heap.push(val); // Add the new value to the end of the heap
-        this.bubbleUp(this.heap.length - 1); // Ensure heap property is maintained
+        this.heap.push(val);
+        this.bubbleUp(this.heap.length - 1);
     }
 
-    // Extract the minimum value from the heap (root)
     extractMin() {
-        if (this.heap.length === 1) return this.heap.pop(); // Only one element in heap
-        const min = this.heap[0]; // The root is the minimum element
-        this.heap[0] = this.heap.pop(); // Replace root with the last element
-        this.bubbleDown(0); // Restore heap property
-        return min; // Return the minimum value
+        if (this.heap.length === 1) return this.heap.pop();
+        const min = this.heap[0];
+        this.heap[0] = this.heap.pop();
+        this.bubbleDown(0);
+        return min;
     }
 
-    // Restore the heap property by moving the value at `index` up
+    peek() { return this.heap[0]; }
+    size() { return this.heap.length; }
+
     bubbleUp(index) {
-        const parent = Math.floor((index - 1) / 2); // Parent index
+        const parent = Math.floor((index - 1) / 2);
         if (index > 0 && this.heap[parent] > this.heap[index]) {
-            [this.heap[parent], this.heap[index]] = [this.heap[index], this.heap[parent]]; // Swap
-            this.bubbleUp(parent); // Recursively bubble up
+            [this.heap[parent], this.heap[index]] = [this.heap[index], this.heap[parent]];
+            this.bubbleUp(parent);
         }
     }
 
-    // Restore the heap property by moving the value at `index` down
     bubbleDown(index) {
-        const left = 2 * index + 1; // Left child index
-        const right = 2 * index + 2; // Right child index
-        let smallest = index; // Assume the current index is the smallest
+        const left = 2 * index + 1;
+        const right = 2 * index + 2;
+        let smallest = index;
 
-        if (left < this.heap.length && this.heap[left] < this.heap[smallest]) {
-            smallest = left; // Update smallest if left child is smaller
-        }
-
-        if (right < this.heap.length && this.heap[right] < this.heap[smallest]) {
-            smallest = right; // Update smallest if right child is smaller
-        }
+        if (left < this.heap.length && this.heap[left] < this.heap[smallest]) smallest = left;
+        if (right < this.heap.length && this.heap[right] < this.heap[smallest]) smallest = right;
 
         if (smallest !== index) {
-            [this.heap[index], this.heap[smallest]] = [this.heap[smallest], this.heap[index]]; // Swap
-            this.bubbleDown(smallest); // Recursively bubble down
+            [this.heap[index], this.heap[smallest]] = [this.heap[smallest], this.heap[index]];
+            this.bubbleDown(smallest);
         }
     }
 }
 
-/**
- * Top K Elements- efficiently find a specific number of elements, known as k, from a set of data
- * To solve tasks like these, one might think to sort the entire collection first, which takes O(n log n) time, and then select the top k elements, taking additional O(k) time.
- * However, the top k elements pattern bypasses the need for full sorting, reducing the time complexity to O(n log k) by managing which elements we compare and keep track of.
- * A heap is the best data structure to keep track of the smallest or largest k elements.
- * k largest elements (by using min heap) or top k smallest elements (by using max heap)
- *      1. Insert the first k elements from the given set of elements into a heap. 
- *          - If we’re looking for the largest elements, use a min heap to keep the smallest of the large elements at the top. 
- *          - Conversely, for the smallest elements, use a max heap to keep the largest of the small elements at the top.
- *      2. Iterate through the remaining elements of the given set-
- *          - For a min heap, if we find an element larger than the top, remove the top element (the smallest of the large elements) and insert the new, larger element. This ensures the heap always contains the largest elements seen so far.
- *          - For a max heap, if we find an element smaller than the top, remove the top element (the largest of the small elements) and insert the new, smaller element, keeping the heap filled with the smallest elements seen so far.
- * 
- * Efficiency of this pattern comes from the ability of the heap to insert and remove elements in O(log k) time. 
- * Because we only maintain k elements in the heap, these operations are quick, and we can process all n elements in the given set in O(n log k) time.
- */
+// Top K Elements pattern — find kth largest
+function findKthLargest(nums, k) {
+    const heap = new MinHeap();
+    for (let num of nums) {
+        heap.insert(num);
+        if (heap.size() > k) heap.extractMin();
+    }
+    return heap.peek();
+}
 
-/**
- * from chatgpt, top 5 heap programs-
- * 1. Find the Kth Largest Element in an Array  - done
- * 2. Merge K Sorted Arrays                     - done
- * 3. Find the Median from a Stream of Numbers
- * 4. Top K Frequent Elements                   - done
- * 5. Sort a Nearly Sorted (K-Sorted) Array
- * 
- * from educative-
- * 1. Sort characters by frequency              - done
- * 2. Connect n ropes with minimum cost         - done
- * 3. Reorganize string - done
- * 
- * in vs code-
- * 1. k closest points to origin
- * 2. top k frequent elements
- * 3. top k frequent words
- * 4. find median from data stream
- */
-
-/*
-1. Find the Kth Largest Element in an Array
-Problem: Given an array, find the Kth largest element.
-
-Approach:
-
-Use a min-heap of size K.
-Iterate through the array:
-Add elements to the heap.
-If the heap size exceeds K, remove the smallest element (heap.pop()).
-The root of the heap will be the Kth largest element.
-Time Complexity:
-
-Using a heap:  O(NlogK), where N is the number of elements.
-
-
-2. Merge K Sorted Arrays
-Problem: Given K sorted arrays, merge them into one sorted array.
-
-Approach:
-
-Use a min-heap to keep track of the smallest element across all arrays.
-Push the first element of each array into the heap.
-While the heap is not empty:
-    - Extract the smallest element and add it to the result.
-    - Insert the next element from the corresponding array into the heap.
-Time Complexity: O(NlogK), where N is the total number of elements across all arrays.
-
-
-3. Find the Median from a Stream of Numbers
-Problem: Continuously find the median as new numbers are added to a data stream.
-
-Approach:
-
-Use two heaps:
-Max-heap for the left half of numbers.
-Min-heap for the right half of numbers.
-Balance the heaps such that their sizes differ by at most 1.
-The median is:
-The root of the max-heap if it has more elements.
-The average of the roots of both heaps if they are of equal size.
-Time Complexity: O(logN) per insertion.
-
-
-4. Top K Frequent Elements
-Problem: Given an array, return the K most frequent elements.
-
-Approach:
-
-Build a frequency map.
-Use a min-heap of size K to store elements by their frequency.
-Iterate through the frequency map:
-Add elements to the heap.
-If the heap size exceeds K, remove the element with the smallest frequency.
-The heap contains the K most frequent elements.
-Time Complexity: O(NlogK), where N is the number of unique elements.
-
-
-5. Sort a Nearly Sorted (K-Sorted) Array
-Problem: Given an array where each element is at most K positions away from its target position, sort it.
-
-Approach:
-
-Use a min-heap of size K+1.
-Insert the first K+1 elements into the heap.
-For each remaining element:
-Add it to the heap.
-Extract the smallest element and add it to the result.
-Extract remaining elements from the heap.
-Time Complexity: O(NlogK), where N is the number of elements.
-*/
+console.log(findKthLargest([3, 2, 1, 5, 6, 4], 2)); // 5
 ```
-
 
 ## Time Complexity
 
+**O(log n)** for insert and extractMin (bubbleUp/bubbleDown traverse at most the height of the tree).
+**O(1)** for peek (just read the root).
+**O(n log k)** for the Top K Elements pattern over n elements with a heap of size k.
 
 ## Space Complexity
 
+**O(n)** to store n elements in the heap array.
 
 ## Notes
 
-- Add notes, edge cases, and patterns here.
+- To find k largest: use a min-heap of size k (the smallest of the k largest sits at the top as the eviction candidate).
+- To find k smallest: use a max-heap of size k (the largest of the k smallest sits at the top).
+- Heap vs full sort: sorting is O(n log n); heap gives O(n log k) — significant when k is much smaller than n.

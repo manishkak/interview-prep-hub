@@ -1,4 +1,4 @@
-# top KFrequent Elements
+const e=`# top KFrequent Elements
 
 ## Problem Statement
 
@@ -26,7 +26,7 @@ The min-heap keeps the least-frequent of the top-k at the top, making it easy to
 
 ## Solution
 
-```js
+\`\`\`js
 class MinHeap {
     constructor(compare) {
         this.data = [];
@@ -98,7 +98,7 @@ function topKFrequent(nums, k) {
 }
 
 console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2)); // [1, 2]
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -112,3 +112,4 @@ console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2)); // [1, 2]
 
 - Min-heap of size k is the standard pattern for "top k by some metric": the top of the min-heap is always the weakest candidate, so it is the first to be evicted.
 - LeetCode #347.
+`;export{e as default};

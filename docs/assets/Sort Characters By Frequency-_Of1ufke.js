@@ -1,4 +1,4 @@
-# Sort Characters By Frequency
+const e=`# Sort Characters By Frequency
 
 ## Problem Statement
 
@@ -26,7 +26,7 @@ Steps:
 
 ## Solution
 
-```js
+\`\`\`js
 class MaxHeap {
     constructor(compare) {
         this.heap = [];
@@ -90,7 +90,7 @@ function frequencySort(s) {
 }
 
 console.log(frequencySort("tree")); // "eert" or "eetr"
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -104,3 +104,4 @@ console.log(frequencySort("tree")); // "eert" or "eetr"
 
 - The comparator (a, b) => a[1] - b[1] returns negative when a's frequency is less, so the heap treats lower-frequency entries as smaller — placing higher-frequency entries at the top (max-heap behavior).
 - LeetCode #451.
+`;export{e as default};

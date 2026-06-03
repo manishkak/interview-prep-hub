@@ -1,4 +1,4 @@
-# top KFrequent Words
+const e=`# top KFrequent Words
 
 ## Problem Statement
 
@@ -25,7 +25,7 @@ After processing all words, extract from the heap and reverse to get descending 
 
 ## Solution
 
-```js
+\`\`\`js
 class MinHeap {
     constructor(compare) {
         this.data = [];
@@ -98,7 +98,7 @@ function topKFrequent(words, k) {
 }
 
 console.log(topKFrequent(["i","love","leetcode","i","love","coding"], 2)); // ["i","love"]
-```
+\`\`\`
 
 ## Time Complexity
 
@@ -113,3 +113,4 @@ console.log(topKFrequent(["i","love","leetcode","i","love","coding"], 2)); // ["
 - The tie-breaking comparator is the tricky part: for equal frequencies, a[0] > b[0] returns true when a comes later alphabetically, making it the "smaller" element in the heap — so it gets evicted and the alphabetically earlier word is retained.
 - The result is reversed at the end because the min-heap extracts in ascending order but the answer needs descending frequency order.
 - LeetCode #692.
+`;export{e as default};
